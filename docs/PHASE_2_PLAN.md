@@ -175,6 +175,24 @@ Phase 2 builds an exam preparation system that generates questions from extracte
 - ✅ Questions generated and stored in database
 - ✅ API endpoints working
 
+#### UI Architecture:
+
+**Navigation Structure**:
+- Simple navigation menu/sidebar with routes:
+  - `/process` - Process PDFs (existing Phase 1 UI - no changes)
+  - `/exam` - Exam Prep (new Phase 2 UI)
+  - `/progress` - Progress Dashboard
+- Each section independent, accessible anytime
+- Clean separation between processing and testing functionality
+
+**Phase 1 UI (Unchanged)**:
+- FileUpload.vue
+- ProcessingStatus.vue
+- ResultViewer.vue
+
+**Phase 2 UI (New)**:
+- All exam prep functionality below
+
 #### Components:
 
 **3.1 Core Components**
