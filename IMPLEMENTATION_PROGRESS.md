@@ -36,7 +36,14 @@
   - Backend database model updated
   - API responses include pass_threshold
   - Frontend uses session-specific thresholds
-- ⬜ Topic performance analytics
+- ✅ Question Review component (QuestionReview.vue)
+  - Review all questions from completed sessions
+  - Color-coded correct (green) and incorrect (red) answers
+  - Filter by all/correct/incorrect questions
+  - Detailed explanations for each question
+  - Session summary with pass/fail status
+  - E2E tests included
+- ⬜ Topic performance analytics dashboard
 - ⬜ Difficulty progression tracking
 - ⬜ Weak area identification
 - ⬜ Study recommendations
@@ -58,20 +65,22 @@
 ## Next Steps
 According to Phase 2 Plan, remaining Phase 3 tasks:
 
-**Phase 3A - Completed:**
+**Phase 3A - Completed:** ✅
 - ✅ Results display working correctly
 - ✅ Session history view (ExamHistory.vue)
 - ✅ Configurable pass threshold
-
-**Phase 3A - Remaining:**
-- ⬜ Question review component (QuestionReview.vue)
+- ✅ Question review component (QuestionReview.vue)
   - Show all questions from a session
   - Highlight correct/incorrect answers
   - Display explanations
+  - Filter controls (all/correct/incorrect)
+
+**Phase 3B - Remaining:**
 - ⬜ Enhanced session configuration
   - Topic filter dropdown
   - Difficulty filter dropdown
   - Time limit options
+  - Session type selection (study/practice/mock)
 
 **Phase 4 - Analytics & Progress:**
 - ⬜ Spaced repetition system (SM-2 algorithm)
