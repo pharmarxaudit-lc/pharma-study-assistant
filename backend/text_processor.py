@@ -5,9 +5,19 @@ from typing import Dict, List
 
 class TextProcessor:
     def clean_text(self, text: str) -> str:
+        # Only remove flowchart artifacts if the text has the specific pattern
+        # Pattern: repeated sequences of dash-bullet-dash between single characters
+        # Example: -•-D-•-o-•-m-•-a-•-n-•-i-•-
+        if re.search(r'(-•-[A-Za-z0-9\s]){3,}', text):
+            # Remove the -•- separators between characters
+            text = re.sub(r'-•-', '', text)
+
+        # Normalize whitespace (collapse multiple spaces/newlines)
         text = re.sub(r'\s+', ' ', text)
-        text = text.replace('', '•').replace('', '-')
+
+        # Remove trailing page numbers
         text = re.sub(r'\d+\s*$', '', text)
+
         return text.strip()
 
     def detect_repeated_elements(self, pages_data: List[Dict]) -> set:
