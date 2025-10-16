@@ -65,21 +65,21 @@
   - [x] Database connection management
   - [x] Session handling
   - [x] Database initialization
-- [ ] Update `backend/config.py`
-  - [ ] Add database path configuration
-  - [ ] Add question generation settings
+- [x] Update `backend/config.py`
+  - [x] Add database path configuration
+  - [x] Add question generation settings
 
 ### Question Generation
-- [ ] Create `backend/question_generator.py`
-  - [ ] Load analysis.json data
-  - [ ] Generate multiple choice questions (single answer)
-  - [ ] Generate "choose all that apply" questions
-  - [ ] Create high-quality distractors
-  - [ ] Add regulatory citations to explanations
-  - [ ] Generate 20-30 questions per topic
-  - [ ] Store questions in database
-  - [ ] Track generation progress
-  - [ ] Handle errors gracefully
+- [x] Create `backend/question_generator.py`
+  - [x] Load analysis.json data
+  - [x] Generate multiple choice questions (single answer)
+  - [x] Generate "choose all that apply" questions
+  - [x] Create high-quality distractors
+  - [x] Add regulatory citations to explanations
+  - [x] Generate 20-30 questions per topic
+  - [x] Store questions in database
+  - [x] Track generation progress
+  - [x] Handle errors gracefully
 - [ ] Create `backend/question_validator.py`
   - [ ] Validate question format
   - [ ] Check for duplicate questions
@@ -162,7 +162,7 @@
   - [ ] Update after each answer
   - [ ] Balance new vs review questions
 
-**Status**: 6/51 Complete (12%)
+**Status**: 15/51 Complete (29%)
 
 ---
 
@@ -372,24 +372,24 @@
 ### By Phase:
 - **Planning**: 9/13 (69%)
 - **Database Design**: 18/18 (100%) ✅
-- **Backend Development**: 6/51 (12%)
+- **Backend Development**: 15/51 (29%)
 - **Frontend Development**: 0/46 (0%)
 - **Progress Dashboard**: 0/14 (0%)
 - **Testing**: 0/23 (0%)
 - **Deployment**: 0/17 (0%)
 - **Phase 2B (Optional)**: Not Started
 
-### Total: 33/182 (18%)
+### Total: 42/182 (23%)
 
 ---
 
 ## 🎯 Current Sprint Focus
 
-**Sprint 1: Foundation** (In Progress - 50%)
+**Sprint 1: Foundation** (In Progress - 100%) ✅
 - [x] Complete database schema
 - [x] Create database models
-- [ ] Build question generator
-- [ ] Test question generation
+- [x] Build question generator
+- [x] Test question generation
 
 **Sprint 2: API & Sessions** (Not Started)
 - [ ] Build all API endpoints

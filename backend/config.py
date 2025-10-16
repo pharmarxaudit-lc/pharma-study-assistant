@@ -20,3 +20,17 @@ class Config:
     OUTPUT_FOLDER = os.path.join(BASE_DIR, 'outputs')
     MAX_FILE_SIZE = 50 * 1024 * 1024
     BATCH_SIZE = 20
+
+    # Database configuration
+    DATABASE_PATH = os.path.join(BASE_DIR, 'backend', 'pharma_exam.db')
+
+    # Question generation settings
+    QUESTIONS_PER_TOPIC = 25  # Target number of questions per topic
+    SINGLE_ANSWER_RATIO = 0.70  # 70% single-answer, 30% choose-all
+    DIFFICULTY_DISTRIBUTION = {
+        'basic': 0.30,       # 30% basic questions
+        'intermediate': 0.50, # 50% intermediate questions
+        'advanced': 0.20     # 20% advanced questions
+    }
+    MAX_RETRIES = 3  # Max API call retries on failure
+    RETRY_DELAY = 2  # Seconds between retries
