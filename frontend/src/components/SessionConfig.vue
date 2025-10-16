@@ -92,6 +92,29 @@
         </label>
       </div>
 
+      <!-- Pass Threshold -->
+      <div class="form-section">
+        <label class="section-label">
+          Pass Threshold: <span class="threshold-value">{{ passThreshold }}%</span>
+        </label>
+        <div class="slider-container">
+          <input
+            type="range"
+            v-model.number="passThreshold"
+            min="50"
+            max="100"
+            step="5"
+            class="threshold-slider"
+          />
+          <div class="slider-labels">
+            <span>50%</span>
+            <span>75%</span>
+            <span>100%</span>
+          </div>
+        </div>
+        <p class="slider-hint">Minimum score required to pass the exam</p>
+      </div>
+
       <!-- Start Button -->
       <div class="action-section">
         <!-- Error message -->
@@ -145,6 +168,7 @@ const topicMode = ref<'all' | 'select'>('all')
 const selectedTopics = ref<string[]>([])
 const difficulty = ref<'basic' | 'intermediate' | 'advanced' | null>(null)
 const includeReview = ref<boolean>(false)
+const passThreshold = ref<number>(70) // Default 70%
 
 // Loading and error states
 const isLoading = ref<boolean>(false)
@@ -244,7 +268,8 @@ async function startSession(): Promise<void> {
       sessionType: response.session_type,
       totalQuestions: response.total_questions,
       currentQuestionNumber: 1, // Always start at question 1
-      currentQuestion: response.first_question
+      currentQuestion: response.first_question,
+      passThreshold: passThreshold.value // Store pass threshold
     }))
 
     // Dispatch custom event to notify ExamView
@@ -589,5 +614,75 @@ h2 {
   margin-top: 1rem;
   color: #666;
   font-size: 0.95rem;
+}
+
+/* Pass Threshold Slider */
+.threshold-value {
+  color: #667eea;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.slider-container {
+  margin: 1rem 0;
+}
+
+.threshold-slider {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(to right, #F44336 0%, #FF9800 50%, #4CAF50 100%);
+  outline: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.threshold-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid #667eea;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+
+.threshold-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.threshold-slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid #667eea;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+
+.threshold-slider::-moz-range-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.slider-hint {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: #666;
+  text-align: center;
 }
 </style>

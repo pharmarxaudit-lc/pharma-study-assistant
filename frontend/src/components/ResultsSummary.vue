@@ -24,7 +24,14 @@
             <div class="score-label">Score</div>
           </div>
         </div>
-        <h2>Session Complete!</h2>
+
+        <!-- Pass/Fail Badge -->
+        <div :class="['pass-fail-badge', getPassFailStatus()]">
+          <span class="badge-icon">{{ getPassFailStatus() === 'passed' ? '✓' : '✗' }}</span>
+          <span class="badge-text">{{ getPassFailMessage() }}</span>
+        </div>
+
+        <h2>{{ getResultMessage() }}</h2>
         <p class="session-type-label">{{ getSessionTypeLabel() }}</p>
       </div>
 
@@ -176,6 +183,7 @@ interface SessionResults {
 const sessionResults = ref<SessionResults | null>(null)
 const isLoading = ref<boolean>(true)
 const errorMessage = ref<string>('')
+const passThreshold = ref<number>(70) // Default, will be loaded from session
 
 // Load session results on mount
 onMounted(async () => {
@@ -186,6 +194,19 @@ onMounted(async () => {
     errorMessage.value = 'No session results found'
     isLoading.value = false
     return
+  }
+
+  // Load pass threshold from session storage
+  const sessionData = sessionStorage.getItem('currentSession')
+  if (sessionData) {
+    try {
+      const session = JSON.parse(sessionData)
+      if (session.passThreshold) {
+        passThreshold.value = session.passThreshold
+      }
+    } catch (e) {
+      console.error('Failed to parse session data:', e)
+    }
   }
 
   try {
@@ -309,6 +330,33 @@ function viewHistory(): void {
   console.log('Session history feature coming soon')
   alert('Session history feature will be implemented in a future update')
 }
+
+function getPassFailStatus(): 'passed' | 'failed' {
+  if (!sessionResults.value) return 'failed'
+  return sessionResults.value.scorePercentage >= passThreshold.value ? 'passed' : 'failed'
+}
+
+function getPassFailMessage(): string {
+  const status = getPassFailStatus()
+  return status === 'passed'
+    ? `You Passed! (${passThreshold.value}% required)`
+    : `Keep Practicing (${passThreshold.value}% required)`
+}
+
+function getResultMessage(): string {
+  const status = getPassFailStatus()
+  if (status === 'passed') {
+    if (sessionResults.value!.scorePercentage >= 90) {
+      return 'Excellent Work! 🎉'
+    } else if (sessionResults.value!.scorePercentage >= 80) {
+      return 'Great Job! 👏'
+    } else {
+      return 'Good Work! ✓'
+    }
+  } else {
+    return 'Keep Practicing! 💪'
+  }
+}
 </script>
 
 <style scoped>
@@ -379,6 +427,46 @@ function viewHistory(): void {
   color: #666;
   font-size: 1.1rem;
   margin: 0;
+}
+
+/* Pass/Fail Badge */
+.pass-fail-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 1rem 0 1.5rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: slideIn 0.5s ease;
+}
+
+.pass-fail-badge.passed {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+}
+
+.pass-fail-badge.failed {
+  background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%);
+  color: white;
+}
+
+.badge-icon {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Stats Grid */
