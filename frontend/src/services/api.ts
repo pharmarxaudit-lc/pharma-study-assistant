@@ -96,6 +96,21 @@ export interface QuestionStats {
   }>
 }
 
+export interface SessionHistoryItem {
+  id: number
+  session_type: string
+  start_time: string
+  end_time: string
+  score: number
+  total: number
+  percentage: number
+}
+
+export interface SessionHistoryResponse {
+  sessions: SessionHistoryItem[]
+  total: number
+}
+
 // API Functions
 export const api = {
   // Start a new study session
@@ -166,8 +181,13 @@ export const api = {
   },
 
   // Get session history
-  async getSessionHistory(limit: number = 10) {
-    const response = await fetch(`${API_BASE_URL}/api/sessions/history?limit=${limit}`)
+  async getSessionHistory(limit: number = 10, sessionType?: string): Promise<SessionHistoryResponse> {
+    let url = `${API_BASE_URL}/api/sessions/history?limit=${limit}`
+    if (sessionType) {
+      url += `&type=${sessionType}`
+    }
+
+    const response = await fetch(url)
 
     if (!response.ok) {
       const error = await response.json()

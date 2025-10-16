@@ -810,11 +810,20 @@ def get_session_history():
 
             sessions_data = []
             for s in sessions:
+                # Handle datetime fields - they may be strings or datetime objects from SQLite
+                start_time = s.start_time
+                if start_time and not isinstance(start_time, str):
+                    start_time = start_time.isoformat()
+
+                end_time = s.end_time
+                if end_time and not isinstance(end_time, str):
+                    end_time = end_time.isoformat()
+
                 sessions_data.append({
                     'id': s.id,
                     'session_type': s.session_type,
-                    'start_time': s.start_time.isoformat() if s.start_time else None,
-                    'end_time': s.end_time.isoformat() if s.end_time else None,
+                    'start_time': start_time,
+                    'end_time': end_time,
                     'score': s.correct_answers,
                     'total': s.total_questions,
                     'percentage': round(s.score_percentage, 1)

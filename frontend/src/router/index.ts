@@ -3,6 +3,7 @@ import ProcessView from '../views/ProcessView.vue'
 import ExamView from '../views/ExamView.vue'
 import ProgressView from '../views/ProgressView.vue'
 import TestView from '../views/TestView.vue'
+import ExamHistory from '../views/ExamHistory.vue'
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -34,6 +35,12 @@ const router = createRouter({
       name: 'test',
       component: TestView,
       meta: { title: 'Mock Screens' }
+    },
+    {
+      path: '/history',
+      name: 'history',
+      component: ExamHistory,
+      meta: { title: 'Exam History' }
     }
   ]
 })

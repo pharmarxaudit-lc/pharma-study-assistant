@@ -17,6 +17,12 @@
         </router-link>
       </li>
       <li>
+        <router-link to="/history" class="nav-link">
+          <span class="nav-icon">📜</span>
+          <span class="nav-label">History</span>
+        </router-link>
+      </li>
+      <li>
         <router-link to="/progress" class="nav-link">
           <span class="nav-icon">📊</span>
           <span class="nav-label">Progress</span>
