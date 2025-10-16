@@ -1,8 +1,14 @@
-run = "bash start.sh"
+run = "python backend/app.py"
 entrypoint = "backend/app.py"
+language = "python3"
 
 [nix]
-channel = "stable-23_11"
+channel = "stable-22_11"
 
 [deployment]
-run = ["bash", "start.sh"]
+run = ["sh", "-c", "python backend/app.py"]
+deploymentTarget = "cloudrun"
+
+[env]
+PORT = "5001"
+FLASK_ENV = "production"
