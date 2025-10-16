@@ -4,7 +4,7 @@
     <div class="progress-header">
       <div class="progress-info">
         <span class="question-number">Question {{ currentQuestion }} of {{ totalQuestions }}</span>
-        <span class="topic-badge">{{ mockQuestion.topic }}</span>
+        <span v-if="question" class="topic-badge">{{ question.topic }}</span>
       </div>
       <div class="progress-bar">
         <div class="progress-fill" :style="{ width: progressPercent + '%' }"></div>
@@ -12,37 +12,37 @@
     </div>
 
     <!-- Question Card -->
-    <div class="question-card">
+    <div v-if="question" class="question-card">
       <!-- Difficulty Badge -->
       <div class="question-meta">
-        <span :class="['difficulty-badge', mockQuestion.difficulty]">
-          {{ getDifficultyLabel(mockQuestion.difficulty) }}
+        <span :class="['difficulty-badge', question.difficulty]">
+          {{ getDifficultyLabel(question.difficulty) }}
         </span>
-        <span :class="['type-badge', mockQuestion.type]">
-          {{ mockQuestion.type === 'single_answer' ? 'Single Answer' : 'Select All That Apply' }}
+        <span :class="['type-badge', question.type]">
+          {{ question.type === 'single_answer' ? 'Single Answer' : 'Select All That Apply' }}
         </span>
       </div>
 
       <!-- Question Text -->
       <div class="question-text">
-        <p>{{ mockQuestion.question }}</p>
+        <p>{{ question.question }}</p>
       </div>
 
       <!-- Answer Options -->
       <div class="answer-options">
         <div
-          v-for="option in mockQuestion.options"
+          v-for="option in question.options"
           :key="option.id"
           :class="['option', {
             'selected': isSelected(option.id),
-            'correct': showFeedback && option.isCorrect,
-            'incorrect': showFeedback && isSelected(option.id) && !option.isCorrect
+            'correct': showFeedback && isCorrectOption(option.id),
+            'incorrect': showFeedback && isSelected(option.id) && !isCorrectOption(option.id)
           }]"
           @click="selectOption(option.id)"
         >
           <div class="option-checkbox">
             <input
-              :type="mockQuestion.type === 'single_answer' ? 'radio' : 'checkbox'"
+              :type="question.type === 'single_answer' ? 'radio' : 'checkbox'"
               :checked="isSelected(option.id)"
               :disabled="showFeedback"
             />
@@ -50,8 +50,8 @@
           <div class="option-content">
             <span class="option-letter">{{ option.id }}.</span>
             <span class="option-text">{{ option.text }}</span>
-            <span v-if="showFeedback && option.isCorrect" class="correct-icon">✓</span>
-            <span v-if="showFeedback && isSelected(option.id) && !option.isCorrect" class="incorrect-icon">✗</span>
+            <span v-if="showFeedback && isCorrectOption(option.id)" class="correct-icon">✓</span>
+            <span v-if="showFeedback && isSelected(option.id) && !isCorrectOption(option.id)" class="incorrect-icon">✗</span>
           </div>
         </div>
       </div>
@@ -75,25 +75,25 @@
         </div>
 
         <!-- Explanation -->
-        <div class="explanation">
+        <div v-if="question.explanation" class="explanation">
           <h4>Explanation:</h4>
-          <p>{{ mockQuestion.explanation }}</p>
+          <p>{{ question.explanation }}</p>
         </div>
 
         <!-- Key Terms -->
-        <div v-if="mockQuestion.keyTerms.length > 0" class="key-terms">
+        <div v-if="question.keyTerms && question.keyTerms.length > 0" class="key-terms">
           <h4>Key Terms:</h4>
           <div class="terms-list">
-            <div v-for="term in mockQuestion.keyTerms" :key="term.term" class="term-item">
+            <div v-for="term in question.keyTerms" :key="term.term" class="term-item">
               <strong>{{ term.term }}:</strong> {{ term.definition }}
             </div>
           </div>
         </div>
 
         <!-- Regulatory Context -->
-        <div v-if="mockQuestion.regulatory" class="regulatory-info">
+        <div v-if="question.regulatory" class="regulatory-info">
           <h4>📋 Legal References:</h4>
-          <p>{{ mockQuestion.regulatory }}</p>
+          <p>{{ question.regulatory }}</p>
         </div>
 
         <!-- Next Question Button -->
@@ -115,13 +115,15 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import { api, type Question as ApiQuestion } from '../services/api'
 
-// Type definitions
+// Type definitions for UI
 interface QuestionOption {
   id: string
   text: string
-  isCorrect: boolean
+  isCorrect?: boolean
 }
 
 interface KeyTerm {
@@ -136,37 +138,84 @@ interface Question {
   type: 'single_answer' | 'choose_all'
   question: string
   options: QuestionOption[]
-  explanation: string
+  explanation?: string
   keyTerms: KeyTerm[]
-  regulatory: string
+  regulatory?: string
+  correctAnswer?: string
 }
 
-// Mock data for demonstration
-const currentQuestion = ref<number>(5)
+// Router
+const router = useRouter()
+
+// Session state
+const sessionId = ref<number>(0)
+const sessionType = ref<string>('study')
+const currentQuestion = ref<number>(1)
 const totalQuestions = ref<number>(25)
+
+// Question state
+const question = ref<Question | null>(null)
 const selectedAnswers = ref<string[]>([])
 const showFeedback = ref<boolean>(false)
 const isCorrect = ref<boolean>(false)
+const isLoading = ref<boolean>(false)
+const errorMessage = ref<string>('')
 
-const mockQuestion = ref<Question>({
-  id: 123,
-  topic: 'Requisitos para ejercer como Farmacéutico',
-  difficulty: 'intermediate',
-  type: 'single_answer',
-  question: 'Según la Ley 247 de 2004, ¿cuántas horas de experiencia práctica debe completar un farmacéutico en Puerto Rico para obtener su licencia?',
-  options: [
-    { id: 'A', text: '1000 horas de internado supervisado', isCorrect: false },
-    { id: 'B', text: '1500 horas de práctica supervisada', isCorrect: true },
-    { id: 'C', text: '2000 horas de experiencia clínica', isCorrect: false },
-    { id: 'D', text: '500 horas de práctica comunitaria', isCorrect: false }
-  ],
-  explanation: 'La Ley 247 de 2004 establece que los farmacéuticos deben completar 1500 horas de práctica supervisada bajo la supervisión de un farmacéutico licenciado en Puerto Rico. Este requisito asegura que los nuevos farmacéuticos tengan experiencia práctica suficiente antes de ejercer de manera independiente.',
-  keyTerms: [
-    { term: 'Práctica Supervisada', definition: 'Experiencia práctica realizada bajo la supervisión directa de un farmacéutico licenciado' },
-    { term: 'Ley 247', definition: 'Ley para Reglamentar el Ejercicio de la Profesión de Farmacia en Puerto Rico' }
-  ],
-  regulatory: 'Ley 247 de 2004, Artículo 6 - Requisitos de Licenciatura'
+// Load session from sessionStorage on mount
+onMounted(() => {
+  const sessionData = sessionStorage.getItem('currentSession')
+  if (!sessionData) {
+    console.error('No active session found')
+    router.push('/exam')
+    return
+  }
+
+  try {
+    const session = JSON.parse(sessionData)
+    sessionId.value = session.sessionId
+    sessionType.value = session.sessionType
+    totalQuestions.value = session.totalQuestions
+    currentQuestion.value = session.currentQuestionNumber
+
+    // Load the first question
+    if (session.currentQuestion) {
+      loadQuestion(session.currentQuestion)
+    }
+  } catch (error) {
+    console.error('Failed to load session:', error)
+    errorMessage.value = 'Failed to load session'
+  }
 })
+
+// Convert API question format to UI format
+function loadQuestion(apiQuestion: ApiQuestion): void {
+  const optionKeys = Object.keys(apiQuestion.options).sort()
+
+  question.value = {
+    id: apiQuestion.id,
+    topic: apiQuestion.topic_name,
+    difficulty: apiQuestion.difficulty,
+    type: apiQuestion.question_type,
+    question: apiQuestion.question_text,
+    options: optionKeys.map(key => ({
+      id: key,
+      text: apiQuestion.options[key]
+    })),
+    explanation: apiQuestion.explanation,
+    // key_terms comes as either object or array from API
+    keyTerms: Array.isArray(apiQuestion.key_terms)
+      ? apiQuestion.key_terms.map((item: any) => ({
+          term: item.term,
+          definition: item.definition
+        }))
+      : Object.entries(apiQuestion.key_terms || {}).map(([term, definition]) => ({
+          term,
+          definition
+        })),
+    regulatory: apiQuestion.regulatory_context,
+    correctAnswer: apiQuestion.correct_answer
+  }
+}
 
 const progressPercent = computed((): number => {
   return (currentQuestion.value / totalQuestions.value) * 100
@@ -185,10 +234,17 @@ function isSelected(optionId: string): boolean {
   return selectedAnswers.value.includes(optionId)
 }
 
+function isCorrectOption(optionId: string): boolean {
+  if (!question.value || !question.value.correctAnswer) return false
+  // correctAnswer can be "A" or "A,C" for multiple answers
+  const correctIds = question.value.correctAnswer.split(',').map(id => id.trim())
+  return correctIds.includes(optionId)
+}
+
 function selectOption(optionId: string): void {
   if (showFeedback.value) return // Can't change answer after submitting
 
-  if (mockQuestion.value.type === 'single_answer') {
+  if (question.value?.type === 'single_answer') {
     selectedAnswers.value = [optionId]
   } else {
     // Multiple selection
@@ -201,49 +257,98 @@ function selectOption(optionId: string): void {
   }
 }
 
-function submitAnswer(): void {
-  // Check if answer is correct
-  const correctOptions = mockQuestion.value.options
-    .filter(opt => opt.isCorrect)
-    .map(opt => opt.id)
+// Store the latest API response to access next question
+const lastAnswerResponse = ref<any>(null)
 
-  const selectedSet = new Set(selectedAnswers.value)
-  const correctSet = new Set(correctOptions)
+async function submitAnswer(): Promise<void> {
+  if (!question.value || isLoading.value) return
 
-  isCorrect.value = selectedSet.size === correctSet.size &&
-    [...selectedSet].every(id => correctSet.has(id))
+  isLoading.value = true
+  errorMessage.value = ''
 
-  showFeedback.value = true
+  try {
+    // Format answer for API (e.g., "A" or "A,C")
+    const selectedAnswer = selectedAnswers.value.sort().join(',')
 
-  // TODO: Send answer to API
-  console.log('Answer submitted:', {
-    questionId: mockQuestion.value.id,
-    selected: selectedAnswers.value,
-    correct: correctOptions,
-    isCorrect: isCorrect.value
-  })
+    // Submit to API
+    const response = await api.submitAnswer(
+      sessionId.value,
+      question.value.id,
+      selectedAnswer
+    )
+
+    // Store response for next question navigation
+    lastAnswerResponse.value = response
+
+    // Update state with response
+    isCorrect.value = response.is_correct
+    showFeedback.value = true
+
+    // Update question with correct answer and explanation
+    if (question.value) {
+      question.value.correctAnswer = response.correct_answer
+      question.value.explanation = response.explanation
+      // key_terms comes as array from API
+      question.value.keyTerms = Array.isArray(response.key_terms)
+        ? response.key_terms.map((item: any) => ({
+            term: item.term,
+            definition: item.definition
+          }))
+        : []
+      question.value.regulatory = response.regulatory_context
+    }
+
+    console.log('Answer submitted successfully:', response)
+
+  } catch (error) {
+    console.error('Failed to submit answer:', error)
+    errorMessage.value = error instanceof Error
+      ? error.message
+      : 'Failed to submit answer. Please try again.'
+  } finally {
+    isLoading.value = false
+  }
 }
 
-function nextQuestion(): void {
-  // Reset for next question
-  selectedAnswers.value = []
-  showFeedback.value = false
-  isCorrect.value = false
+async function nextQuestion(): Promise<void> {
+  if (!question.value) return
 
-  if (currentQuestion.value < totalQuestions.value) {
-    currentQuestion.value++
-    // TODO: Load next question from API
-    alert('Mock: Would load next question here')
+  // Check if there's a next question
+  if (lastAnswerResponse.value?.next_question) {
+    loadQuestion(lastAnswerResponse.value.next_question)
+
+    // Increment question number
+    currentQuestion.value += 1
+
+    // Reset for next question
+    selectedAnswers.value = []
+    showFeedback.value = false
+    isCorrect.value = false
+    errorMessage.value = ''
+    lastAnswerResponse.value = null
+
+    // Update session storage
+    const sessionData = sessionStorage.getItem('currentSession')
+    if (sessionData) {
+      const session = JSON.parse(sessionData)
+      session.currentQuestionNumber = currentQuestion.value
+      session.currentQuestion = question.value
+      sessionStorage.setItem('currentSession', JSON.stringify(session))
+    }
   } else {
-    // TODO: Navigate to results page
-    alert('Mock: Would show results page here')
+    // Session is complete - navigate to results
+    sessionStorage.setItem('sessionComplete', 'true')
+    sessionStorage.setItem('completedSessionId', String(sessionId.value))
+    window.dispatchEvent(new Event('sessionComplete'))
+    router.push('/exam') // ExamView will detect completion and show ResultsSummary
   }
 }
 
 function exitSession(): void {
   if (confirm('Are you sure you want to exit? Your progress will be saved.')) {
-    // TODO: Save session and navigate away
-    alert('Mock: Would exit session here')
+    // Clear session and return to exam config
+    sessionStorage.removeItem('currentSession')
+    router.push('/exam')
   }
 }
 </script>

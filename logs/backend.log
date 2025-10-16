@@ -1,146 +1,17 @@
-2025-10-16 14:09:50,285 [INFO] __main__: ================================================================================
-2025-10-16 14:09:50,285 [INFO] __main__: Pharmacy Exam Prep Application Starting
-2025-10-16 14:09:50,285 [INFO] __main__: Upload folder: /Users/luiscotto/Code/pharma-study-assistant/uploads
-2025-10-16 14:09:50,285 [INFO] __main__: Output folder: /Users/luiscotto/Code/pharma-study-assistant/outputs
-2025-10-16 14:09:50,285 [INFO] __main__: Anthropic API Key configured: True
-2025-10-16 14:09:50,285 [INFO] __main__: ================================================================================
-2025-10-16 14:09:50,287 [INFO] __main__: Starting Flask server on port 5001 (debug=False)
+2025-10-16 15:22:43,615 [INFO] __main__: ================================================================================
+2025-10-16 15:22:43,615 [INFO] __main__: Pharmacy Exam Prep Application Starting
+2025-10-16 15:22:43,615 [INFO] __main__: Upload folder: /Users/luiscotto/Code/pharma-study-assistant/uploads
+2025-10-16 15:22:43,615 [INFO] __main__: Output folder: /Users/luiscotto/Code/pharma-study-assistant/outputs
+2025-10-16 15:22:43,615 [INFO] __main__: Anthropic API Key configured: True
+2025-10-16 15:22:43,615 [INFO] __main__: ================================================================================
+2025-10-16 15:22:43,618 [INFO] __main__: Starting Flask server on port 5001 (debug=False)
  * Serving Flask app 'app'
  * Debug mode: off
-2025-10-16 14:09:50,293 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+2025-10-16 15:22:43,624 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:5001
  * Running on http://192.168.5.102:5001
-2025-10-16 14:09:50,293 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
-2025-10-16 14:09:52,647 [DEBUG] __main__: Health check requested
-2025-10-16 14:09:52,647 [INFO] __main__: Health check: {'status': 'healthy', 'claude_configured': True, 'timestamp': '2025-10-16T14:09:52.647438'}
-2025-10-16 14:09:52,648 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:09:52] "GET /api/health HTTP/1.1" 200 -
-2025-10-16 14:10:02,439 [DEBUG] __main__: Serving index.html
-2025-10-16 14:10:02,440 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:10:02] "GET / HTTP/1.1" 200 -
-2025-10-16 14:10:02,448 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:10:02] "GET /assets/index-CaLhqawi.css HTTP/1.1" 200 -
-2025-10-16 14:10:02,448 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:10:02] "GET /assets/index-DnG3Q_Ni.js HTTP/1.1" 200 -
-2025-10-16 14:10:08,427 [DEBUG] __main__: Serving index.html
-2025-10-16 14:10:08,428 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:10:08] "GET / HTTP/1.1" 200 -
-2025-10-16 14:10:08,435 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:10:08] "GET /assets/index-CaLhqawi.css HTTP/1.1" 200 -
-2025-10-16 14:10:08,436 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:10:08] "GET /assets/index-DnG3Q_Ni.js HTTP/1.1" 200 -
-2025-10-16 14:10:43,201 [DEBUG] __main__: Serving index.html
-2025-10-16 14:10:43,201 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:10:43] "GET / HTTP/1.1" 200 -
-2025-10-16 14:10:43,210 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:10:43] "GET /assets/index-BToqTpNB.css HTTP/1.1" 200 -
-2025-10-16 14:10:43,210 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:10:43] "GET /assets/index-DTLIvPr_.js HTTP/1.1" 200 -
-2025-10-16 14:11:23,573 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:11:23] "GET /assets/index-DTLIvPr_.js HTTP/1.1" 200 -
-2025-10-16 14:11:31,388 [DEBUG] __main__: Serving index.html
-2025-10-16 14:11:31,388 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:11:31] "GET / HTTP/1.1" 200 -
-2025-10-16 14:11:31,401 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:11:31] "GET /assets/index-BToqTpNB.css HTTP/1.1" 200 -
-2025-10-16 14:11:31,401 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:11:31] "GET /assets/index-DTLIvPr_.js HTTP/1.1" 200 -
-2025-10-16 14:11:50,495 [DEBUG] __main__: Serving index.html
-2025-10-16 14:11:50,495 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:11:50] "GET / HTTP/1.1" 200 -
-2025-10-16 14:11:50,501 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:11:50] "GET /assets/index-BToqTpNB.css HTTP/1.1" 200 -
-2025-10-16 14:11:50,501 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:11:50] "GET /assets/index-z2G59fpN.js HTTP/1.1" 200 -
-2025-10-16 14:12:28,011 [DEBUG] __main__: Serving index.html
-2025-10-16 14:12:28,015 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:12:28] "GET / HTTP/1.1" 200 -
-2025-10-16 14:12:28,025 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:12:28] "GET /assets/index-BToqTpNB.css HTTP/1.1" 200 -
-2025-10-16 14:12:28,025 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:12:28] "GET /assets/index-z2G59fpN.js HTTP/1.1" 200 -
-2025-10-16 14:13:27,734 [DEBUG] __main__: Serving index.html
-2025-10-16 14:13:27,735 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:27] "GET / HTTP/1.1" 200 -
-2025-10-16 14:13:27,741 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:27] "[36mGET /assets/index-BToqTpNB.css HTTP/1.1[0m" 304 -
-2025-10-16 14:13:27,743 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:27] "[36mGET /assets/index-z2G59fpN.js HTTP/1.1[0m" 304 -
-2025-10-16 14:13:29,111 [DEBUG] __main__: Serving index.html
-2025-10-16 14:13:29,111 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:29] "GET / HTTP/1.1" 200 -
-2025-10-16 14:13:29,117 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:29] "[36mGET /assets/index-BToqTpNB.css HTTP/1.1[0m" 304 -
-2025-10-16 14:13:29,118 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:29] "[36mGET /assets/index-z2G59fpN.js HTTP/1.1[0m" 304 -
-2025-10-16 14:13:29,996 [DEBUG] __main__: Serving index.html
-2025-10-16 14:13:29,996 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:29] "GET / HTTP/1.1" 200 -
-2025-10-16 14:13:30,001 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:30] "[36mGET /assets/index-z2G59fpN.js HTTP/1.1[0m" 304 -
-2025-10-16 14:13:30,004 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:30] "[36mGET /assets/index-BToqTpNB.css HTTP/1.1[0m" 304 -
-2025-10-16 14:13:30,789 [DEBUG] __main__: Serving index.html
-2025-10-16 14:13:30,790 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:30] "GET / HTTP/1.1" 200 -
-2025-10-16 14:13:30,794 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:30] "[36mGET /assets/index-BToqTpNB.css HTTP/1.1[0m" 304 -
-2025-10-16 14:13:30,796 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:30] "[36mGET /assets/index-z2G59fpN.js HTTP/1.1[0m" 304 -
-2025-10-16 14:13:31,479 [DEBUG] __main__: Serving index.html
-2025-10-16 14:13:31,480 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:31] "GET / HTTP/1.1" 200 -
-2025-10-16 14:13:31,487 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:31] "[36mGET /assets/index-z2G59fpN.js HTTP/1.1[0m" 304 -
-2025-10-16 14:13:31,488 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:31] "[36mGET /assets/index-BToqTpNB.css HTTP/1.1[0m" 304 -
-2025-10-16 14:13:32,213 [DEBUG] __main__: Serving index.html
-2025-10-16 14:13:32,213 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:32] "GET / HTTP/1.1" 200 -
-2025-10-16 14:13:32,219 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:32] "[36mGET /assets/index-BToqTpNB.css HTTP/1.1[0m" 304 -
-2025-10-16 14:13:32,220 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:32] "[36mGET /assets/index-z2G59fpN.js HTTP/1.1[0m" 304 -
-2025-10-16 14:13:32,891 [DEBUG] __main__: Serving index.html
-2025-10-16 14:13:32,892 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:32] "GET / HTTP/1.1" 200 -
-2025-10-16 14:13:32,898 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:32] "[36mGET /assets/index-z2G59fpN.js HTTP/1.1[0m" 304 -
-2025-10-16 14:13:32,899 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:32] "[36mGET /assets/index-BToqTpNB.css HTTP/1.1[0m" 304 -
-2025-10-16 14:13:33,624 [DEBUG] __main__: Serving index.html
-2025-10-16 14:13:33,624 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:33] "GET / HTTP/1.1" 200 -
-2025-10-16 14:13:33,631 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:33] "[36mGET /assets/index-BToqTpNB.css HTTP/1.1[0m" 304 -
-2025-10-16 14:13:33,632 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:33] "[36mGET /assets/index-z2G59fpN.js HTTP/1.1[0m" 304 -
-2025-10-16 14:13:34,389 [DEBUG] __main__: Serving index.html
-2025-10-16 14:13:34,390 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:34] "GET / HTTP/1.1" 200 -
-2025-10-16 14:13:34,396 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:34] "[36mGET /assets/index-z2G59fpN.js HTTP/1.1[0m" 304 -
-2025-10-16 14:13:34,396 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:34] "[36mGET /assets/index-BToqTpNB.css HTTP/1.1[0m" 304 -
-2025-10-16 14:13:35,050 [DEBUG] __main__: Serving index.html
-2025-10-16 14:13:35,051 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:35] "GET / HTTP/1.1" 200 -
-2025-10-16 14:13:35,058 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:35] "[36mGET /assets/index-z2G59fpN.js HTTP/1.1[0m" 304 -
-2025-10-16 14:13:35,058 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:35] "[36mGET /assets/index-BToqTpNB.css HTTP/1.1[0m" 304 -
-2025-10-16 14:13:35,771 [DEBUG] __main__: Serving index.html
-2025-10-16 14:13:35,771 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:35] "GET / HTTP/1.1" 200 -
-2025-10-16 14:13:35,777 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:35] "[36mGET /assets/index-z2G59fpN.js HTTP/1.1[0m" 304 -
-2025-10-16 14:13:35,779 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:35] "[36mGET /assets/index-BToqTpNB.css HTTP/1.1[0m" 304 -
-2025-10-16 14:13:36,444 [DEBUG] __main__: Serving index.html
-2025-10-16 14:13:36,445 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:36] "GET / HTTP/1.1" 200 -
-2025-10-16 14:13:36,452 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:36] "[36mGET /assets/index-BToqTpNB.css HTTP/1.1[0m" 304 -
-2025-10-16 14:13:36,452 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:36] "[36mGET /assets/index-z2G59fpN.js HTTP/1.1[0m" 304 -
-2025-10-16 14:13:42,343 [DEBUG] __main__: Serving index.html
-2025-10-16 14:13:42,344 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:42] "[36mGET / HTTP/1.1[0m" 304 -
-2025-10-16 14:13:42,352 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:42] "[36mGET /assets/index-z2G59fpN.js HTTP/1.1[0m" 304 -
-2025-10-16 14:13:42,353 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:13:42] "[36mGET /assets/index-BToqTpNB.css HTTP/1.1[0m" 304 -
-2025-10-16 14:14:56,542 [DEBUG] __main__: Serving index.html
-2025-10-16 14:14:56,543 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:14:56] "GET / HTTP/1.1" 200 -
-2025-10-16 14:14:56,550 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:14:56] "GET /assets/index-C1m2L_zw.css HTTP/1.1" 200 -
-2025-10-16 14:14:56,551 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:14:56] "GET /assets/index-DzK9FhFG.js HTTP/1.1" 200 -
-2025-10-16 14:14:58,948 [DEBUG] __main__: Serving index.html
-2025-10-16 14:14:58,948 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:14:58] "GET / HTTP/1.1" 200 -
-2025-10-16 14:14:58,957 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:14:58] "GET /assets/index-DzK9FhFG.js HTTP/1.1" 200 -
-2025-10-16 14:14:58,957 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:14:58] "GET /assets/index-C1m2L_zw.css HTTP/1.1" 200 -
-2025-10-16 14:15:00,435 [DEBUG] __main__: Serving index.html
-2025-10-16 14:15:00,436 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:15:00] "GET / HTTP/1.1" 200 -
-2025-10-16 14:15:00,440 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:15:00] "GET /assets/index-C1m2L_zw.css HTTP/1.1" 200 -
-2025-10-16 14:15:00,440 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:15:00] "GET /assets/index-DzK9FhFG.js HTTP/1.1" 200 -
-2025-10-16 14:21:27,192 [DEBUG] __main__: Serving index.html
-2025-10-16 14:21:27,193 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:21:27] "GET / HTTP/1.1" 200 -
-2025-10-16 14:21:27,206 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:21:27] "GET /assets/index-C1m2L_zw.css HTTP/1.1" 200 -
-2025-10-16 14:21:27,206 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:21:27] "GET /assets/index-DzK9FhFG.js HTTP/1.1" 200 -
-2025-10-16 14:22:04,090 [DEBUG] __main__: Serving index.html
-2025-10-16 14:22:04,090 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:22:04] "GET / HTTP/1.1" 200 -
-2025-10-16 14:22:04,096 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:22:04] "GET /assets/index-Mqpjuror.css HTTP/1.1" 200 -
-2025-10-16 14:22:04,096 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:22:04] "GET /assets/index-DX-kUB0S.js HTTP/1.1" 200 -
-2025-10-16 14:22:49,293 [DEBUG] __main__: Serving index.html
-2025-10-16 14:22:49,294 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:22:49] "GET / HTTP/1.1" 200 -
-2025-10-16 14:22:49,302 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:22:49] "GET /assets/index-Mqpjuror.css HTTP/1.1" 200 -
-2025-10-16 14:22:49,302 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:22:49] "GET /assets/index-DX-kUB0S.js HTTP/1.1" 200 -
-2025-10-16 14:23:56,702 [DEBUG] __main__: Serving index.html
-2025-10-16 14:23:56,703 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:23:56] "GET / HTTP/1.1" 200 -
-2025-10-16 14:23:56,712 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:23:56] "GET /assets/index-Mqpjuror.css HTTP/1.1" 200 -
-2025-10-16 14:23:56,712 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:23:56] "GET /assets/index-DX-kUB0S.js HTTP/1.1" 200 -
-2025-10-16 14:24:30,616 [DEBUG] __main__: Serving index.html
-2025-10-16 14:24:30,617 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:30] "GET / HTTP/1.1" 200 -
-2025-10-16 14:24:30,624 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:30] "[36mGET /assets/index-DX-kUB0S.js HTTP/1.1[0m" 304 -
-2025-10-16 14:24:30,625 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:30] "[36mGET /assets/index-Mqpjuror.css HTTP/1.1[0m" 304 -
-2025-10-16 14:24:31,544 [DEBUG] __main__: Serving index.html
-2025-10-16 14:24:31,544 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:31] "GET / HTTP/1.1" 200 -
-2025-10-16 14:24:31,551 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:31] "[36mGET /assets/index-DX-kUB0S.js HTTP/1.1[0m" 304 -
-2025-10-16 14:24:31,552 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:31] "[36mGET /assets/index-Mqpjuror.css HTTP/1.1[0m" 304 -
-2025-10-16 14:24:32,023 [DEBUG] __main__: Serving index.html
-2025-10-16 14:24:32,023 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:32] "GET / HTTP/1.1" 200 -
-2025-10-16 14:24:32,028 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:32] "[36mGET /assets/index-DX-kUB0S.js HTTP/1.1[0m" 304 -
-2025-10-16 14:24:32,029 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:32] "[36mGET /assets/index-Mqpjuror.css HTTP/1.1[0m" 304 -
-2025-10-16 14:24:32,342 [DEBUG] __main__: Serving index.html
-2025-10-16 14:24:32,343 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:32] "GET / HTTP/1.1" 200 -
-2025-10-16 14:24:32,348 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:32] "[36mGET /assets/index-DX-kUB0S.js HTTP/1.1[0m" 304 -
-2025-10-16 14:24:32,350 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:32] "[36mGET /assets/index-Mqpjuror.css HTTP/1.1[0m" 304 -
-2025-10-16 14:24:53,766 [DEBUG] __main__: Serving index.html
-2025-10-16 14:24:53,767 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:53] "GET / HTTP/1.1" 200 -
-2025-10-16 14:24:53,773 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:53] "GET /assets/index-XGKE8l3b.css HTTP/1.1" 200 -
-2025-10-16 14:24:53,773 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:53] "GET /assets/index-EE_qnL9g.js HTTP/1.1" 200 -
-2025-10-16 14:25:16,034 [DEBUG] __main__: Serving index.html
-2025-10-16 14:25:16,035 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:25:16] "GET / HTTP/1.1" 200 -
-2025-10-16 14:25:16,047 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:25:16] "GET /assets/index-EE_qnL9g.js HTTP/1.1" 200 -
-2025-10-16 14:25:16,048 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:25:16] "GET /assets/index-XGKE8l3b.css HTTP/1.1" 200 -
+2025-10-16 15:22:43,625 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-10-16 15:22:45,819 [DEBUG] __main__: Health check requested
+2025-10-16 15:22:45,819 [INFO] __main__: Health check: {'status': 'healthy', 'claude_configured': True, 'timestamp': '2025-10-16T15:22:45.819226'}
+2025-10-16 15:22:45,819 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 15:22:45] "GET /api/health HTTP/1.1" 200 -

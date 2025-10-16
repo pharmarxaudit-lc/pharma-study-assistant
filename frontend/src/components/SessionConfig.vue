@@ -94,8 +94,14 @@
 
       <!-- Start Button -->
       <div class="action-section">
-        <button class="start-button" @click="startSession">
-          Start Session
+        <!-- Error message -->
+        <div v-if="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
+
+        <button class="start-button" @click="startSession" :disabled="isLoading">
+          <span v-if="isLoading" class="loading-spinner"></span>
+          {{ isLoading ? 'Starting Session...' : 'Start Session' }}
         </button>
         <p class="session-summary">
           {{ getSessionSummary() }}
@@ -107,6 +113,8 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { api } from '../services/api'
 
 // Type definitions
 interface SessionType {
@@ -127,6 +135,9 @@ interface Topic {
   questionCount: number
 }
 
+// Router
+const router = useRouter()
+
 // Session configuration
 const sessionType = ref<'study' | 'practice' | 'mock'>('study')
 const numQuestions = ref<number>(25)
@@ -134,6 +145,10 @@ const topicMode = ref<'all' | 'select'>('all')
 const selectedTopics = ref<string[]>([])
 const difficulty = ref<'basic' | 'intermediate' | 'advanced' | null>(null)
 const includeReview = ref<boolean>(false)
+
+// Loading and error states
+const isLoading = ref<boolean>(false)
+const errorMessage = ref<string>('')
 
 // Available options (MOCK DATA - will come from API)
 const sessionTypes: SessionType[] = [
@@ -192,19 +207,60 @@ function getSessionSummary(): string {
   return `${typeLabel}: ${numQuestions.value} questions from ${topicText}${diffText}`
 }
 
-function startSession(): void {
-  console.log('Starting session with config:', {
-    sessionType: sessionType.value,
-    numQuestions: numQuestions.value,
-    topicMode: topicMode.value,
-    selectedTopics: selectedTopics.value,
-    difficulty: difficulty.value,
-    includeReview: includeReview.value
-  })
+async function startSession(): Promise<void> {
+  // Validation
+  if (topicMode.value === 'select' && selectedTopics.value.length === 0) {
+    errorMessage.value = 'Please select at least one topic'
+    return
+  }
 
-  // TODO: Call API to start session
-  // TODO: Navigate to study/practice/mock view
-  alert('Mock: Session would start here!')
+  // Clear previous errors
+  errorMessage.value = ''
+  isLoading.value = true
+
+  try {
+    // Build session config
+    const config = {
+      file_id: '20251016_113156', // Using the document file_id from database
+      session_type: sessionType.value,
+      num_questions: numQuestions.value,
+      topic_filter: topicMode.value === 'select' && selectedTopics.value.length > 0
+        ? selectedTopics.value
+        : undefined,
+      difficulty_filter: difficulty.value || undefined,
+      prioritize_weak: includeReview.value
+    }
+
+    console.log('Starting session with config:', config)
+
+    // Call API to start session
+    const response = await api.startSession(config)
+
+    console.log('Session started successfully:', response)
+
+    // Store session data in sessionStorage for the exam view to use
+    sessionStorage.setItem('currentSession', JSON.stringify({
+      sessionId: response.session_id,
+      sessionType: response.session_type,
+      totalQuestions: response.total_questions,
+      currentQuestionNumber: 1, // Always start at question 1
+      currentQuestion: response.first_question
+    }))
+
+    // Dispatch custom event to notify ExamView
+    window.dispatchEvent(new Event('sessionStarted'))
+
+    // Navigate to exam view (will stay on same page if already there)
+    await router.push('/exam')
+
+  } catch (error) {
+    console.error('Failed to start session:', error)
+    errorMessage.value = error instanceof Error
+      ? error.message
+      : 'Failed to start session. Please try again.'
+  } finally {
+    isLoading.value = false
+  }
 }
 </script>
 
@@ -474,6 +530,16 @@ h2 {
   text-align: center;
 }
 
+.error-message {
+  background: #ffebee;
+  color: #c62828;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  border: 1px solid #ef9a9a;
+}
+
 .start-button {
   width: 100%;
   padding: 1rem 2rem;
@@ -486,15 +552,37 @@ h2 {
   cursor: pointer;
   transition: all 0.3s;
   box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-.start-button:hover {
+.start-button:hover:not(:disabled) {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(102, 126, 234, 0.6);
 }
 
-.start-button:active {
+.start-button:active:not(:disabled) {
   transform: translateY(0);
+}
+
+.start-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 .session-summary {

@@ -1,16 +1,32 @@
 <template>
   <div class="results-summary">
-    <!-- Results Header -->
-    <div class="results-header">
-      <div class="score-circle" :class="getScoreClass()">
-        <div class="score-content">
-          <div class="score-number">{{ sessionResults.scorePercentage }}%</div>
-          <div class="score-label">Score</div>
-        </div>
-      </div>
-      <h2>Session Complete!</h2>
-      <p class="session-type-label">{{ getSessionTypeLabel() }}</p>
+    <!-- Loading state -->
+    <div v-if="isLoading" class="loading-container">
+      <div class="loading-spinner"></div>
+      <p>Loading results...</p>
     </div>
+
+    <!-- Error state -->
+    <div v-else-if="errorMessage" class="error-container">
+      <div class="error-message">{{ errorMessage }}</div>
+      <button class="action-button secondary" @click="startNewSession">
+        Start New Session
+      </button>
+    </div>
+
+    <!-- Results content -->
+    <template v-else-if="sessionResults">
+      <!-- Results Header -->
+      <div class="results-header">
+        <div class="score-circle" :class="getScoreClass()">
+          <div class="score-content">
+            <div class="score-number">{{ sessionResults.scorePercentage }}%</div>
+            <div class="score-label">Score</div>
+          </div>
+        </div>
+        <h2>Session Complete!</h2>
+        <p class="session-type-label">{{ getSessionTypeLabel() }}</p>
+      </div>
 
     <!-- Stats Grid -->
     <div class="stats-grid">
@@ -110,13 +126,19 @@
         View Session History
       </button>
     </div>
+    </template>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import { api, type SessionResults as ApiSessionResults } from '../services/api'
 
-// Type definitions
+// Router
+const router = useRouter()
+
+// Type definitions for UI
 interface TopicPerformance {
   name: string
   correct: number
@@ -150,53 +172,68 @@ interface SessionResults {
   incorrectQuestions: IncorrectQuestion[]
 }
 
-// Mock data for demonstration
-const sessionResults = ref<SessionResults>({
-  scorePercentage: 76,
-  correctAnswers: 19,
-  incorrectAnswers: 6,
-  totalQuestions: 25,
-  timeSpent: 1847, // 30 minutes 47 seconds
-  sessionType: 'practice',
-  topicBreakdown: [
-    { name: 'Requisitos para ejercer como Farmacéutico', correct: 8, total: 10 },
-    { name: 'Recetas y Dispensación', correct: 6, total: 8 },
-    { name: 'Sustancias Controladas', correct: 5, total: 7 }
-  ],
-  difficultyBreakdown: [
-    { level: 'basic', correct: 8, total: 9 },
-    { level: 'intermediate', correct: 9, total: 12 },
-    { level: 'advanced', correct: 2, total: 4 }
-  ],
-  incorrectQuestions: [
-    {
-      id: 45,
-      topic: 'Requisitos para ejercer como Farmacéutico',
-      difficulty: 'intermediate',
-      question: '¿Cuántas horas de educación continua debe completar un farmacéutico anualmente en Puerto Rico?',
-      userAnswer: '15 horas',
-      correctAnswer: '20 horas'
-    },
-    {
-      id: 78,
-      topic: 'Recetas y Dispensación',
-      difficulty: 'advanced',
-      question: '¿Cuál es el período máximo permitido para dispensar una receta de sustancia controlada Schedule II?',
-      userAnswer: '30 días',
-      correctAnswer: '7 días desde la fecha de emisión'
-    },
-    {
-      id: 112,
-      topic: 'Sustancias Controladas',
-      difficulty: 'basic',
-      question: '¿Qué formulario DEA se utiliza para reportar el robo de sustancias controladas?',
-      userAnswer: 'DEA Form 41',
-      correctAnswer: 'DEA Form 106'
+// State
+const sessionResults = ref<SessionResults | null>(null)
+const isLoading = ref<boolean>(true)
+const errorMessage = ref<string>('')
+
+// Load session results on mount
+onMounted(async () => {
+  const completedSessionId = sessionStorage.getItem('completedSessionId')
+
+  if (!completedSessionId) {
+    console.error('No completed session ID found')
+    errorMessage.value = 'No session results found'
+    isLoading.value = false
+    return
+  }
+
+  try {
+    // Fetch results from API
+    const apiResults = await api.getSessionResults(Number(completedSessionId))
+
+    // Transform API response to UI format
+    sessionResults.value = {
+      scorePercentage: Math.round(apiResults.score_percentage),
+      correctAnswers: apiResults.correct_answers,
+      incorrectAnswers: apiResults.incorrect_answers,
+      totalQuestions: apiResults.total_questions,
+      timeSpent: apiResults.time_spent,
+      sessionType: apiResults.session_type as 'study' | 'practice' | 'mock',
+      topicBreakdown: apiResults.topic_breakdown.map(t => ({
+        name: t.topic_name,
+        correct: t.correct,
+        total: t.total
+      })),
+      difficultyBreakdown: apiResults.difficulty_breakdown.map(d => ({
+        level: d.difficulty as 'basic' | 'intermediate' | 'advanced',
+        correct: d.correct,
+        total: d.total
+      })),
+      incorrectQuestions: apiResults.incorrect_questions.map(q => ({
+        id: q.question_id,
+        topic: q.topic_name,
+        difficulty: q.difficulty as 'basic' | 'intermediate' | 'advanced',
+        question: q.question_text,
+        userAnswer: q.user_answer,
+        correctAnswer: q.correct_answer
+      }))
     }
-  ]
+
+    console.log('Session results loaded:', sessionResults.value)
+
+  } catch (error) {
+    console.error('Failed to load session results:', error)
+    errorMessage.value = error instanceof Error
+      ? error.message
+      : 'Failed to load session results'
+  } finally {
+    isLoading.value = false
+  }
 })
 
 function getScoreClass(): string {
+  if (!sessionResults.value) return ''
   const score = sessionResults.value.scorePercentage
   if (score >= 80) return 'excellent'
   if (score >= 70) return 'good'
@@ -205,6 +242,7 @@ function getScoreClass(): string {
 }
 
 function getSessionTypeLabel(): string {
+  if (!sessionResults.value) return 'Session'
   const labels: Record<string, string> = {
     study: 'Study Session',
     practice: 'Practice Session',
@@ -237,18 +275,23 @@ function getTopicBarClass(correct: number, total: number): string {
 }
 
 function reviewIncorrect(): void {
-  console.log('Reviewing incorrect questions')
-  alert('Mock: Would start review session with incorrect questions')
+  // TODO: Implement review mode - start new session with only incorrect questions
+  console.log('Review feature coming soon')
+  alert('Review feature will be implemented in a future update')
 }
 
 function startNewSession(): void {
-  console.log('Starting new session')
-  alert('Mock: Would navigate to session config')
+  // Clear session data and navigate to config
+  sessionStorage.removeItem('currentSession')
+  sessionStorage.removeItem('sessionComplete')
+  sessionStorage.removeItem('completedSessionId')
+  router.push('/exam')
 }
 
 function viewHistory(): void {
-  console.log('Viewing session history')
-  alert('Mock: Would navigate to session history view')
+  // TODO: Implement session history view
+  console.log('Session history feature coming soon')
+  alert('Session history feature will be implemented in a future update')
 }
 </script>
 
@@ -622,5 +665,54 @@ function viewHistory(): void {
 .action-button.tertiary:hover {
   background: #f0f3ff;
   transform: translateY(-2px);
+}
+
+/* Loading Container */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 1rem;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(102, 126, 234, 0.2);
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-container p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Error Container */
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 2rem;
+}
+
+.error-message {
+  background: #ffebee;
+  color: #c62828;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  font-weight: 500;
+  border: 1px solid #ef9a9a;
+  text-align: center;
+  max-width: 500px;
 }
 </style>
