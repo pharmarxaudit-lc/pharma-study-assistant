@@ -29,6 +29,25 @@ Pharmacy exam prep application that converts PDF study materials into structured
 **Reason**: PyMuPDF 1.23.8 has build issues with Python 3.13. Battle-tested compatibility with 3.8.
 **Priority**: PDF parsing tool compatibility over newer Python features
 
+### Topic Identification: LLM vs Rule-Based
+**Decision**: Use Claude API for semantic topic identification instead of Python heuristics
+**Reason**:
+- Rule-based approach (headers, page counts) creates arbitrary topic boundaries
+- LLM understands content semantics and natural topic transitions
+- Results in meaningful topic names instead of "Section 11"
+- Example: "Funciones del Farmacéutico y Administración de Medicamentos" vs "Pages 11-13"
+**Implementation**:
+- Process PDF in 10-page chunks
+- Claude identifies topics semantically
+- Context (summary + topics) passed between chunks for continuity
+**See**: `docs/LLM_TOPIC_IDENTIFICATION.md` for complete details
+
+### Language Preservation
+**Decision**: Explicitly instruct Claude to preserve Spanish content
+**Reason**: Puerto Rico pharmacy exam requires Spanish materials
+**Implementation**: All prompts include "Keep all content in ORIGINAL LANGUAGE (Spanish)"
+**Result**: No unwanted translation to English
+
 ### File Writing Strategy
 **Decision**: Incremental writing instead of batch writing at completion
 **Reason**:
@@ -43,7 +62,7 @@ Pharmacy exam prep application that converts PDF study materials into structured
 **Code**: `BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))`
 
 ### Memory Management
-**Finding**: 92-page PDF only uses ~45-50MB total memory
+**Finding**: 111-page PDF only uses ~45-50MB total memory
 **Approach**: In-memory pipeline with incremental disk writes is efficient
 
 ## Development Workflow
@@ -96,9 +115,9 @@ Backend runs on port 5000, frontend on port 3000 (with proxy to backend).
 ### Backend Core
 - `app.py` - Flask API with SSE streaming for real-time progress
 - `pdf_extractor.py` - PyMuPDF integration for text extraction
-- `text_processor.py` - Text cleaning and structure detection
-- `content_analyzer.py` - Claude API for topic analysis
-- `llm_formatter.py` - Claude API for markdown formatting
+- `text_processor.py` - **LLM-based topic identification with context propagation**
+- `content_analyzer.py` - Claude API for topic analysis (Spanish preservation)
+- `llm_formatter.py` - Claude API for markdown formatting (Spanish preservation)
 - `config.py` - Centralized configuration with absolute paths
 
 ### Frontend Components
@@ -171,9 +190,15 @@ outputs/{file_id}/
 1. **Upload** - PDF saved to `uploads/{file_id}.pdf`
 2. **Extract** - PyMuPDF extracts text by page → saved to `pages/raw/`
 3. **Clean** - Remove headers/footers/repeated elements → saved to `pages/cleaned/`
-4. **Analyze** - Claude analyzes content → identifies topics
-5. **Format** - Claude formats each topic → appended to `formatted.md`
-6. **Complete** - All metadata saved to `analysis.json`
+4. **LLM Topic Identification** (NEW) - Claude identifies topics in 10-page chunks
+   - Chunk 1 (pages 1-10): Identify topics
+   - Generate summary of last 2-3 pages
+   - Chunk 2 (pages 11-20): Receive context + identify topics
+   - Continue for all chunks...
+   - Result: Semantically meaningful topics (e.g., 41 topics from 111 pages)
+5. **Analyze** - Claude analyzes each identified topic → extracts key terms, critical points
+6. **Format** - Claude formats each topic → appended to `formatted.md`
+7. **Complete** - All metadata saved to `analysis.json`
 
 ## Future Improvements / Phase 2
 

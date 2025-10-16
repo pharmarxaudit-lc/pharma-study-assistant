@@ -35,14 +35,25 @@ flowchart TB
     SSE2 --> Process[Text Processing Phase]
 
     Process -->|Log: Processing text| Clean[TextProcessor.clean_text]
-    Clean -->|Remove repeated headers/footers| Group[TextProcessor.group_by_topic]
-    Group -->|Detect topic boundaries| Topics[topics list in memory<br/>92 topics × ~5KB = 460KB]
+    Clean -->|Remove repeated headers/footers| LLMIdentify[LLM Topic Identification<br/>NEW: Semantic analysis]
 
-    Topics -->|Log: Identified 92 topics| SSE3[SSE: progress 50%<br/>message: Processing topics]
+    LLMIdentify --> Chunk1[Chunk 1: Pages 1-10]
+    Chunk1 -->|Claude API| IdentifyTopics1[Identify topics semantically]
+    IdentifyTopics1 --> Summary1[Generate summary of last 2-3 pages]
+
+    Summary1 --> Chunk2[Chunk 2: Pages 11-20]
+    Chunk2 -->|Context: topics + summary| IdentifyTopics2[Identify topics with context]
+    IdentifyTopics2 --> Summary2[Generate new summary]
+
+    Summary2 --> MoreChunks{More chunks?}
+    MoreChunks -->|Yes| NextChunk[Continue with context...]
+    MoreChunks -->|No| Topics[topics list in memory<br/>41 topics × ~5KB = 205KB]
+
+    Topics -->|Log: Identified 41 topics| SSE3[SSE: progress 50%<br/>message: Processing topics]
     SSE3 --> Analyze[Analysis Phase]
 
-    Analyze -->|Loop: For each topic 1-92| Topic1[Topic 1/92]
-    Topic1 -->|Log: Processing topic X/92| Claude1[ContentAnalyzer.analyze_topic]
+    Analyze -->|Loop: For each topic 1-41| Topic1[Topic 1/41]
+    Topic1 -->|Log: Processing topic X/41| Claude1[ContentAnalyzer.analyze_topic]
 
     Claude1 -->|Anthropic API Call| ClaudeAPI1[Claude API: Analysis<br/>Model: claude-3-5-sonnet-20241022]
     ClaudeAPI1 -->|Log: Analyzing topic| Request1[POST https://api.anthropic.com/v1/messages<br/>Max tokens: 2000<br/>Temperature: 0.1]

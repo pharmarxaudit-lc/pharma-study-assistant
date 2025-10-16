@@ -1,32 +1,37 @@
 import json
-from typing import Dict
+import logging
+from typing import Dict, Optional
 
 from anthropic import Anthropic
 from config import Config
 
 
 class PharmacyContentAnalyzer:
-    def __init__(self):
+    def __init__(self, logger: Optional[logging.Logger] = None):
         self.client = Anthropic(api_key=Config.ANTHROPIC_API_KEY)
         self.model = Config.ANTHROPIC_MODEL
+        # Use provided logger or create default
+        self.logger = logger or logging.getLogger(__name__)
 
     def analyze_topic(self, topic_data: Dict) -> Dict:
         content_text = self._prepare_content(topic_data)
 
-        prompt = f"""Analyze this pharmacy law content and return ONLY valid JSON:
+        prompt = f"""Analyze this pharmacy law content and return ONLY valid JSON.
+
+IMPORTANT: Keep all content in its ORIGINAL LANGUAGE (Spanish if the input is in Spanish). Do NOT translate.
 
 {content_text}
 
 Return this exact structure:
 {{
-  "main_topic": "topic name",
+  "main_topic": "topic name (in original language)",
   "subtopics": ["sub1", "sub2"],
   "content_type": "regulation",
-  "key_terms": [{{"term": "name", "definition": "def", "importance": "high"}}],
-  "exam_critical_points": [{{"point": "fact", "category": "requirement"}}],
+  "key_terms": [{{"term": "name (original language)", "definition": "def (original language)", "importance": "high"}}],
+  "exam_critical_points": [{{"point": "fact (original language)", "category": "requirement"}}],
   "question_potential": {{"multiple_choice": "high", "true_false": "medium", "scenario_based": "high", "calculation": "low"}},
   "difficulty_level": "intermediate",
-  "regulatory_context": "DEA"
+  "regulatory_context": "context (original language)"
 }}"""
 
         try:
@@ -46,7 +51,7 @@ Return this exact structure:
             return analysis  # type: ignore
 
         except Exception as e:
-            print(f"Analysis error: {e}")
+            self.logger.error(f"Analysis error: {e}")
             return self._fallback_analysis(topic_data)
 
     def _prepare_content(self, topic_data: Dict) -> str:

@@ -34,6 +34,34 @@ os.makedirs(Config.OUTPUT_FOLDER, exist_ok=True)
 
 processing_status = {}
 
+def create_session_logger(file_id: str) -> logging.Logger:
+    """Create a file-specific logger for tracing individual processing sessions."""
+    # Create logger with unique name
+    session_logger = logging.getLogger(f'session_{file_id}')
+    session_logger.setLevel(logging.DEBUG)
+
+    # Prevent propagation to root logger to avoid duplicate logs
+    session_logger.propagate = False
+
+    # Remove any existing handlers to avoid duplicates
+    session_logger.handlers.clear()
+
+    # Create file handler for this session
+    log_file = os.path.join('logs', f'{file_id}.log')
+    file_handler = logging.FileHandler(log_file)
+    file_handler.setLevel(logging.DEBUG)
+    file_handler.setFormatter(logging.Formatter('%(asctime)s [%(levelname)s] %(message)s'))
+
+    # Also add console handler for visibility
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.INFO)
+    console_handler.setFormatter(logging.Formatter('%(asctime)s [%(levelname)s] %(message)s'))
+
+    session_logger.addHandler(file_handler)
+    session_logger.addHandler(console_handler)
+
+    return session_logger
+
 logger.info("="*80)
 logger.info("Pharmacy Exam Prep Application Starting")
 logger.info(f"Upload folder: {Config.UPLOAD_FOLDER}")
@@ -116,6 +144,13 @@ def process_file(file_id):
     logger.info(f"Processing file: {filepath}")
 
     def generate():
+        # Create session-specific logger
+        session_logger = create_session_logger(file_id)
+        session_logger.info("="*80)
+        session_logger.info(f"Starting processing session for file_id: {file_id}")
+        session_logger.info(f"File path: {filepath}")
+        session_logger.info("="*80)
+
         try:
             # Create output directory structure
             output_dir = os.path.join(Config.OUTPUT_FOLDER, file_id)
@@ -124,18 +159,18 @@ def process_file(file_id):
             os.makedirs(pages_raw_dir, exist_ok=True)
             os.makedirs(pages_cleaned_dir, exist_ok=True)
 
-            logger.info("Starting PDF extraction...")
+            session_logger.info("Starting PDF extraction...")
             yield f"data: {json.dumps({'progress': 10, 'message': 'Extracting PDF...'})}\n\n"
 
             extractor = PDFExtractor(filepath)
             total_pages = extractor.total_pages
-            logger.info(f"Extracting {total_pages} pages...")
+            session_logger.info(f"Extracting {total_pages} pages...")
             pages_data = extractor.extract_all()
             extractor.close()
-            logger.info(f"Extracted {len(pages_data)} pages successfully")
+            session_logger.info(f"Extracted {len(pages_data)} pages successfully")
 
             # Save raw pages immediately
-            logger.info("Saving raw pages...")
+            session_logger.info("Saving raw pages...")
             for page in pages_data:
                 page_num = page.get('page', 1)  # Fixed: use 'page' key instead of 'page_num'
                 page_file = os.path.join(pages_raw_dir, f"page_{page_num:03d}.md")
@@ -151,14 +186,14 @@ def process_file(file_id):
                             f.write(f"{content_item}\n\n")
 
             yield f"data: {json.dumps({'progress': 30, 'message': 'Processing text...'})}\n\n"
-            logger.info("Processing text...")
+            session_logger.info("Processing text...")
 
-            processor = TextProcessor()
+            processor = TextProcessor(logger=session_logger)
             topics = processor.process(pages_data)
-            logger.info(f"Identified {len(topics)} topics")
+            session_logger.info(f"Identified {len(topics)} topics")
 
             # Save cleaned pages immediately
-            logger.info("Saving cleaned pages...")
+            session_logger.info("Saving cleaned pages...")
             for page in pages_data:
                 page_num = page.get('page', 1)  # Fixed: use 'page' key instead of 'page_num'
                 page_file = os.path.join(pages_cleaned_dir, f"page_{page_num:03d}.md")
@@ -187,34 +222,34 @@ def process_file(file_id):
                 f.write("# Pharmacy Law Study Guide\n\n")
                 f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n---\n\n")
 
-            analyzer = PharmacyContentAnalyzer()
-            formatter = ClaudeFormatter()
+            analyzer = PharmacyContentAnalyzer(logger=session_logger)
+            formatter = ClaudeFormatter(logger=session_logger)
 
             analyses = []
 
             for idx, topic in enumerate(topics):
                 progress = 50 + int((idx / len(topics)) * 45)
                 topic_name = topic.get('topic', 'Unknown')
-                logger.info(f"Processing topic {idx+1}/{len(topics)}: {topic_name}")
+                session_logger.info(f"Processing topic {idx+1}/{len(topics)}: {topic_name}")
                 yield f"data: {json.dumps({'progress': progress, 'message': f'Processing {idx+1}/{len(topics)}: {topic_name[:30]}...'})}\n\n"
 
-                logger.debug(f"Analyzing topic: {topic_name}")
+                session_logger.debug(f"Analyzing topic: {topic_name}")
                 analysis = analyzer.analyze_topic(topic)
-                logger.debug(f"Analysis complete for: {topic_name}")
+                session_logger.debug(f"Analysis complete for: {topic_name}")
 
-                logger.debug(f"Formatting topic: {topic_name}")
+                session_logger.debug(f"Formatting topic: {topic_name}")
                 formatted = formatter.format_topic(topic, analysis)
-                logger.debug(f"Formatting complete for: {topic_name}")
+                session_logger.debug(f"Formatting complete for: {topic_name}")
 
                 # Write this topic immediately to markdown file
                 with open(md_path, 'a', encoding='utf-8') as f:
                     f.write(formatted + "\n\n---\n\n")
-                logger.info(f"Topic {idx+1} written to {md_path}")
+                session_logger.info(f"Topic {idx+1} written to {md_path}")
 
                 analyses.append(analysis)
 
             yield f"data: {json.dumps({'progress': 95, 'message': 'Finalizing files...'})}\n\n"
-            logger.info("Writing final analysis JSON...")
+            session_logger.info("Writing final analysis JSON...")
 
             # Write final JSON analysis
             with open(json_path, 'w') as f:
@@ -233,12 +268,12 @@ def process_file(file_id):
                 "analysis_file": json_file
             }
 
-            logger.info(f"Processing complete for file_id: {file_id}")
-            logger.info("="*80)
+            session_logger.info(f"Processing complete for file_id: {file_id}")
+            session_logger.info("="*80)
             yield f"data: {json.dumps({'progress': 100, 'message': 'Complete!', 'output_file': md_file})}\n\n"
 
         except Exception as e:
-            logger.error(f"Error during processing: {str(e)}", exc_info=True)
+            session_logger.error(f"Error during processing: {str(e)}", exc_info=True)
             yield f"data: {json.dumps({'error': str(e)})}\n\n"
 
     return Response(generate(), mimetype='text/event-stream')

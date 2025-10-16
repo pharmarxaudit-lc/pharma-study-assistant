@@ -1,18 +1,23 @@
-from typing import Dict
+import logging
+from typing import Dict, Optional
 
 from anthropic import Anthropic
 from config import Config
 
 
 class ClaudeFormatter:
-    def __init__(self):
+    def __init__(self, logger: Optional[logging.Logger] = None):
         self.client = Anthropic(api_key=Config.ANTHROPIC_API_KEY)
         self.model = Config.ANTHROPIC_MODEL
+        # Use provided logger or create default
+        self.logger = logger or logging.getLogger(__name__)
 
     def format_topic(self, topic_data: Dict, analysis: Dict) -> str:
         content_text = self._prepare_input(topic_data)
 
-        prompt = f"""Format this pharmacy content as clean markdown with YAML frontmatter:
+        prompt = f"""Format this pharmacy content as clean markdown with YAML frontmatter.
+
+CRITICAL: Keep ALL content in its ORIGINAL LANGUAGE. Do NOT translate anything. If the content is in Spanish, the output MUST be in Spanish.
 
 {content_text}
 
@@ -26,7 +31,7 @@ exam_focus: high
 
 # {analysis['main_topic']}
 
-[Format with proper headers, bold key terms, use ⚠️ for critical points, 💊 for drugs, ⚖️ for laws]"""
+[Format with proper headers, bold key terms, use ⚠️ for critical points, 💊 for drugs, ⚖️ for laws. Keep original language!]"""
 
         try:
             response = self.client.messages.create(
@@ -37,7 +42,7 @@ exam_focus: high
             )
             return response.content[0].text.strip()  # type: ignore
         except Exception as e:
-            print(f"Format error: {e}")
+            self.logger.error(f"Format error: {e}")
             return self._basic_format(topic_data, analysis)
 
     def _prepare_input(self, topic_data: Dict) -> str:
