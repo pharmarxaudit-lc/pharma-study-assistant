@@ -82,6 +82,7 @@ const screens: Screen[] = [
   border: 2px solid #e0e0e0;
   border-radius: 8px;
   background: white;
+  color: #2c3e50;
   cursor: pointer;
   font-weight: 500;
   transition: all 0.2s;
@@ -89,6 +90,7 @@ const screens: Screen[] = [
 
 .screen-button:hover {
   border-color: #667eea;
+  color: #667eea;
 }
 
 .screen-button.active {

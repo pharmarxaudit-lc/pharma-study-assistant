@@ -104,3 +104,11 @@
 2025-10-16 14:15:00,436 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:15:00] "GET / HTTP/1.1" 200 -
 2025-10-16 14:15:00,440 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:15:00] "GET /assets/index-C1m2L_zw.css HTTP/1.1" 200 -
 2025-10-16 14:15:00,440 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:15:00] "GET /assets/index-DzK9FhFG.js HTTP/1.1" 200 -
+2025-10-16 14:21:27,192 [DEBUG] __main__: Serving index.html
+2025-10-16 14:21:27,193 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:21:27] "GET / HTTP/1.1" 200 -
+2025-10-16 14:21:27,206 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:21:27] "GET /assets/index-C1m2L_zw.css HTTP/1.1" 200 -
+2025-10-16 14:21:27,206 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:21:27] "GET /assets/index-DzK9FhFG.js HTTP/1.1" 200 -
+2025-10-16 14:22:04,090 [DEBUG] __main__: Serving index.html
+2025-10-16 14:22:04,090 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:22:04] "GET / HTTP/1.1" 200 -
+2025-10-16 14:22:04,096 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:22:04] "GET /assets/index-Mqpjuror.css HTTP/1.1" 200 -
+2025-10-16 14:22:04,096 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:22:04] "GET /assets/index-DX-kUB0S.js HTTP/1.1" 200 -
