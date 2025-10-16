@@ -1,0 +1,915 @@
+
+📄 Document: Unknown
+📊 Topics found: 13
+🧪 TEST MODE: Generating questions for FIRST topic only
+
+
+============================================================
+Question Generation Started: 20251016_113156
+============================================================
+
+
+📚 Topic 1/13: La Profesión de Farmacia - Responsabilidad Social
+   Pages: 1-2
+  Generating question 1/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/3 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+
+❌ Error during generation: Instance <Question at 0x7f9400954d90> is not bound to a Session; attribute refresh operation cannot proceed (Background on this error at: https://sqlalche.me/e/20/bhk3)
+Traceback (most recent call last):
+  File "generate_questions.py", line 75, in main
+    stats = generator.generate_all_questions(args.file_id, args.count)
+  File "/Users/luiscotto/Code/pharma-study-assistant/backend/question_generator.py", line 373, in generate_all_questions
+    'single_answer': sum(1 for q in questions if q.question_type == 'single_answer'),
+  File "/Users/luiscotto/Code/pharma-study-assistant/backend/question_generator.py", line 373, in <genexpr>
+    'single_answer': sum(1 for q in questions if q.question_type == 'single_answer'),
+  File "/Users/luiscotto/opt/anaconda3/lib/python3.8/site-packages/sqlalchemy/orm/attributes.py", line 566, in __get__
+    return self.impl.get(state, dict_)  # type: ignore[no-any-return]
+  File "/Users/luiscotto/opt/anaconda3/lib/python3.8/site-packages/sqlalchemy/orm/attributes.py", line 1086, in get
+    value = self._fire_loader_callables(state, key, passive)
+  File "/Users/luiscotto/opt/anaconda3/lib/python3.8/site-packages/sqlalchemy/orm/attributes.py", line 1116, in _fire_loader_callables
+    return state._load_expired(state, passive)
+  File "/Users/luiscotto/opt/anaconda3/lib/python3.8/site-packages/sqlalchemy/orm/state.py", line 803, in _load_expired
+    self.manager.expired_attribute_loader(self, toload, passive)
+  File "/Users/luiscotto/opt/anaconda3/lib/python3.8/site-packages/sqlalchemy/orm/loading.py", line 1603, in load_scalar_attributes
+    raise orm_exc.DetachedInstanceError(
+sqlalchemy.orm.exc.DetachedInstanceError: Instance <Question at 0x7f9400954d90> is not bound to a Session; attribute refresh operation cannot proceed (Background on this error at: https://sqlalche.me/e/20/bhk3)
+
+📄 Document: Unknown
+📊 Topics found: 13
+🧪 TEST MODE: Generating questions for FIRST topic only
+
+
+============================================================
+Question Generation Started: 20251016_113156
+============================================================
+
+
+📚 Topic 1/13: La Profesión de Farmacia - Responsabilidad Social
+   Pages: 1-2
+  Generating question 1/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/3 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   ✅ Generated 3 questions
+
+📚 Topic 2/13: Requisitos para ejercer como Farmacéutico
+   Pages: 3-8
+  Generating question 1/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/3 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   ✅ Generated 3 questions
+
+📚 Topic 3/13: Denegación y Suspensión de Licencia
+   Pages: 9-10
+  Generating question 1/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/3 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   ✅ Generated 3 questions
+
+📚 Topic 4/13: Funciones del Farmacéutico
+   Pages: 11-13
+  Generating question 1/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/3 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   ✅ Generated 3 questions
+
+📚 Topic 5/13: Farmacéutico Regente y Preceptor
+   Pages: 14-17
+  Generating question 1/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/3 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   ✅ Generated 3 questions
+
+📚 Topic 6/13: Delitos y Conductas Prohibidas
+   Pages: 18-26
+  Generating question 1/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/3 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   ✅ Generated 3 questions
+
+📚 Topic 7/13: Técnico de Farmacia
+   Pages: 27-34
+  Generating question 1/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/3 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   ✅ Generated 3 questions
+
+📚 Topic 8/13: Junta de Farmacia
+   Pages: 35-37
+  Generating question 1/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/3 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   ✅ Generated 3 questions
+
+📚 Topic 9/13: Regulación de Establecimientos Farmacéuticos
+   Pages: 38-53
+  Generating question 1/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/3 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   ✅ Generated 3 questions
+
+📚 Topic 10/13: Medicamentos y su Dispensación
+   Pages: 54-78
+  Generating question 1/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/3 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   ✅ Generated 3 questions
+
+📚 Topic 11/13: Cuerpos Regulatorios y División de Medicamentos
+   Pages: 79-83
+  Generating question 1/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/3 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   ✅ Generated 3 questions
+
+📚 Topic 12/13: Sustancias Controladas
+   Pages: 84-100
+  Generating question 1/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/3 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   ✅ Generated 3 questions
+
+📚 Topic 13/13: Colegio de Farmacéuticos de Puerto Rico
+   Pages: 101-101
+  Generating question 1/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/3 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/3 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   ✅ Generated 3 questions
+
+============================================================
+Generation Complete!
+============================================================
+Total Questions: 39
+By Type: Single Answer: 26, Choose All: 13
+By Difficulty: Basic: 0, Intermediate: 39, Advanced: 0
+============================================================
+
+
+✅ SUCCESS! Generated 39 questions
+
+📄 Document: Unknown
+📊 Topics found: 13
+
+============================================================
+Question Generation Started: 20251016_113156
+============================================================
+
+
+📚 Topic 1/13: La Profesión de Farmacia - Responsabilidad Social
+   Pages: 1-2
+  Generating question 1/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 4/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 5/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 6/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 7/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 8/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 9/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 10/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 11/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 12/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 13/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 14/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 15/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 16/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 17/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 18/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 19/25 (type: choose_all, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 20/25 (type: choose_all, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 21/25 (type: choose_all, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 22/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 23/25 (type: choose_all, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 24/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 25/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   ✅ Generated 25 questions
+
+📚 Topic 2/13: Requisitos para ejercer como Farmacéutico
+   Pages: 3-8
+  Generating question 1/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 4/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 5/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 6/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 7/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 8/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 9/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 10/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 11/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 12/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 13/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 14/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 15/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 16/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 17/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 18/25 (type: choose_all, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 19/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 20/25 (type: choose_all, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 21/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 22/25 (type: choose_all, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 23/25 (type: choose_all, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 24/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 25/25 (type: choose_all, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   ✅ Generated 25 questions
+
+📚 Topic 3/13: Denegación y Suspensión de Licencia
+   Pages: 9-10
+  Generating question 1/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 4/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 5/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 6/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 7/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 8/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 9/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 10/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 11/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 12/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 13/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 14/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 15/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 16/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 17/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 18/25 (type: choose_all, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 19/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 20/25 (type: choose_all, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 21/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 22/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 23/25 (type: choose_all, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 24/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 25/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   ✅ Generated 25 questions
+
+📚 Topic 4/13: Funciones del Farmacéutico
+   Pages: 11-13
+  Generating question 1/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 4/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 5/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 6/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 7/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 8/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 9/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 10/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 11/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 12/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 13/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 14/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 15/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 16/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 17/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 18/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 19/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 20/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 21/25 (type: choose_all, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 22/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 23/25 (type: choose_all, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 24/25 (type: choose_all, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 25/25 (type: choose_all, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   ✅ Generated 25 questions
+
+📚 Topic 5/13: Farmacéutico Regente y Preceptor
+   Pages: 14-17
+  Generating question 1/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+JSON parse error (attempt 1): Expecting value: line 8 column 5 (char 401)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 4/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 5/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 6/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 7/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 8/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 9/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 10/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 11/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 12/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 13/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 14/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 15/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 16/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 17/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 18/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 19/25 (type: choose_all, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 20/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 21/25 (type: choose_all, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 22/25 (type: choose_all, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 23/25 (type: choose_all, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 24/25 (type: choose_all, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 25/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   ✅ Generated 25 questions
+
+📚 Topic 6/13: Delitos y Conductas Prohibidas
+   Pages: 18-26
+  Generating question 1/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 4/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 5/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 6/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 7/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 8/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 9/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 10/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 11/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 12/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 13/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 14/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 15/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 16/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 17/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 18/25 (type: choose_all, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 19/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 20/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 21/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 22/25 (type: choose_all, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 23/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 24/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 25/25 (type: choose_all, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   ✅ Generated 25 questions
+
+📚 Topic 7/13: Técnico de Farmacia
+   Pages: 27-34
+  Generating question 1/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 4/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 5/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 6/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 7/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 8/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 9/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 10/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 11/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 12/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 13/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 14/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 15/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 16/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 17/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 18/25 (type: choose_all, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 19/25 (type: choose_all, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 20/25 (type: choose_all, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 21/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 22/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 23/25 (type: choose_all, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 24/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 25/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   ✅ Generated 25 questions
+
+📚 Topic 8/13: Junta de Farmacia
+   Pages: 35-37
+  Generating question 1/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 4/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 5/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 6/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 7/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 8/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 9/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 10/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 11/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 12/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 13/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 14/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 15/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 16/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 17/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 18/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 19/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 20/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 21/25 (type: choose_all, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 22/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 23/25 (type: choose_all, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 24/25 (type: choose_all, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 25/25 (type: choose_all, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   ✅ Generated 25 questions
+
+📚 Topic 9/13: Regulación de Establecimientos Farmacéuticos
+   Pages: 38-53
+  Generating question 1/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 4/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 5/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 6/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 7/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 8/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 9/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+JSON parse error (attempt 1): Expecting value: line 8 column 5 (char 569)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 10/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 11/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 12/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 13/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 14/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 15/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 16/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 17/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 18/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 19/25 (type: choose_all, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 20/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 21/25 (type: choose_all, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 22/25 (type: choose_all, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 23/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 24/25 (type: choose_all, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 25/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   ✅ Generated 25 questions
+
+📚 Topic 10/13: Medicamentos y su Dispensación
+   Pages: 54-78
+  Generating question 1/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 4/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 5/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 6/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 7/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 8/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 9/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 10/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 11/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 12/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 13/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 14/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 15/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 16/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 17/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 18/25 (type: choose_all, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 19/25 (type: choose_all, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 20/25 (type: choose_all, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 21/25 (type: choose_all, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 22/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 23/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 24/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 25/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   ✅ Generated 25 questions
+
+📚 Topic 11/13: Cuerpos Regulatorios y División de Medicamentos
+   Pages: 79-83
+  Generating question 1/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 4/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 5/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 6/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 7/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 8/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 9/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 10/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 11/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 12/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 13/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 14/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 15/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 16/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 17/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 18/25 (type: choose_all, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 19/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 20/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 21/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 22/25 (type: choose_all, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 23/25 (type: choose_all, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 24/25 (type: choose_all, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 25/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   ✅ Generated 25 questions
+
+📚 Topic 12/13: Sustancias Controladas
+   Pages: 84-100
+  Generating question 1/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 4/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 5/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 6/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 7/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 8/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 9/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 10/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 11/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 12/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 13/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 14/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 15/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 16/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 17/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 18/25 (type: choose_all, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 19/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 20/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 21/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 22/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 23/25 (type: choose_all, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 24/25 (type: choose_all, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 25/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   ✅ Generated 25 questions
+
+📚 Topic 13/13: Colegio de Farmacéuticos de Puerto Rico
+   Pages: 101-101
+  Generating question 1/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 2/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 3/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 4/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 5/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 6/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 7/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 8/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 9/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 10/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 11/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 12/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 13/25 (type: single_answer, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 14/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 15/25 (type: single_answer, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 16/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 17/25 (type: single_answer, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 18/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 19/25 (type: choose_all, difficulty: basic)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 20/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 21/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 22/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 23/25 (type: choose_all, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 24/25 (type: choose_all, difficulty: intermediate)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+  Generating question 25/25 (type: choose_all, difficulty: advanced)
+HTTP Request: POST https://api.anthropic.com/v1/messages "HTTP/1.1 200 OK"
+   ✅ Generated 25 questions
+
+============================================================
+Generation Complete!
+============================================================
+Total Questions: 325
+By Type: Single Answer: 221, Choose All: 104
+By Difficulty: Basic: 91, Intermediate: 169, Advanced: 65
+============================================================
+
+
+✅ SUCCESS! Generated 325 questions

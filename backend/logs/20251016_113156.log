@@ -1,0 +1,95 @@
+2025-10-16 11:31:56,722 [INFO] session_20251016_113156: ================================================================================
+2025-10-16 11:31:56,722 [INFO] session_20251016_113156: Starting processing session for file_id: 20251016_113156
+2025-10-16 11:31:56,722 [INFO] session_20251016_113156: File path: /Users/luiscotto/Code/pharma-study-assistant/uploads/20251016_113156_repaso_ley_2025.pdf
+2025-10-16 11:31:56,722 [INFO] session_20251016_113156: ================================================================================
+2025-10-16 11:31:56,723 [INFO] session_20251016_113156: Starting PDF extraction...
+2025-10-16 11:31:56,723 [INFO] session_20251016_113156: Extracting 111 pages...
+2025-10-16 11:32:10,656 [INFO] session_20251016_113156: Extracted 111 pages successfully
+2025-10-16 11:32:10,664 [INFO] session_20251016_113156: Saving raw pages...
+2025-10-16 11:32:10,670 [INFO] session_20251016_113156: Processing text...
+2025-10-16 11:32:10,737 [INFO] session_20251016_113156: Created 1 dynamic chunks (max 80000 tokens each)
+2025-10-16 11:32:10,750 [INFO] session_20251016_113156:   Chunk 1: 111 pages, ~25,731 tokens
+2025-10-16 11:32:10,750 [INFO] session_20251016_113156: Processing chunk 1/1: pages 1-111
+2025-10-16 11:32:35,340 [INFO] session_20251016_113156: Identified 13 topics
+2025-10-16 11:32:35,340 [INFO] session_20251016_113156: Saving cleaned pages...
+2025-10-16 11:32:35,371 [INFO] session_20251016_113156: Processing topic 1/13: La Profesión de Farmacia - Responsabilidad Social
+2025-10-16 11:32:35,371 [DEBUG] session_20251016_113156: Analyzing topic: La Profesión de Farmacia - Responsabilidad Social
+2025-10-16 11:32:39,578 [DEBUG] session_20251016_113156: Analysis complete for: La Profesión de Farmacia - Responsabilidad Social
+2025-10-16 11:32:39,578 [DEBUG] session_20251016_113156: Formatting topic: La Profesión de Farmacia - Responsabilidad Social
+2025-10-16 11:32:44,569 [DEBUG] session_20251016_113156: Formatting complete for: La Profesión de Farmacia - Responsabilidad Social
+2025-10-16 11:32:44,570 [INFO] session_20251016_113156: Topic 1 written to /Users/luiscotto/Code/pharma-study-assistant/outputs/20251016_113156/20251016_113156_formatted.md
+2025-10-16 11:32:44,570 [INFO] session_20251016_113156: Processing topic 2/13: Requisitos para ejercer como Farmacéutico
+2025-10-16 11:32:44,570 [DEBUG] session_20251016_113156: Analyzing topic: Requisitos para ejercer como Farmacéutico
+2025-10-16 11:32:51,271 [DEBUG] session_20251016_113156: Analysis complete for: Requisitos para ejercer como Farmacéutico
+2025-10-16 11:32:51,272 [DEBUG] session_20251016_113156: Formatting topic: Requisitos para ejercer como Farmacéutico
+2025-10-16 11:32:58,372 [DEBUG] session_20251016_113156: Formatting complete for: Requisitos para ejercer como Farmacéutico
+2025-10-16 11:32:58,372 [INFO] session_20251016_113156: Topic 2 written to /Users/luiscotto/Code/pharma-study-assistant/outputs/20251016_113156/20251016_113156_formatted.md
+2025-10-16 11:32:58,372 [INFO] session_20251016_113156: Processing topic 3/13: Denegación y Suspensión de Licencia
+2025-10-16 11:32:58,372 [DEBUG] session_20251016_113156: Analyzing topic: Denegación y Suspensión de Licencia
+2025-10-16 11:33:04,207 [DEBUG] session_20251016_113156: Analysis complete for: Denegación y Suspensión de Licencia
+2025-10-16 11:33:04,207 [DEBUG] session_20251016_113156: Formatting topic: Denegación y Suspensión de Licencia
+2025-10-16 11:33:11,115 [DEBUG] session_20251016_113156: Formatting complete for: Denegación y Suspensión de Licencia
+2025-10-16 11:33:11,115 [INFO] session_20251016_113156: Topic 3 written to /Users/luiscotto/Code/pharma-study-assistant/outputs/20251016_113156/20251016_113156_formatted.md
+2025-10-16 11:33:11,115 [INFO] session_20251016_113156: Processing topic 4/13: Funciones del Farmacéutico
+2025-10-16 11:33:11,115 [DEBUG] session_20251016_113156: Analyzing topic: Funciones del Farmacéutico
+2025-10-16 11:33:17,901 [DEBUG] session_20251016_113156: Analysis complete for: Funciones del Farmacéutico
+2025-10-16 11:33:17,901 [DEBUG] session_20251016_113156: Formatting topic: Funciones del Farmacéutico
+2025-10-16 11:33:24,172 [DEBUG] session_20251016_113156: Formatting complete for: Funciones del Farmacéutico
+2025-10-16 11:33:24,172 [INFO] session_20251016_113156: Topic 4 written to /Users/luiscotto/Code/pharma-study-assistant/outputs/20251016_113156/20251016_113156_formatted.md
+2025-10-16 11:33:24,172 [INFO] session_20251016_113156: Processing topic 5/13: Farmacéutico Regente y Preceptor
+2025-10-16 11:33:24,172 [DEBUG] session_20251016_113156: Analyzing topic: Farmacéutico Regente y Preceptor
+2025-10-16 11:33:31,338 [DEBUG] session_20251016_113156: Analysis complete for: Farmacéutico Regente y Preceptor
+2025-10-16 11:33:31,338 [DEBUG] session_20251016_113156: Formatting topic: Farmacéutico Regente y Preceptor
+2025-10-16 11:33:38,935 [DEBUG] session_20251016_113156: Formatting complete for: Farmacéutico Regente y Preceptor
+2025-10-16 11:33:38,935 [INFO] session_20251016_113156: Topic 5 written to /Users/luiscotto/Code/pharma-study-assistant/outputs/20251016_113156/20251016_113156_formatted.md
+2025-10-16 11:33:38,935 [INFO] session_20251016_113156: Processing topic 6/13: Delitos y Conductas Prohibidas
+2025-10-16 11:33:38,935 [DEBUG] session_20251016_113156: Analyzing topic: Delitos y Conductas Prohibidas
+2025-10-16 11:33:44,546 [DEBUG] session_20251016_113156: Analysis complete for: Delitos y Conductas Prohibidas
+2025-10-16 11:33:44,546 [DEBUG] session_20251016_113156: Formatting topic: Delitos y Conductas Prohibidas
+2025-10-16 11:33:52,838 [DEBUG] session_20251016_113156: Formatting complete for: Delitos y Conductas Prohibidas
+2025-10-16 11:33:52,839 [INFO] session_20251016_113156: Topic 6 written to /Users/luiscotto/Code/pharma-study-assistant/outputs/20251016_113156/20251016_113156_formatted.md
+2025-10-16 11:33:52,839 [INFO] session_20251016_113156: Processing topic 7/13: Técnico de Farmacia
+2025-10-16 11:33:52,839 [DEBUG] session_20251016_113156: Analyzing topic: Técnico de Farmacia
+2025-10-16 11:33:58,035 [DEBUG] session_20251016_113156: Analysis complete for: Técnico de Farmacia
+2025-10-16 11:33:58,035 [DEBUG] session_20251016_113156: Formatting topic: Técnico de Farmacia
+2025-10-16 11:34:05,392 [DEBUG] session_20251016_113156: Formatting complete for: Técnico de Farmacia
+2025-10-16 11:34:05,393 [INFO] session_20251016_113156: Topic 7 written to /Users/luiscotto/Code/pharma-study-assistant/outputs/20251016_113156/20251016_113156_formatted.md
+2025-10-16 11:34:05,393 [INFO] session_20251016_113156: Processing topic 8/13: Junta de Farmacia
+2025-10-16 11:34:05,393 [DEBUG] session_20251016_113156: Analyzing topic: Junta de Farmacia
+2025-10-16 11:34:11,366 [DEBUG] session_20251016_113156: Analysis complete for: Junta de Farmacia
+2025-10-16 11:34:11,366 [DEBUG] session_20251016_113156: Formatting topic: Junta de Farmacia
+2025-10-16 11:34:18,540 [DEBUG] session_20251016_113156: Formatting complete for: Junta de Farmacia
+2025-10-16 11:34:18,540 [INFO] session_20251016_113156: Topic 8 written to /Users/luiscotto/Code/pharma-study-assistant/outputs/20251016_113156/20251016_113156_formatted.md
+2025-10-16 11:34:18,540 [INFO] session_20251016_113156: Processing topic 9/13: Regulación de Establecimientos Farmacéuticos
+2025-10-16 11:34:18,541 [DEBUG] session_20251016_113156: Analyzing topic: Regulación de Establecimientos Farmacéuticos
+2025-10-16 11:34:24,197 [DEBUG] session_20251016_113156: Analysis complete for: Regulación de Establecimientos Farmacéuticos
+2025-10-16 11:34:24,197 [DEBUG] session_20251016_113156: Formatting topic: Regulación de Establecimientos Farmacéuticos
+2025-10-16 11:34:31,503 [DEBUG] session_20251016_113156: Formatting complete for: Regulación de Establecimientos Farmacéuticos
+2025-10-16 11:34:31,503 [INFO] session_20251016_113156: Topic 9 written to /Users/luiscotto/Code/pharma-study-assistant/outputs/20251016_113156/20251016_113156_formatted.md
+2025-10-16 11:34:31,503 [INFO] session_20251016_113156: Processing topic 10/13: Medicamentos y su Dispensación
+2025-10-16 11:34:31,504 [DEBUG] session_20251016_113156: Analyzing topic: Medicamentos y su Dispensación
+2025-10-16 11:34:36,854 [DEBUG] session_20251016_113156: Analysis complete for: Medicamentos y su Dispensación
+2025-10-16 11:34:36,854 [DEBUG] session_20251016_113156: Formatting topic: Medicamentos y su Dispensación
+2025-10-16 11:34:44,652 [DEBUG] session_20251016_113156: Formatting complete for: Medicamentos y su Dispensación
+2025-10-16 11:34:44,653 [INFO] session_20251016_113156: Topic 10 written to /Users/luiscotto/Code/pharma-study-assistant/outputs/20251016_113156/20251016_113156_formatted.md
+2025-10-16 11:34:44,653 [INFO] session_20251016_113156: Processing topic 11/13: Cuerpos Regulatorios y División de Medicamentos
+2025-10-16 11:34:44,653 [DEBUG] session_20251016_113156: Analyzing topic: Cuerpos Regulatorios y División de Medicamentos
+2025-10-16 11:34:50,386 [DEBUG] session_20251016_113156: Analysis complete for: Cuerpos Regulatorios y División de Medicamentos
+2025-10-16 11:34:50,386 [DEBUG] session_20251016_113156: Formatting topic: Cuerpos Regulatorios y División de Medicamentos
+2025-10-16 11:34:57,030 [DEBUG] session_20251016_113156: Formatting complete for: Cuerpos Regulatorios y División de Medicamentos
+2025-10-16 11:34:57,030 [INFO] session_20251016_113156: Topic 11 written to /Users/luiscotto/Code/pharma-study-assistant/outputs/20251016_113156/20251016_113156_formatted.md
+2025-10-16 11:34:57,030 [INFO] session_20251016_113156: Processing topic 12/13: Sustancias Controladas
+2025-10-16 11:34:57,031 [DEBUG] session_20251016_113156: Analyzing topic: Sustancias Controladas
+2025-10-16 11:35:02,776 [DEBUG] session_20251016_113156: Analysis complete for: Sustancias Controladas
+2025-10-16 11:35:02,776 [DEBUG] session_20251016_113156: Formatting topic: Sustancias Controladas
+2025-10-16 11:35:10,152 [DEBUG] session_20251016_113156: Formatting complete for: Sustancias Controladas
+2025-10-16 11:35:10,153 [INFO] session_20251016_113156: Topic 12 written to /Users/luiscotto/Code/pharma-study-assistant/outputs/20251016_113156/20251016_113156_formatted.md
+2025-10-16 11:35:10,153 [INFO] session_20251016_113156: Processing topic 13/13: Colegio de Farmacéuticos de Puerto Rico
+2025-10-16 11:35:10,153 [DEBUG] session_20251016_113156: Analyzing topic: Colegio de Farmacéuticos de Puerto Rico
+2025-10-16 11:35:15,584 [DEBUG] session_20251016_113156: Analysis complete for: Colegio de Farmacéuticos de Puerto Rico
+2025-10-16 11:35:15,584 [DEBUG] session_20251016_113156: Formatting topic: Colegio de Farmacéuticos de Puerto Rico
+2025-10-16 11:35:19,035 [DEBUG] session_20251016_113156: Formatting complete for: Colegio de Farmacéuticos de Puerto Rico
+2025-10-16 11:35:19,035 [INFO] session_20251016_113156: Topic 13 written to /Users/luiscotto/Code/pharma-study-assistant/outputs/20251016_113156/20251016_113156_formatted.md
+2025-10-16 11:35:19,035 [INFO] session_20251016_113156: Writing final analysis JSON...
+2025-10-16 11:35:19,037 [INFO] session_20251016_113156: Processing complete for file_id: 20251016_113156
+2025-10-16 11:35:19,037 [INFO] session_20251016_113156: ================================================================================

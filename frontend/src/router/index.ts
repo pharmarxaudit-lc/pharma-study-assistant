@@ -1,10 +1,11 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import ProcessView from '../views/ProcessView.vue'
 import ExamView from '../views/ExamView.vue'
 import ProgressView from '../views/ProgressView.vue'
+import TestView from '../views/TestView.vue'
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes: [
     {
       path: '/',
@@ -27,6 +28,12 @@ const router = createRouter({
       name: 'progress',
       component: ProgressView,
       meta: { title: 'Progress' }
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: TestView,
+      meta: { title: 'Mock Screens' }
     }
   ]
 })
