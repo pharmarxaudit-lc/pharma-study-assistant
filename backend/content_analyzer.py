@@ -1,7 +1,9 @@
+import json
 from typing import Dict
+
 from anthropic import Anthropic
 from config import Config
-import json
+
 
 class PharmacyContentAnalyzer:
     def __init__(self):
@@ -41,7 +43,7 @@ Return this exact structure:
 
             analysis = json.loads(analysis_text.strip())
             analysis["pages"] = f"{topic_data['start_page']}-{topic_data['end_page']}"
-            return analysis
+            return analysis  # type: ignore
 
         except Exception as e:
             print(f"Analysis error: {e}")

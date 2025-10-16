@@ -1,15 +1,16 @@
-from flask import Flask, request, jsonify, send_file, Response
-from flask_cors import CORS
-from werkzeug.utils import secure_filename
-import os
 import json
 import logging
+import os
 from datetime import datetime
+
+from config import Config
+from content_analyzer import PharmacyContentAnalyzer
+from flask import Flask, Response, jsonify, request, send_file
+from flask_cors import CORS
+from llm_formatter import ClaudeFormatter
 from pdf_extractor import PDFExtractor
 from text_processor import TextProcessor
-from content_analyzer import PharmacyContentAnalyzer
-from llm_formatter import ClaudeFormatter
-from config import Config
+from werkzeug.utils import secure_filename
 
 # Create necessary directories first
 os.makedirs('logs', exist_ok=True)
@@ -116,6 +117,13 @@ def process_file(file_id):
 
     def generate():
         try:
+            # Create output directory structure
+            output_dir = os.path.join(Config.OUTPUT_FOLDER, file_id)
+            pages_raw_dir = os.path.join(output_dir, 'pages', 'raw')
+            pages_cleaned_dir = os.path.join(output_dir, 'pages', 'cleaned')
+            os.makedirs(pages_raw_dir, exist_ok=True)
+            os.makedirs(pages_cleaned_dir, exist_ok=True)
+
             logger.info("Starting PDF extraction...")
             yield f"data: {json.dumps({'progress': 10, 'message': 'Extracting PDF...'})}\n\n"
 
@@ -126,6 +134,20 @@ def process_file(file_id):
             extractor.close()
             logger.info(f"Extracted {len(pages_data)} pages successfully")
 
+            # Save raw pages immediately
+            logger.info("Saving raw pages...")
+            for page in pages_data:
+                page_num = page.get('page_num', 0)
+                page_file = os.path.join(pages_raw_dir, f"page_{page_num:03d}.md")
+                with open(page_file, 'w', encoding='utf-8') as f:
+                    f.write(f"# Page {page_num}\n\n")
+                    if page.get('title'):
+                        f.write(f"## {page['title']}\n\n")
+                    for header in page.get('headers', []):
+                        f.write(f"### {header}\n\n")
+                    for block in page.get('text_blocks', []):
+                        f.write(f"{block}\n\n")
+
             yield f"data: {json.dumps({'progress': 30, 'message': 'Processing text...'})}\n\n"
             logger.info("Processing text...")
 
@@ -133,12 +155,39 @@ def process_file(file_id):
             topics = processor.process(pages_data)
             logger.info(f"Identified {len(topics)} topics")
 
+            # Save cleaned pages immediately
+            logger.info("Saving cleaned pages...")
+            for page in pages_data:
+                page_num = page.get('page_num', 0)
+                page_file = os.path.join(pages_cleaned_dir, f"page_{page_num:03d}.md")
+                # Apply text cleaning to each block
+                cleaned_blocks = []
+                for block in page.get('text_blocks', []):
+                    if isinstance(block, str):
+                        cleaned_blocks.append(processor.clean_text(block))
+                with open(page_file, 'w', encoding='utf-8') as f:
+                    f.write(f"# Page {page_num}\n\n")
+                    if page.get('title'):
+                        f.write(f"## {page['title']}\n\n")
+                    for block in cleaned_blocks:
+                        f.write(f"{block}\n\n")
+
             yield f"data: {json.dumps({'progress': 50, 'message': f'Analyzing {len(topics)} topics...'})}\n\n"
+
+            # Initialize output files for incremental writing
+            md_file = f"{file_id}_formatted.md"
+            json_file = f"{file_id}_analysis.json"
+            md_path = os.path.join(output_dir, md_file)
+            json_path = os.path.join(output_dir, json_file)
+
+            # Write markdown header
+            with open(md_path, 'w', encoding='utf-8') as f:
+                f.write("# Pharmacy Law Study Guide\n\n")
+                f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n---\n\n")
 
             analyzer = PharmacyContentAnalyzer()
             formatter = ClaudeFormatter()
 
-            formatted_sections = []
             analyses = []
 
             for idx, topic in enumerate(topics):
@@ -155,26 +204,17 @@ def process_file(file_id):
                 formatted = formatter.format_topic(topic, analysis)
                 logger.debug(f"Formatting complete for: {topic_name}")
 
-                formatted_sections.append(formatted)
+                # Write this topic immediately to markdown file
+                with open(md_path, 'a', encoding='utf-8') as f:
+                    f.write(formatted + "\n\n---\n\n")
+                logger.info(f"Topic {idx+1} written to {md_path}")
+
                 analyses.append(analysis)
 
-            yield f"data: {json.dumps({'progress': 95, 'message': 'Saving files...'})}\n\n"
-            logger.info("Saving output files...")
+            yield f"data: {json.dumps({'progress': 95, 'message': 'Finalizing files...'})}\n\n"
+            logger.info("Writing final analysis JSON...")
 
-            md_file = f"{file_id}_formatted.md"
-            json_file = f"{file_id}_analysis.json"
-
-            md_path = os.path.join(Config.OUTPUT_FOLDER, md_file)
-            json_path = os.path.join(Config.OUTPUT_FOLDER, json_file)
-
-            logger.info(f"Writing markdown to: {md_path}")
-            with open(md_path, 'w', encoding='utf-8') as f:
-                f.write(f"# Pharmacy Law Study Guide\n\n")
-                f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n---\n\n")
-                for section in formatted_sections:
-                    f.write(section + "\n\n---\n\n")
-
-            logger.info(f"Writing analysis JSON to: {json_path}")
+            # Write final JSON analysis
             with open(json_path, 'w') as f:
                 json.dump({
                     "metadata": {

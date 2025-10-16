@@ -25,7 +25,20 @@ cd frontend
 npm install
 ```
 
-4. **Run Development Servers**
+4. **Run Validation (Optional but Recommended)**
+```bash
+bash validate.sh
+```
+This runs linters and type checkers on both backend and frontend.
+
+5. **Start Application**
+
+Option A - Using the startup script (recommended):
+```bash
+bash start_app.sh
+```
+
+Option B - Manual development servers:
 
 Terminal 1 (Backend):
 ```bash
@@ -39,8 +52,9 @@ cd frontend
 npm run dev
 ```
 
-5. **Access the Application**
-- Open http://localhost:3000 in your browser
+6. **Access the Application**
+- Startup script: http://localhost:5001
+- Manual dev servers: http://localhost:3000
 
 ### Replit Deployment
 
@@ -71,6 +85,10 @@ npm run dev
 ## Features
 
 - **Smart PDF Extraction**: Handles large files (40MB+, 100+ pages)
+- **Incremental File Writing**: Files are written as they're processed, not at the end
+  - Raw page extraction saved immediately
+  - Cleaned pages saved after text processing
+  - Each formatted topic appended to markdown as it completes
 - **AI-Powered Analysis**: Claude analyzes content for:
   - Topic classification
   - Key term extraction
@@ -80,6 +98,7 @@ npm run dev
 - **Rich Metadata**: YAML frontmatter + JSON for Phase 2
 - **Clean Formatting**: Professional markdown with visual indicators
 - **Real-time Progress**: Live updates during processing
+- **Code Quality**: Comprehensive validation with ruff, mypy, and TypeScript checks
 
 ## Usage
 
@@ -90,12 +109,19 @@ npm run dev
 
 ## Output Files
 
+All files are written incrementally during processing to `outputs/{file_id}/`:
+
+### Page Extraction
+- `pages/raw/page_001.md` - Raw text exactly as extracted by PyMuPDF
+- `pages/cleaned/page_001.md` - After text cleaning and processing
+
 ### Markdown File
 Clean, structured study materials with:
 - YAML frontmatter with metadata
 - Properly formatted headers and sections
 - Bold key terms
 - Visual indicators (⚠️ for critical points, 💊 for drugs, ⚖️ for laws)
+- Topics appended incrementally as they're analyzed
 
 ### Analysis JSON
 Rich metadata including:
@@ -104,6 +130,7 @@ Rich metadata including:
 - Exam-critical points
 - Question generation potential
 - Relationships between topics
+- Written at completion with all topic metadata
 
 ## Cost Estimate
 
@@ -164,9 +191,18 @@ pharmacy-exam-prep/
 │   └── index.html
 ├── uploads/                      # Temp PDF storage
 ├── outputs/                      # Generated files
-├── .replit                       # Replit config
-├── replit.nix                    # Nix dependencies
-├── start.sh                      # Startup script
+│   └── {file_id}/
+│       ├── pages/
+│       │   ├── raw/              # Raw extracted pages
+│       │   └── cleaned/          # Cleaned pages
+│       ├── formatted.md          # Final markdown output
+│       └── analysis.json         # Analysis metadata
+├── logs/                         # Application logs
+├── validate.sh                   # Validation script (ruff, mypy, TypeScript)
+├── start_app.sh                  # Startup script
+├── stop_app.sh                   # Stop script
+├── pyproject.toml                # Python tool configuration
+├── .gitignore
 └── README.md
 ```
 

@@ -1,5 +1,7 @@
+from typing import Dict, List
+
 import fitz
-from typing import List, Dict
+
 
 class PDFExtractor:
     def __init__(self, pdf_path: str):

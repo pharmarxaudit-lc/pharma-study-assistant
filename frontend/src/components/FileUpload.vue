@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="drop-zone" :class="{ 'drag-over': isDragging }" @drop.prevent="handleDrop" @dragover.prevent="isDragging = true" @dragleave="isDragging = false" @click="$refs.fileInput.click()">
+    <div class="drop-zone" :class="{ 'drag-over': isDragging }" @drop.prevent="handleDrop" @dragover.prevent="isDragging = true" @dragleave="isDragging = false" @click="fileInput?.click()">
       <input ref="fileInput" type="file" accept=".pdf" @change="handleSelect" style="display: none" />
       <div v-if="!file">
         <div style="font-size: 64px; margin-bottom: 20px;">📄</div>
@@ -15,7 +15,7 @@
     </div>
 
     <div class="actions">
-      <button v-if="!file" @click="$refs.fileInput.click()">Choose File</button>
+      <button v-if="!file" @click="fileInput?.click()">Choose File</button>
       <template v-else>
         <button @click="clear" style="background: #999;">Clear</button>
         <button @click="upload" :disabled="uploading">{{ uploading ? 'Uploading...' : 'Process' }}</button>

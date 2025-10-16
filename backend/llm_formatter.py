@@ -1,6 +1,8 @@
 from typing import Dict
+
 from anthropic import Anthropic
 from config import Config
+
 
 class ClaudeFormatter:
     def __init__(self):
@@ -33,7 +35,7 @@ exam_focus: high
                 temperature=0.3,
                 messages=[{"role": "user", "content": prompt}]
             )
-            return response.content[0].text.strip()
+            return response.content[0].text.strip()  # type: ignore
         except Exception as e:
             print(f"Format error: {e}")
             return self._basic_format(topic_data, analysis)

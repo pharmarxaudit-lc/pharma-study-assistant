@@ -1,6 +1,7 @@
 import re
-from typing import List, Dict
 from collections import Counter
+from typing import Dict, List
+
 
 class TextProcessor:
     def clean_text(self, text: str) -> str:
@@ -10,7 +11,7 @@ class TextProcessor:
         return text.strip()
 
     def detect_repeated_elements(self, pages_data: List[Dict]) -> set:
-        text_frequency = Counter()
+        text_frequency: Counter = Counter()
         for page in pages_data:
             for item in page.get("content", []):
                 text = item.get("text", "").strip()

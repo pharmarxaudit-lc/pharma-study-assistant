@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted } from 'vue'
 
 const props = defineProps<{ fileId: string }>()
 const emit = defineEmits<{
@@ -33,7 +33,6 @@ const emit = defineEmits<{
 const progress = ref(0)
 const message = ref('Starting...')
 const error = ref('')
-let eventSource: EventSource | null = null
 
 onMounted(async () => {
   console.log('[ProcessingStatus] Component mounted for file_id:', props.fileId)
@@ -125,8 +124,6 @@ onMounted(async () => {
     error.value = err.message || 'Processing failed'
   }
 })
-
-onUnmounted(() => eventSource?.close())
 </script>
 
 <style scoped>

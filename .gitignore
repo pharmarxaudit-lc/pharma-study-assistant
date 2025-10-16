@@ -62,3 +62,21 @@ Thumbs.db
 .pytest_cache/
 .coverage
 htmlcov/
+
+# Mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Ruff
+.ruff_cache/
+
+# MacOS specific
+.AppleDouble
+.LSOverride
+
+# Temporary files
+/tmp/
+*.tmp
+*.bak
+*.swp
