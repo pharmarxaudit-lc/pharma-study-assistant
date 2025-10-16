@@ -112,3 +112,35 @@
 2025-10-16 14:22:04,090 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:22:04] "GET / HTTP/1.1" 200 -
 2025-10-16 14:22:04,096 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:22:04] "GET /assets/index-Mqpjuror.css HTTP/1.1" 200 -
 2025-10-16 14:22:04,096 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:22:04] "GET /assets/index-DX-kUB0S.js HTTP/1.1" 200 -
+2025-10-16 14:22:49,293 [DEBUG] __main__: Serving index.html
+2025-10-16 14:22:49,294 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:22:49] "GET / HTTP/1.1" 200 -
+2025-10-16 14:22:49,302 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:22:49] "GET /assets/index-Mqpjuror.css HTTP/1.1" 200 -
+2025-10-16 14:22:49,302 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:22:49] "GET /assets/index-DX-kUB0S.js HTTP/1.1" 200 -
+2025-10-16 14:23:56,702 [DEBUG] __main__: Serving index.html
+2025-10-16 14:23:56,703 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:23:56] "GET / HTTP/1.1" 200 -
+2025-10-16 14:23:56,712 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:23:56] "GET /assets/index-Mqpjuror.css HTTP/1.1" 200 -
+2025-10-16 14:23:56,712 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:23:56] "GET /assets/index-DX-kUB0S.js HTTP/1.1" 200 -
+2025-10-16 14:24:30,616 [DEBUG] __main__: Serving index.html
+2025-10-16 14:24:30,617 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:30] "GET / HTTP/1.1" 200 -
+2025-10-16 14:24:30,624 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:30] "[36mGET /assets/index-DX-kUB0S.js HTTP/1.1[0m" 304 -
+2025-10-16 14:24:30,625 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:30] "[36mGET /assets/index-Mqpjuror.css HTTP/1.1[0m" 304 -
+2025-10-16 14:24:31,544 [DEBUG] __main__: Serving index.html
+2025-10-16 14:24:31,544 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:31] "GET / HTTP/1.1" 200 -
+2025-10-16 14:24:31,551 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:31] "[36mGET /assets/index-DX-kUB0S.js HTTP/1.1[0m" 304 -
+2025-10-16 14:24:31,552 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:31] "[36mGET /assets/index-Mqpjuror.css HTTP/1.1[0m" 304 -
+2025-10-16 14:24:32,023 [DEBUG] __main__: Serving index.html
+2025-10-16 14:24:32,023 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:32] "GET / HTTP/1.1" 200 -
+2025-10-16 14:24:32,028 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:32] "[36mGET /assets/index-DX-kUB0S.js HTTP/1.1[0m" 304 -
+2025-10-16 14:24:32,029 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:32] "[36mGET /assets/index-Mqpjuror.css HTTP/1.1[0m" 304 -
+2025-10-16 14:24:32,342 [DEBUG] __main__: Serving index.html
+2025-10-16 14:24:32,343 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:32] "GET / HTTP/1.1" 200 -
+2025-10-16 14:24:32,348 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:32] "[36mGET /assets/index-DX-kUB0S.js HTTP/1.1[0m" 304 -
+2025-10-16 14:24:32,350 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:32] "[36mGET /assets/index-Mqpjuror.css HTTP/1.1[0m" 304 -
+2025-10-16 14:24:53,766 [DEBUG] __main__: Serving index.html
+2025-10-16 14:24:53,767 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:53] "GET / HTTP/1.1" 200 -
+2025-10-16 14:24:53,773 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:53] "GET /assets/index-XGKE8l3b.css HTTP/1.1" 200 -
+2025-10-16 14:24:53,773 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:24:53] "GET /assets/index-EE_qnL9g.js HTTP/1.1" 200 -
+2025-10-16 14:25:16,034 [DEBUG] __main__: Serving index.html
+2025-10-16 14:25:16,035 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:25:16] "GET / HTTP/1.1" 200 -
+2025-10-16 14:25:16,047 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:25:16] "GET /assets/index-EE_qnL9g.js HTTP/1.1" 200 -
+2025-10-16 14:25:16,048 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 14:25:16] "GET /assets/index-XGKE8l3b.css HTTP/1.1" 200 -

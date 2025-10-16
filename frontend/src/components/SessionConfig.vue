@@ -261,6 +261,7 @@ h2 {
   border: 2px solid #e0e0e0;
   border-radius: 8px;
   background: white;
+  color: #2c3e50;
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -304,6 +305,7 @@ h2 {
   border: 2px solid #e0e0e0;
   border-radius: 8px;
   background: white;
+  color: #2c3e50;
   font-size: 1.25rem;
   font-weight: 600;
   cursor: pointer;
@@ -312,6 +314,7 @@ h2 {
 
 .count-button:hover {
   border-color: #2196F3;
+  color: #2196F3;
 }
 
 .count-button.active {
@@ -333,12 +336,14 @@ h2 {
   border: 2px solid #e0e0e0;
   border-radius: 8px;
   background: white;
+  color: #2c3e50;
   cursor: pointer;
   transition: all 0.2s;
 }
 
 .topic-mode-button:hover {
   border-color: #9C27B0;
+  color: #9C27B0;
 }
 
 .topic-mode-button.active {
@@ -403,6 +408,7 @@ h2 {
   border: 2px solid #e0e0e0;
   border-radius: 8px;
   background: white;
+  color: #2c3e50;
   cursor: pointer;
   transition: all 0.2s;
   font-weight: 500;
@@ -410,6 +416,8 @@ h2 {
 
 .difficulty-button:hover {
   transform: translateY(-2px);
+  border-color: #667eea;
+  color: #667eea;
 }
 
 .difficulty-button.basic.active {
