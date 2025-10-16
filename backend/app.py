@@ -137,16 +137,18 @@ def process_file(file_id):
             # Save raw pages immediately
             logger.info("Saving raw pages...")
             for page in pages_data:
-                page_num = page.get('page_num', 0)
+                page_num = page.get('page', 1)  # Fixed: use 'page' key instead of 'page_num'
                 page_file = os.path.join(pages_raw_dir, f"page_{page_num:03d}.md")
                 with open(page_file, 'w', encoding='utf-8') as f:
                     f.write(f"# Page {page_num}\n\n")
-                    if page.get('title'):
-                        f.write(f"## {page['title']}\n\n")
                     for header in page.get('headers', []):
                         f.write(f"### {header}\n\n")
-                    for block in page.get('text_blocks', []):
-                        f.write(f"{block}\n\n")
+                    # Use the content structure from PDFExtractor
+                    for content_item in page.get('content', []):
+                        if isinstance(content_item, dict):
+                            f.write(f"{content_item.get('text', '')}\n\n")
+                        else:
+                            f.write(f"{content_item}\n\n")
 
             yield f"data: {json.dumps({'progress': 30, 'message': 'Processing text...'})}\n\n"
             logger.info("Processing text...")
@@ -158,19 +160,19 @@ def process_file(file_id):
             # Save cleaned pages immediately
             logger.info("Saving cleaned pages...")
             for page in pages_data:
-                page_num = page.get('page_num', 0)
+                page_num = page.get('page', 1)  # Fixed: use 'page' key instead of 'page_num'
                 page_file = os.path.join(pages_cleaned_dir, f"page_{page_num:03d}.md")
-                # Apply text cleaning to each block
-                cleaned_blocks = []
-                for block in page.get('text_blocks', []):
-                    if isinstance(block, str):
-                        cleaned_blocks.append(processor.clean_text(block))
                 with open(page_file, 'w', encoding='utf-8') as f:
                     f.write(f"# Page {page_num}\n\n")
-                    if page.get('title'):
-                        f.write(f"## {page['title']}\n\n")
-                    for block in cleaned_blocks:
-                        f.write(f"{block}\n\n")
+                    for header in page.get('headers', []):
+                        f.write(f"### {header}\n\n")
+                    # Apply text cleaning to each content item
+                    for content_item in page.get('content', []):
+                        if isinstance(content_item, dict):
+                            text = content_item.get('text', '')
+                            if text:
+                                cleaned_text = processor.clean_text(text)
+                                f.write(f"{cleaned_text}\n\n")
 
             yield f"data: {json.dumps({'progress': 50, 'message': f'Analyzing {len(topics)} topics...'})}\n\n"
 
