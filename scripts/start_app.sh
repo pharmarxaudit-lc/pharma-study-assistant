@@ -2,16 +2,17 @@
 
 # Pharmacy Exam Prep - Local Development Startup Script
 
-# Get the directory where the script is located
+# Get the directory where the script is located and navigate to project root
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-cd "$SCRIPT_DIR"
+PROJECT_ROOT="$( cd "$SCRIPT_DIR/.." && pwd )"
+cd "$PROJECT_ROOT"
 
 echo "🚀 Starting Pharmacy Exam Prep Application..."
 echo ""
 
-# Check if .env file exists
+# Check if .env file exists in project root
 if [ ! -f ".env" ]; then
-    echo "❌ Error: .env file not found!"
+    echo "❌ Error: .env file not found in project root!"
     echo "Please create .env file with your ANTHROPIC_API_KEY"
     exit 1
 fi

@@ -2,6 +2,11 @@
 
 # Pharmacy Exam Prep - Stop Application Script
 
+# Get the directory where the script is located and navigate to project root
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+PROJECT_ROOT="$( cd "$SCRIPT_DIR/.." && pwd )"
+cd "$PROJECT_ROOT"
+
 echo "🛑 Stopping Pharmacy Exam Prep Application..."
 
 # Kill all Flask/Python processes related to this app
