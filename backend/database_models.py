@@ -120,6 +120,7 @@ class StudySession(Base):
     difficulty_filter = Column(String(50))  # NULL = all
     total_questions = Column(Integer, nullable=False)
     time_limit_minutes = Column(Integer)
+    pass_threshold = Column(Integer, default=70)  # Pass threshold percentage (default 70%)
 
     # Session results
     start_time = Column(String(50), nullable=False, index=True)

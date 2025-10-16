@@ -11,6 +11,7 @@ export interface SessionConfig {
   topic_filter?: string[]
   difficulty_filter?: 'basic' | 'intermediate' | 'advanced'
   prioritize_weak?: boolean
+  pass_threshold?: number
 }
 
 export interface Question {
@@ -35,6 +36,7 @@ export interface SessionStartResponse {
   file_id: string
   session_type: string
   total_questions: number
+  pass_threshold: number
   current_question_number: number
   first_question: Question
 }
@@ -59,6 +61,7 @@ export interface SessionResults {
   score: number
   total: number
   percentage: number
+  pass_threshold: number
   duration_seconds: number
   topic_breakdown: Array<{
     topic: string
@@ -104,6 +107,7 @@ export interface SessionHistoryItem {
   score: number
   total: number
   percentage: number
+  pass_threshold: number
 }
 
 export interface SessionHistoryResponse {

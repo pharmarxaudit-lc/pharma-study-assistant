@@ -85,8 +85,8 @@
             </div>
             <div class="detail-item">
               <span class="detail-label">Status:</span>
-              <span class="detail-value" :class="session.percentage >= 70 ? 'passed' : 'failed'">
-                {{ session.percentage >= 70 ? 'Passed ✓' : 'Needs Review' }}
+              <span class="detail-value" :class="session.percentage >= (session.pass_threshold || 70) ? 'passed' : 'failed'">
+                {{ session.percentage >= (session.pass_threshold || 70) ? 'Passed ✓' : 'Needs Review' }}
               </span>
             </div>
           </div>

@@ -529,6 +529,7 @@ def start_session():
         topics = data.get('topics')  # None = all topics
         difficulty = data.get('difficulty')  # None = all difficulties
         include_review = data.get('include_review', False)
+        pass_threshold = data.get('pass_threshold', 70)  # Default 70%
 
         with db.session() as session:
             # Get document
@@ -567,7 +568,8 @@ def start_session():
                 start_time=datetime.now(),
                 total_questions=len(questions),
                 correct_answers=0,
-                score_percentage=0.0
+                score_percentage=0.0,
+                pass_threshold=pass_threshold
             )
             session.add(new_session)
             session.flush()
@@ -590,6 +592,7 @@ def start_session():
                 'session_id': session_id,
                 'total_questions': len(questions),
                 'session_type': session_type,
+                'pass_threshold': pass_threshold,
                 'first_question': {
                     'id': first_q.id,
                     'question_number': 1,
@@ -773,6 +776,7 @@ def get_session_results(session_id):
                 'score': study_session.correct_answers,
                 'total': study_session.total_questions,
                 'percentage': round(study_session.score_percentage, 1),
+                'pass_threshold': study_session.pass_threshold,
                 'duration_seconds': duration_seconds,
                 'topic_breakdown': [
                     {
@@ -826,7 +830,8 @@ def get_session_history():
                     'end_time': end_time,
                     'score': s.correct_answers,
                     'total': s.total_questions,
-                    'percentage': round(s.score_percentage, 1)
+                    'percentage': round(s.score_percentage, 1),
+                    'pass_threshold': s.pass_threshold
                 })
 
             return jsonify({

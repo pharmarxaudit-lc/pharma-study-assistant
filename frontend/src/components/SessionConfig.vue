@@ -252,7 +252,8 @@ async function startSession(): Promise<void> {
         ? selectedTopics.value
         : undefined,
       difficulty_filter: difficulty.value || undefined,
-      prioritize_weak: includeReview.value
+      prioritize_weak: includeReview.value,
+      pass_threshold: passThreshold.value
     }
 
     console.log('Starting session with config:', config)
