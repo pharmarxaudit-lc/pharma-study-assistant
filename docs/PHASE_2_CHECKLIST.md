@@ -29,42 +29,42 @@
 ## 🗄️ Database Design (Phase 2A)
 
 ### Schema Definition
-- [ ] Design `documents` table
-  - [ ] Define fields (id, file_id, filename, upload_date, total_topics, total_pages)
-  - [ ] Define constraints and indexes
-- [ ] Design `questions` table
-  - [ ] Define fields (id, document_id, topic_id, question_type, difficulty, question_text, options_json, correct_answer, explanation, key_terms_json, regulatory_context, created_date)
-  - [ ] Define constraints and indexes
-  - [ ] Design JSON structure for options_json
-  - [ ] Design JSON structure for key_terms_json
-- [ ] Design `user_attempts` table
-  - [ ] Define fields (id, question_id, session_id, selected_answer, is_correct, attempt_date, time_spent_seconds)
-  - [ ] Define constraints and indexes
-- [ ] Design `study_sessions` table
-  - [ ] Define fields (id, document_id, session_type, start_time, end_time, total_questions, correct_answers, score_percentage)
-  - [ ] Define constraints and indexes
-- [ ] Design `spaced_repetition` table
-  - [ ] Define fields (id, question_id, ease_factor, interval_days, repetitions, next_review_date, last_reviewed)
-  - [ ] Define constraints and indexes
-- [ ] Document table relationships (foreign keys)
-- [ ] Create database initialization script
-- [ ] Create sample data for testing
+- [x] Design `documents` table
+  - [x] Define fields (id, file_id, filename, upload_date, total_topics, total_pages)
+  - [x] Define constraints and indexes
+- [x] Design `questions` table
+  - [x] Define fields (id, document_id, topic_id, question_type, difficulty, question_text, options_json, correct_answer, explanation, key_terms_json, regulatory_context, created_date)
+  - [x] Define constraints and indexes
+  - [x] Design JSON structure for options_json
+  - [x] Design JSON structure for key_terms_json
+- [x] Design `user_attempts` table
+  - [x] Define fields (id, question_id, session_id, selected_answer, is_correct, attempt_date, time_spent_seconds)
+  - [x] Define constraints and indexes
+- [x] Design `study_sessions` table
+  - [x] Define fields (id, document_id, session_type, start_time, end_time, total_questions, correct_answers, score_percentage)
+  - [x] Define constraints and indexes
+- [x] Design `spaced_repetition` table
+  - [x] Define fields (id, question_id, ease_factor, interval_days, repetitions, next_review_date, last_reviewed)
+  - [x] Define constraints and indexes
+- [x] Document table relationships (foreign keys)
+- [x] Create database initialization script
+- [x] Create sample data for testing
 
-**Status**: 0/18 Complete (0%)
+**Status**: 18/18 Complete (100%)
 
 ---
 
 ## 🔧 Backend Development (Phase 2A)
 
 ### Core Infrastructure
-- [ ] Create `backend/database_models.py`
-  - [ ] Define SQLAlchemy models for all tables
-  - [ ] Add relationships and constraints
-  - [ ] Add helper methods
-- [ ] Create `backend/database.py`
-  - [ ] Database connection management
-  - [ ] Session handling
-  - [ ] Database initialization
+- [x] Create `backend/database_models.py`
+  - [x] Define SQLAlchemy models for all tables
+  - [x] Add relationships and constraints
+  - [x] Add helper methods
+- [x] Create `backend/database.py`
+  - [x] Database connection management
+  - [x] Session handling
+  - [x] Database initialization
 - [ ] Update `backend/config.py`
   - [ ] Add database path configuration
   - [ ] Add question generation settings
@@ -162,7 +162,7 @@
   - [ ] Update after each answer
   - [ ] Balance new vs review questions
 
-**Status**: 0/51 Complete (0%)
+**Status**: 6/51 Complete (12%)
 
 ---
 
@@ -371,23 +371,23 @@
 
 ### By Phase:
 - **Planning**: 9/13 (69%)
-- **Database Design**: 0/18 (0%)
-- **Backend Development**: 0/51 (0%)
+- **Database Design**: 18/18 (100%) ✅
+- **Backend Development**: 6/51 (12%)
 - **Frontend Development**: 0/46 (0%)
 - **Progress Dashboard**: 0/14 (0%)
 - **Testing**: 0/23 (0%)
 - **Deployment**: 0/17 (0%)
 - **Phase 2B (Optional)**: Not Started
 
-### Total: 9/182 (5%)
+### Total: 33/182 (18%)
 
 ---
 
 ## 🎯 Current Sprint Focus
 
-**Sprint 1: Foundation** (Not Started)
-- [ ] Complete database schema
-- [ ] Create database models
+**Sprint 1: Foundation** (In Progress - 50%)
+- [x] Complete database schema
+- [x] Create database models
 - [ ] Build question generator
 - [ ] Test question generation
 
