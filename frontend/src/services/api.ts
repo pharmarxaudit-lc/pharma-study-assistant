@@ -56,28 +56,27 @@ export interface AnswerResponse {
 export interface SessionResults {
   session_id: number
   session_type: string
-  score_percentage: number
-  correct_answers: number
-  incorrect_answers: number
-  total_questions: number
-  time_spent: number
+  score: number
+  total: number
+  percentage: number
+  duration_seconds: number
   topic_breakdown: Array<{
-    topic_name: string
+    topic: string
     correct: number
     total: number
+    percentage: number
   }>
-  difficulty_breakdown: Array<{
-    difficulty: string
-    correct: number
-    total: number
-  }>
-  incorrect_questions: Array<{
+  attempts: Array<{
     question_id: number
-    question_text: string
     topic_name: string
     difficulty: string
-    user_answer: string
+    question_text: string
+    options: { [key: string]: string }
+    selected_answer: string
     correct_answer: string
+    is_correct: boolean
+    explanation: string
+    time_spent_seconds: number
   }>
 }
 

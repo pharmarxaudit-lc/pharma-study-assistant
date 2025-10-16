@@ -40,6 +40,35 @@ processing_status = {}
 # Initialize database connection
 db = get_database(Config.DATABASE_PATH)
 
+def parse_options(options_json: str) -> dict:
+    """
+    Parse options from database format to API format.
+    Database stores: ["A. text", "B. text", "C. text", "D. text"]
+    API expects: {"A": "text", "B": "text", "C": "text", "D": "text"}
+    """
+    try:
+        options_data = json.loads(options_json)
+
+        # If already a dict, return as-is
+        if isinstance(options_data, dict):
+            return options_data
+
+        # If it's an array, parse it
+        if isinstance(options_data, list):
+            result = {}
+            for option in options_data:
+                # Extract letter and text from "A. Some text" format
+                if isinstance(option, str) and len(option) > 2 and option[1] == '.':
+                    letter = option[0]
+                    text = option[2:].strip()
+                    result[letter] = text
+            return result
+
+        return {}
+    except Exception as e:
+        logger.error(f"Error parsing options: {e}")
+        return {}
+
 def create_session_logger(file_id: str) -> logging.Logger:
     """Create a file-specific logger for tracing individual processing sessions."""
     # Create logger with unique name
@@ -365,7 +394,7 @@ def get_questions(file_id):
                     'question_type': q.question_type,
                     'difficulty': q.difficulty,
                     'question_text': q.question_text,
-                    'options': json.loads(q.options_json),
+                    'options': parse_options(q.options_json),
                     'correct_answer': q.correct_answer,
                     'explanation': q.explanation,
                     'key_terms': json.loads(q.key_terms_json) if q.key_terms_json else [],
@@ -450,7 +479,7 @@ def get_single_question(question_id):
                 'question_type': question.question_type,
                 'difficulty': question.difficulty,
                 'question_text': question.question_text,
-                'options': json.loads(question.options_json),
+                'options': parse_options(question.options_json),
                 'correct_answer': question.correct_answer,
                 'explanation': question.explanation,
                 'key_terms': json.loads(question.key_terms_json) if question.key_terms_json else [],
@@ -568,7 +597,7 @@ def start_session():
                     'question_type': first_q.question_type,
                     'difficulty': first_q.difficulty,
                     'question_text': first_q.question_text,
-                    'options': json.loads(first_q.options_json)
+                    'options': parse_options(first_q.options_json)
                 }
             })
 
@@ -662,7 +691,7 @@ def submit_answer(session_id):
                             'question_type': next_q.question_type,
                             'difficulty': next_q.difficulty,
                             'question_text': next_q.question_text,
-                            'options': json.loads(next_q.options_json)
+                            'options': parse_options(next_q.options_json)
                         }
             else:
                 next_question = None
@@ -715,7 +744,7 @@ def get_session_results(session_id):
                         'topic_name': question.topic_name,
                         'difficulty': question.difficulty,
                         'question_text': question.question_text,
-                        'options': json.loads(question.options_json),
+                        'options': parse_options(question.options_json),
                         'selected_answer': attempt.selected_answer,
                         'correct_answer': question.correct_answer,
                         'is_correct': attempt.is_correct,
@@ -733,7 +762,10 @@ def get_session_results(session_id):
             # Calculate timing
             duration_seconds = 0
             if study_session.end_time and study_session.start_time:
-                duration_seconds = int((study_session.end_time - study_session.start_time).total_seconds())
+                # Parse datetime strings from SQLite
+                end_dt = datetime.fromisoformat(study_session.end_time) if isinstance(study_session.end_time, str) else study_session.end_time
+                start_dt = datetime.fromisoformat(study_session.start_time) if isinstance(study_session.start_time, str) else study_session.start_time
+                duration_seconds = int((end_dt - start_dt).total_seconds())
 
             return jsonify({
                 'session_id': session_id,

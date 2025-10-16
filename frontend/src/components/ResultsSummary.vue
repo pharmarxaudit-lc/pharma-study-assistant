@@ -192,30 +192,46 @@ onMounted(async () => {
     // Fetch results from API
     const apiResults = await api.getSessionResults(Number(completedSessionId))
 
+    // Calculate derived data
+    const incorrectCount = apiResults.total - apiResults.score
+    const incorrectAttempts = apiResults.attempts.filter(a => !a.is_correct)
+
+    // Group by difficulty
+    const difficultyMap: Record<string, { correct: number; total: number }> = {}
+    apiResults.attempts.forEach(a => {
+      if (!difficultyMap[a.difficulty]) {
+        difficultyMap[a.difficulty] = { correct: 0, total: 0 }
+      }
+      difficultyMap[a.difficulty].total++
+      if (a.is_correct) {
+        difficultyMap[a.difficulty].correct++
+      }
+    })
+
     // Transform API response to UI format
     sessionResults.value = {
-      scorePercentage: Math.round(apiResults.score_percentage),
-      correctAnswers: apiResults.correct_answers,
-      incorrectAnswers: apiResults.incorrect_answers,
-      totalQuestions: apiResults.total_questions,
-      timeSpent: apiResults.time_spent,
+      scorePercentage: Math.round(apiResults.percentage),
+      correctAnswers: apiResults.score,
+      incorrectAnswers: incorrectCount,
+      totalQuestions: apiResults.total,
+      timeSpent: apiResults.duration_seconds,
       sessionType: apiResults.session_type as 'study' | 'practice' | 'mock',
-      topicBreakdown: apiResults.topic_breakdown.map(t => ({
-        name: t.topic_name,
+      topicBreakdown: (apiResults.topic_breakdown || []).map(t => ({
+        name: t.topic,
         correct: t.correct,
         total: t.total
       })),
-      difficultyBreakdown: apiResults.difficulty_breakdown.map(d => ({
-        level: d.difficulty as 'basic' | 'intermediate' | 'advanced',
-        correct: d.correct,
-        total: d.total
+      difficultyBreakdown: Object.entries(difficultyMap).map(([level, stats]) => ({
+        level: level as 'basic' | 'intermediate' | 'advanced',
+        correct: stats.correct,
+        total: stats.total
       })),
-      incorrectQuestions: apiResults.incorrect_questions.map(q => ({
+      incorrectQuestions: incorrectAttempts.map(q => ({
         id: q.question_id,
         topic: q.topic_name,
         difficulty: q.difficulty as 'basic' | 'intermediate' | 'advanced',
         question: q.question_text,
-        userAnswer: q.user_answer,
+        userAnswer: q.selected_answer,
         correctAnswer: q.correct_answer
       }))
     }
