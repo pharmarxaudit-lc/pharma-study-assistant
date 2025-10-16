@@ -15,7 +15,7 @@
 - ✅ Question statistics tracking
 - ✅ 325 questions loaded into database
 
-## Phase 2B: Frontend Exam Interface ✅ COMPLETE (with 1 known issue)
+## Phase 2B: Frontend Exam Interface ✅ COMPLETE
 - ✅ Session configuration UI (SessionConfig.vue)
 - ✅ Question display component (QuestionDisplay.vue)
 - ✅ Results summary component (ResultsSummary.vue)
@@ -23,17 +23,19 @@
 - ✅ ExamView routing and state management
 - ✅ Complete exam flow (start → questions → results)
 - ✅ Playwright E2E tests
+- ✅ Configurable pass threshold with slider control
+- ✅ Pass threshold stored per session in database
 
-### Known Issues
-⚠️ **Backend datetime error in results endpoint** (app.py:736)
-- Error: `unsupported operand type(s) for -: 'str' and 'str'`
-- Location: `duration_seconds = int((study_session.end_time - study_session.start_time).total_seconds())`
-- Root cause: SQLite stores datetime as TEXT, retrieved as strings
-- Impact: Results API returns 500, but frontend still displays results page
-- Fix needed: Parse datetime strings before subtraction
-
-## Phase 3: Progress Tracking & Analytics 🔜 NOT STARTED
-- ⬜ Session history view
+## Phase 3: Progress Tracking & Analytics 🚧 IN PROGRESS
+- ✅ Session history view (ExamHistory.vue)
+  - Filter by session type
+  - Display scores, dates, duration
+  - Session-specific pass/fail status
+  - View results for past sessions
+- ✅ Configurable pass threshold support
+  - Backend database model updated
+  - API responses include pass_threshold
+  - Frontend uses session-specific thresholds
 - ⬜ Topic performance analytics
 - ⬜ Difficulty progression tracking
 - ⬜ Weak area identification
@@ -50,13 +52,37 @@
 - ✅ Playwright E2E tests created
 - ✅ Complete exam flow verified (10 questions)
 - ✅ Session start, question navigation, answer submission all working
-- ⚠️ Results endpoint needs fix for datetime parsing
+- ✅ Results endpoint datetime parsing fixed
+- ✅ History view E2E tests added
 
-## Next Steps for New Session
-1. Fix backend datetime parsing in `app.py:736`
-2. Test full results page display with proper data
-3. Implement session history view (Phase 3)
-4. Add analytics dashboard
+## Next Steps
+According to Phase 2 Plan, remaining Phase 3 tasks:
+
+**Phase 3A - Completed:**
+- ✅ Results display working correctly
+- ✅ Session history view (ExamHistory.vue)
+- ✅ Configurable pass threshold
+
+**Phase 3A - Remaining:**
+- ⬜ Question review component (QuestionReview.vue)
+  - Show all questions from a session
+  - Highlight correct/incorrect answers
+  - Display explanations
+- ⬜ Enhanced session configuration
+  - Topic filter dropdown
+  - Difficulty filter dropdown
+  - Time limit options
+
+**Phase 4 - Analytics & Progress:**
+- ⬜ Spaced repetition system (SM-2 algorithm)
+- ⬜ Progress dashboard (ProgressDashboard.vue)
+- ⬜ Topic performance analytics
+- ⬜ PDF report generation
+
+**Phase 5 - Deployment:**
+- ⬜ Database preparation and optimization
+- ⬜ Replit configuration
+- ⬜ Deployment and testing
 
 ---
 Last updated: 2025-10-16
