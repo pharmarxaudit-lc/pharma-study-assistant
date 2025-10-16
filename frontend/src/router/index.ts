@@ -4,6 +4,7 @@ import ExamView from '../views/ExamView.vue'
 import ProgressView from '../views/ProgressView.vue'
 import TestView from '../views/TestView.vue'
 import ExamHistory from '../views/ExamHistory.vue'
+import QuestionReview from '../views/QuestionReview.vue'
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -41,6 +42,12 @@ const router = createRouter({
       name: 'history',
       component: ExamHistory,
       meta: { title: 'Exam History' }
+    },
+    {
+      path: '/review/:sessionId',
+      name: 'review',
+      component: QuestionReview,
+      meta: { title: 'Question Review' }
     }
   ]
 })

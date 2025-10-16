@@ -92,6 +92,9 @@
           </div>
 
           <div class="session-actions">
+            <router-link :to="`/review/${session.id}`" class="action-button review-button" @click.stop>
+              Review Answers
+            </router-link>
             <button class="action-button view-button" @click.stop="viewSessionDetails(session.id)">
               View Results
             </button>
@@ -475,6 +478,7 @@ function viewSessionDetails(sessionId: number): void {
 .session-actions {
   display: flex;
   justify-content: flex-end;
+  gap: 0.75rem;
 }
 
 .action-button {
@@ -484,6 +488,21 @@ function viewSessionDetails(sessionId: number): void {
   cursor: pointer;
   font-weight: 600;
   transition: all 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.review-button {
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+}
+
+.review-button:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
 }
 
 .view-button {
