@@ -27,14 +27,14 @@ wheels/
 .env
 .env.local
 
-# Uploads and outputs
-uploads/
-outputs/
-*.pdf
+# Uploads and outputs - TEMPORARILY TRACKED FOR CORE CONTENT
+# uploads/
+# outputs/
+# *.pdf
 
-# Logs
-logs/
-*.log
+# Logs - TEMPORARILY TRACKED
+# logs/
+# *.log
 
 # Frontend
 frontend/node_modules/
