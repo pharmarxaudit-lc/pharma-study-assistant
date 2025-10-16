@@ -1,0 +1,183 @@
+{
+  "metadata": {
+    "generated": "2025-10-16T11:19:23.351359",
+    "total_topics": 4,
+    "file_id": "20251016_111814"
+  },
+  "topics": [
+    {
+      "main_topic": "Introducci\u00f3n y Declaraci\u00f3n de Competencias para Examen de Rev\u00e1lida de Farmacia",
+      "subtopics": [
+        "Introducci\u00f3n al examen de rev\u00e1lida",
+        "Declaraci\u00f3n de competencias",
+        "\u00c1rea I - Ejercicio de la profesi\u00f3n",
+        "Reglamentos y resoluciones aplicables"
+      ],
+      "content_type": "regulation",
+      "key_terms": [
+        {
+          "term": "rev\u00e1lida de farmac\u00e9utico",
+          "definition": "examen que mide las competencias del aspirante para iniciarse en el ejercicio de la profesi\u00f3n",
+          "importance": "high"
+        },
+        {
+          "term": "aspectos legales",
+          "definition": "conocimientos sobre leyes y reglamentos aplicables a la pr\u00e1ctica de farmacia",
+          "importance": "high"
+        }
+      ],
+      "exam_critical_points": [
+        {
+          "point": "El examen consta de dos partes: uno general y otro sobre aspectos legales",
+          "category": "requirement"
+        },
+        {
+          "point": "Los aspectos de derecho a ser examinados se limitan hasta seis meses anteriores a la fecha de la rev\u00e1lida",
+          "category": "requirement"
+        }
+      ],
+      "question_potential": {
+        "multiple_choice": "high",
+        "true_false": "medium",
+        "scenario_based": "high",
+        "calculation": "low"
+      },
+      "difficulty_level": "intermediate",
+      "regulatory_context": "Ley de Farmacia de Puerto Rico, Ley N\u00fam. 247-2004, seg\u00fan enmendada y reglamentos relacionados del Departamento de Salud",
+      "pages": "1-2"
+    },
+    {
+      "main_topic": "Profesi\u00f3n de Farmacia",
+      "subtopics": [
+        "Profesi\u00f3n de Farmacia",
+        "Ocupaci\u00f3n de t\u00e9cnico de farmacia",
+        "Junta de Farmacia",
+        "Establecimientos autorizados y registrados"
+      ],
+      "content_type": "regulation",
+      "key_terms": [
+        {
+          "term": "Farmac\u00e9utico Regente",
+          "definition": "Profesional farmac\u00e9utico principal responsable de una farmacia",
+          "importance": "high"
+        },
+        {
+          "term": "T\u00e9cnico de Farmacia",
+          "definition": "Personal certificado para asistir al farmac\u00e9utico",
+          "importance": "high"
+        }
+      ],
+      "exam_critical_points": [
+        {
+          "point": "Requisitos para obtener la licencia de farmac\u00e9utico",
+          "category": "requirement"
+        },
+        {
+          "point": "Funciones y responsabilidades del farmac\u00e9utico",
+          "category": "requirement"
+        }
+      ],
+      "question_potential": {
+        "multiple_choice": "high",
+        "true_false": "medium",
+        "scenario_based": "high",
+        "calculation": "low"
+      },
+      "difficulty_level": "intermediate",
+      "regulatory_context": "Ley de Farmacia que regula el ejercicio profesional farmac\u00e9utico, t\u00e9cnicos de farmacia y establecimientos farmac\u00e9uticos",
+      "pages": "3-4"
+    },
+    {
+      "main_topic": "Farmacias y Recetas",
+      "subtopics": [
+        "Recetario",
+        "Medicamentos",
+        "Dispensaci\u00f3n",
+        "Sustancias Controladas",
+        "Colegiaci\u00f3n y \u00c9tica"
+      ],
+      "content_type": "regulation",
+      "key_terms": [
+        {
+          "term": "Prescribiente",
+          "definition": "Profesional autorizado para prescribir medicamentos con uso m\u00e9dico leg\u00edtimo",
+          "importance": "high"
+        },
+        {
+          "term": "Dispensaci\u00f3n",
+          "definition": "Proceso de entrega de medicamentos bajo responsabilidad del farmac\u00e9utico",
+          "importance": "high"
+        }
+      ],
+      "exam_critical_points": [
+        {
+          "point": "Responsabilidad del farmac\u00e9utico en funciones no delegables",
+          "category": "requirement"
+        },
+        {
+          "point": "Verificaci\u00f3n y orientaci\u00f3n en el proceso de dispensaci\u00f3n",
+          "category": "requirement"
+        }
+      ],
+      "question_potential": {
+        "multiple_choice": "high",
+        "true_false": "medium",
+        "scenario_based": "high",
+        "calculation": "low"
+      },
+      "difficulty_level": "intermediate",
+      "regulatory_context": "Ley de Farmacia de Puerto Rico y reglamentaciones federales sobre sustancias controladas",
+      "pages": "5-8"
+    },
+    {
+      "main_topic": "\u00c9tica y Derecho",
+      "subtopics": [
+        "Moral y \u00c9tica",
+        "Colegio de Farmac\u00e9uticos",
+        "Derecho Constitucional",
+        "Responsabilidad civil extracontractual"
+      ],
+      "content_type": "regulation",
+      "key_terms": [
+        {
+          "term": "Bio\u00e9tica",
+          "definition": "Estudio de los aspectos \u00e9ticos de las ciencias de la vida",
+          "importance": "high"
+        },
+        {
+          "term": "Eutanasia",
+          "definition": "Derecho a morir con dignidad",
+          "importance": "high"
+        },
+        {
+          "term": "Objeci\u00f3n por consciencia",
+          "definition": "Derecho a negarse a realizar ciertos actos por razones morales o religiosas",
+          "importance": "high"
+        }
+      ],
+      "exam_critical_points": [
+        {
+          "point": "C\u00f3digo de \u00e9tica del Colegio de Farmac\u00e9uticos",
+          "category": "requirement"
+        },
+        {
+          "point": "Tr\u00e1mite de querellas ante el Colegio de Farmac\u00e9uticos y Junta de Farmacia",
+          "category": "procedure"
+        },
+        {
+          "point": "Responsabilidad civil por mala pr\u00e1ctica profesional",
+          "category": "requirement"
+        }
+      ],
+      "question_potential": {
+        "multiple_choice": "high",
+        "true_false": "medium",
+        "scenario_based": "high",
+        "calculation": "low"
+      },
+      "difficulty_level": "intermediate",
+      "regulatory_context": "\u00c1rea IV del examen de rev\u00e1lida de farmacia (aproximadamente 5% del examen)",
+      "pages": "9-10"
+    }
+  ]
+}

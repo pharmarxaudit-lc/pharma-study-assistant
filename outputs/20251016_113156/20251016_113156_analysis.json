@@ -1,0 +1,560 @@
+{
+  "metadata": {
+    "generated": "2025-10-16T11:35:19.035886",
+    "total_topics": 13,
+    "file_id": "20251016_113156"
+  },
+  "topics": [
+    {
+      "main_topic": "La Profesi\u00f3n de Farmacia - Responsabilidad Social",
+      "subtopics": [
+        "Responsabilidad social de la profesi\u00f3n",
+        "Requisitos para ejercer"
+      ],
+      "content_type": "regulation",
+      "key_terms": [
+        {
+          "term": "Responsabilidad social farmac\u00e9utica",
+          "definition": "Proveer servicios farmac\u00e9uticos para promover la salud, seguridad y bienestar del paciente, prevenir enfermedades y lograr \u00f3ptimos resultados en el uso de los medicamentos",
+          "importance": "high"
+        }
+      ],
+      "exam_critical_points": [
+        {
+          "point": "Licencia",
+          "category": "requirement"
+        },
+        {
+          "point": "Colegiaci\u00f3n",
+          "category": "requirement"
+        },
+        {
+          "point": "Recertificaci\u00f3n",
+          "category": "requirement"
+        }
+      ],
+      "question_potential": {
+        "multiple_choice": "high",
+        "true_false": "high",
+        "scenario_based": "medium",
+        "calculation": "low"
+      },
+      "difficulty_level": "intermediate",
+      "regulatory_context": "Ley 247 de 2004 (Art. 2.01)",
+      "pages": "1-2"
+    },
+    {
+      "main_topic": "Requisitos para ejercer como Farmac\u00e9utico",
+      "subtopics": [
+        "Licencia y requisitos b\u00e1sicos",
+        "Internado y Rev\u00e1lida",
+        "Colegiaci\u00f3n",
+        "Recertificaci\u00f3n"
+      ],
+      "content_type": "regulation",
+      "key_terms": [
+        {
+          "term": "Internado",
+          "definition": "1500 horas bajo supervisi\u00f3n de farmac\u00e9utico preceptor",
+          "importance": "high"
+        },
+        {
+          "term": "Rev\u00e1lida",
+          "definition": "Examen General y Examen de aspectos legales",
+          "importance": "high"
+        },
+        {
+          "term": "Recertificaci\u00f3n",
+          "definition": "Proceso cada 3 a\u00f1os con 35 cr\u00e9ditos de educaci\u00f3n continua",
+          "importance": "high"
+        }
+      ],
+      "exam_critical_points": [
+        {
+          "point": "Mayor\u00eda de edad (21 a\u00f1os)",
+          "category": "requirement"
+        },
+        {
+          "point": "Grado acad\u00e9mico en Farmacia de instituci\u00f3n acreditada",
+          "category": "requirement"
+        },
+        {
+          "point": "1500 horas de internado",
+          "category": "requirement"
+        },
+        {
+          "point": "Colegiaci\u00f3n obligatoria",
+          "category": "requirement"
+        }
+      ],
+      "question_potential": {
+        "multiple_choice": "high",
+        "true_false": "high",
+        "scenario_based": "high",
+        "calculation": "low"
+      },
+      "difficulty_level": "intermediate",
+      "regulatory_context": "Ley 247 de 2004, Ley N\u00fam. 243 de 1938, Reglamento General de la Junta de Farmacia 2014",
+      "pages": "3-8"
+    },
+    {
+      "main_topic": "Denegaci\u00f3n y Suspensi\u00f3n de Licencia",
+      "subtopics": [
+        "Denegaci\u00f3n de licencia",
+        "Suspensi\u00f3n y cancelaci\u00f3n de licencia",
+        "Re-instalaci\u00f3n de licencia"
+      ],
+      "content_type": "regulation",
+      "key_terms": [
+        {
+          "term": "Denegaci\u00f3n de licencia",
+          "definition": "Proceso por el cual la Junta rechaza otorgar una licencia de farmac\u00e9utico o certificado de t\u00e9cnico de farmacia",
+          "importance": "high"
+        },
+        {
+          "term": "Depravaci\u00f3n moral",
+          "definition": "Conducta que implica deshonestidad o falta de \u00e9tica profesional",
+          "importance": "high"
+        }
+      ],
+      "exam_critical_points": [
+        {
+          "point": "Fraude o enga\u00f1o en la obtenci\u00f3n de licencia",
+          "category": "requirement"
+        },
+        {
+          "point": "Adicci\u00f3n a sustancias controladas o bebidas alcoh\u00f3licas",
+          "category": "requirement"
+        },
+        {
+          "point": "Convicci\u00f3n por delitos en los \u00faltimos diez a\u00f1os",
+          "category": "requirement"
+        }
+      ],
+      "question_potential": {
+        "multiple_choice": "high",
+        "true_false": "high",
+        "scenario_based": "high",
+        "calculation": "low"
+      },
+      "difficulty_level": "intermediate",
+      "regulatory_context": "Regulaci\u00f3n que establece las bases para denegar, suspender o revocar licencias de farmac\u00e9uticos y t\u00e9cnicos de farmacia en Puerto Rico",
+      "pages": "9-10"
+    },
+    {
+      "main_topic": "Funciones del Farmac\u00e9utico",
+      "subtopics": [
+        "Dispensaci\u00f3n de medicamentos",
+        "Administraci\u00f3n de medicamentos inyectables",
+        "Administraci\u00f3n de vacunas"
+      ],
+      "content_type": "regulation",
+      "key_terms": [
+        {
+          "term": "Dispensaci\u00f3n",
+          "definition": "Proceso que incluye recibir, evaluar e interpretar la receta, preparar, verificar y entregar el medicamento con la debida orientaci\u00f3n al paciente",
+          "importance": "high"
+        },
+        {
+          "term": "Orientaci\u00f3n farmac\u00e9utica",
+          "definition": "Discusi\u00f3n confidencial persona a persona entre farmac\u00e9utico y paciente sobre informaci\u00f3n necesaria para optimizar la farmacoterapia",
+          "importance": "high"
+        }
+      ],
+      "exam_critical_points": [
+        {
+          "point": "El farmac\u00e9utico debe poseer certificado para administrar vacunas",
+          "category": "requirement"
+        },
+        {
+          "point": "La orientaci\u00f3n ser\u00e1 confidencial y podr\u00e1 ser complementada, pero no sustituida por informaci\u00f3n escrita",
+          "category": "requirement"
+        }
+      ],
+      "question_potential": {
+        "multiple_choice": "high",
+        "true_false": "high",
+        "scenario_based": "high",
+        "calculation": "low"
+      },
+      "difficulty_level": "intermediate",
+      "regulatory_context": "Ley 247 de 2004 (Art. 2.02) - Regulaci\u00f3n de las funciones del farmac\u00e9utico en Puerto Rico",
+      "pages": "11-13"
+    },
+    {
+      "main_topic": "Farmac\u00e9utico Regente y Preceptor",
+      "subtopics": [
+        "Farmac\u00e9utico Regente",
+        "Requisitos del Preceptor",
+        "Centro de Pr\u00e1ctica",
+        "Farmac\u00e9utico Inspector"
+      ],
+      "content_type": "regulation",
+      "key_terms": [
+        {
+          "term": "Farmac\u00e9utico Regente",
+          "definition": "Farmac\u00e9utico cuyo nombre aparece como responsable en los r\u00e9cords del Departamento de Salud, encargado de velar por el cumplimiento de las leyes de manufactura, distribuci\u00f3n y dispensaci\u00f3n de medicamentos",
+          "importance": "high"
+        },
+        {
+          "term": "Preceptor",
+          "definition": "Farmac\u00e9utico certificado por la Junta que supervisa internos de farmacia con no menos de 3 a\u00f1os de experiencia",
+          "importance": "high"
+        }
+      ],
+      "exam_critical_points": [
+        {
+          "point": "Un farmac\u00e9utico podr\u00e1 supervisar m\u00e1ximo 5 personas: cinco t\u00e9cnicos de farmacia, o un interno de farmacia m\u00e1s cuatro t\u00e9cnicos",
+          "category": "requirement"
+        },
+        {
+          "point": "El farmac\u00e9utico regente solo puede ejercer en una facilidad",
+          "category": "limitation"
+        }
+      ],
+      "question_potential": {
+        "multiple_choice": "high",
+        "true_false": "high",
+        "scenario_based": "high",
+        "calculation": "low"
+      },
+      "difficulty_level": "intermediate",
+      "regulatory_context": "Ley de Farmacia de Puerto Rico y Reglamento General de la Junta de Farmacia",
+      "pages": "14-17"
+    },
+    {
+      "main_topic": "Delitos y Conductas Prohibidas",
+      "subtopics": [
+        "Certificaci\u00f3n y credenciales",
+        "Delitos Menos graves",
+        "Ejercicio de aplicaci\u00f3n"
+      ],
+      "content_type": "regulation",
+      "key_terms": [
+        {
+          "term": "Delitos Menos graves",
+          "definition": "Infracciones sancionadas con pena de reclusi\u00f3n por t\u00e9rmino no mayor de seis meses o multa hasta $5,000",
+          "importance": "high"
+        },
+        {
+          "term": "Certificado de especialidad",
+          "definition": "Documento otorgado por la Junta para ejercer como especialista en un \u00e1rea de farmacia",
+          "importance": "high"
+        }
+      ],
+      "exam_critical_points": [
+        {
+          "point": "Ejercer como farmac\u00e9utico sin licencia",
+          "category": "prohibici\u00f3n"
+        },
+        {
+          "point": "Dispensar medicamentos sin ser farmac\u00e9utico autorizado",
+          "category": "prohibici\u00f3n"
+        },
+        {
+          "point": "Operar establecimiento sin licencia correspondiente",
+          "category": "prohibici\u00f3n"
+        }
+      ],
+      "question_potential": {
+        "multiple_choice": "high",
+        "true_false": "medium",
+        "scenario_based": "high",
+        "calculation": "low"
+      },
+      "difficulty_level": "intermediate",
+      "regulatory_context": "Cap\u00edtulo 5 de Ley de Farmacia de Puerto Rico, Art\u00edculo 6",
+      "pages": "18-26"
+    },
+    {
+      "main_topic": "T\u00e9cnico de Farmacia",
+      "subtopics": [
+        "Funciones del T\u00e9cnico de Farmacia",
+        "Requisitos para ejercer",
+        "Certificaci\u00f3n",
+        "Recertificaci\u00f3n"
+      ],
+      "content_type": "regulation",
+      "key_terms": [
+        {
+          "term": "T\u00e9cnico de Farmacia",
+          "definition": "Profesional que ayuda al farmac\u00e9utico en funciones t\u00e9cnicas y administrativas bajo supervisi\u00f3n directa",
+          "importance": "high"
+        },
+        {
+          "term": "Supervisi\u00f3n directa",
+          "definition": "Supervisi\u00f3n obligatoria por un farmac\u00e9utico autorizado",
+          "importance": "high"
+        }
+      ],
+      "exam_critical_points": [
+        {
+          "point": "2.0 UEC (20 hrs.) por trienio para recertificaci\u00f3n",
+          "category": "requirement"
+        },
+        {
+          "point": "18 a\u00f1os de edad o m\u00e1s",
+          "category": "requirement"
+        },
+        {
+          "point": "Certificado Negativo de Antecedentes Penales",
+          "category": "requirement"
+        }
+      ],
+      "question_potential": {
+        "multiple_choice": "high",
+        "true_false": "high",
+        "scenario_based": "high",
+        "calculation": "low"
+      },
+      "difficulty_level": "intermediate",
+      "regulatory_context": "Ley 247 de 2004 - Regula las funciones y requisitos para ejercer como T\u00e9cnico de Farmacia en Puerto Rico",
+      "pages": "27-34"
+    },
+    {
+      "main_topic": "Junta de Farmacia",
+      "subtopics": [
+        "Composici\u00f3n y Nombramientos de la Junta",
+        "Facultades, funciones y deberes",
+        "Procesos investigativos y adjudicativos"
+      ],
+      "content_type": "regulation",
+      "key_terms": [
+        {
+          "term": "Junta de Farmacia",
+          "definition": "Organismo regulador compuesto por siete miembros que supervisa la pr\u00e1ctica farmac\u00e9utica",
+          "importance": "high"
+        },
+        {
+          "term": "Internado",
+          "definition": "Per\u00edodo de pr\u00e1ctica supervisada requerido para farmac\u00e9uticos y t\u00e9cnicos",
+          "importance": "high"
+        }
+      ],
+      "exam_critical_points": [
+        {
+          "point": "Siete miembros nombrados por el gobernador: seis farmac\u00e9uticos y un t\u00e9cnico de farmacia",
+          "category": "requirement"
+        },
+        {
+          "point": "T\u00e9rmino de cuatro a\u00f1os, m\u00e1ximo dos t\u00e9rminos consecutivos",
+          "category": "requirement"
+        },
+        {
+          "point": "No menos de tres miembros deben ejercer en farmacia de comunidad",
+          "category": "requirement"
+        }
+      ],
+      "question_potential": {
+        "multiple_choice": "high",
+        "true_false": "high",
+        "scenario_based": "high",
+        "calculation": "low"
+      },
+      "difficulty_level": "intermediate",
+      "regulatory_context": "Ley que establece la composici\u00f3n, facultades y responsabilidades de la Junta de Farmacia para regular la pr\u00e1ctica farmac\u00e9utica en Puerto Rico",
+      "pages": "35-37"
+    },
+    {
+      "main_topic": "Regulaci\u00f3n de Establecimientos Farmac\u00e9uticos",
+      "subtopics": [
+        "Licencias y autorizaciones",
+        "Requisitos para operar como farmacia",
+        "Manejo del recetario"
+      ],
+      "content_type": "regulation",
+      "key_terms": [
+        {
+          "term": "Farmac\u00e9utico regente",
+          "definition": "Farmac\u00e9utico a cuyo cargo y responsabilidad estar\u00e1 el recetario",
+          "importance": "high"
+        },
+        {
+          "term": "Recetario",
+          "definition": "Espacio f\u00edsico reservado para la dispensaci\u00f3n de medicamentos de receta",
+          "importance": "high"
+        }
+      ],
+      "exam_critical_points": [
+        {
+          "point": "Contar con los servicios de por lo menos un (1) farmac\u00e9utico mientras est\u00e9 abierta al p\u00fablico",
+          "category": "requirement"
+        },
+        {
+          "point": "La ausencia de farmac\u00e9utico s\u00f3lo podr\u00e1 ocurrir en caso de emergencia",
+          "category": "requirement"
+        }
+      ],
+      "question_potential": {
+        "multiple_choice": "high",
+        "true_false": "high",
+        "scenario_based": "high",
+        "calculation": "low"
+      },
+      "difficulty_level": "intermediate",
+      "regulatory_context": "Regulaci\u00f3n estatal de establecimientos dedicados a manufactura, distribuci\u00f3n, dispensaci\u00f3n y venta de medicamentos en Puerto Rico",
+      "pages": "38-53"
+    },
+    {
+      "main_topic": "Medicamentos y su Dispensaci\u00f3n",
+      "subtopics": [
+        "Medicamentos sin recetas",
+        "Medicamentos de recetas",
+        "Medicamentos con requisitos especiales",
+        "Productos biol\u00f3gicos"
+      ],
+      "content_type": "regulation",
+      "key_terms": [
+        {
+          "term": "Productos biol\u00f3gicos",
+          "definition": "Medicamentos que requieren requisitos especiales para su dispensaci\u00f3n y est\u00e1n sujetos a regulaciones federales",
+          "importance": "high"
+        },
+        {
+          "term": "Biosimilar intercambiable",
+          "definition": "Producto biol\u00f3gico aprobado como intercambiable seg\u00fan el Purple Book o Orange Book",
+          "importance": "high"
+        }
+      ],
+      "exam_critical_points": [
+        {
+          "point": "Los medicamentos sin receta que contengan sustancias controladas s\u00f3lo podr\u00e1n adquirirse en farmacias",
+          "category": "requirement"
+        },
+        {
+          "point": "Se proh\u00edbe la sustituci\u00f3n autom\u00e1tica de un producto biol\u00f3gico",
+          "category": "requirement"
+        }
+      ],
+      "question_potential": {
+        "multiple_choice": "high",
+        "true_false": "high",
+        "scenario_based": "high",
+        "calculation": "low"
+      },
+      "difficulty_level": "advanced",
+      "regulatory_context": "Ley de Farmacia de Puerto Rico sobre dispensaci\u00f3n de medicamentos y productos biol\u00f3gicos",
+      "pages": "54-78"
+    },
+    {
+      "main_topic": "Cuerpos Regulatorios y Divisi\u00f3n de Medicamentos",
+      "subtopics": [
+        "Facultades del Secretario",
+        "Divisi\u00f3n de Medicamentos y Farmacia"
+      ],
+      "content_type": "regulation",
+      "key_terms": [
+        {
+          "term": "Divisi\u00f3n de Medicamentos y Farmacia",
+          "definition": "Entidad adscrita a SARAFS responsable de fiscalizar el cumplimiento de las disposiciones de la Ley de Farmacia y el licenciamiento de establecimientos farmac\u00e9uticos",
+          "importance": "high"
+        },
+        {
+          "term": "Secretario de Salud",
+          "definition": "Funcionario responsable de poner en vigor y fiscalizar el cumplimiento de las disposiciones de esta Ley",
+          "importance": "high"
+        }
+      ],
+      "exam_critical_points": [
+        {
+          "point": "El Secretario puede delegar funciones de fiscalizaci\u00f3n a la Divisi\u00f3n de Medicamentos y Farmacia",
+          "category": "requirement"
+        },
+        {
+          "point": "La Divisi\u00f3n debe tener un farmac\u00e9utico con no menos de cinco a\u00f1os de experiencia",
+          "category": "requirement"
+        }
+      ],
+      "question_potential": {
+        "multiple_choice": "high",
+        "true_false": "medium",
+        "scenario_based": "high",
+        "calculation": "low"
+      },
+      "difficulty_level": "intermediate",
+      "regulatory_context": "Ley de Farmacia de Puerto Rico - Regulaci\u00f3n sobre autoridad y responsabilidades de los cuerpos regulatorios farmac\u00e9uticos",
+      "pages": "79-83"
+    },
+    {
+      "main_topic": "Sustancias Controladas",
+      "subtopics": [
+        "Dispensaci\u00f3n de sustancias controladas",
+        "Clasificaci\u00f3n de sustancias controladas",
+        "Scanabisa",
+        "Actividades que requieren registro"
+      ],
+      "content_type": "regulation",
+      "key_terms": [
+        {
+          "term": "Sistema cerrado",
+          "definition": "Sistema para manufactura, distribuci\u00f3n y dispensaci\u00f3n donde solo personas o entidades registradas pueden participar legalmente",
+          "importance": "high"
+        },
+        {
+          "term": "Sustancias Controladas",
+          "definition": "Drogas que la sociedad ha determinado que ameritan regulaci\u00f3n y controles m\u00e1s estrictos por su potencial de abuso y adicci\u00f3n",
+          "importance": "high"
+        }
+      ],
+      "exam_critical_points": [
+        {
+          "point": "Solo personas o entidades registradas con las agencias reguladoras pueden legalmente dedicarse a las actividades de manufactura, distribuci\u00f3n y dispensaci\u00f3n",
+          "category": "requirement"
+        },
+        {
+          "point": "Dispensadores requieren registro cada 3 a\u00f1os",
+          "category": "requirement"
+        }
+      ],
+      "question_potential": {
+        "multiple_choice": "high",
+        "true_false": "medium",
+        "scenario_based": "high",
+        "calculation": "low"
+      },
+      "difficulty_level": "intermediate",
+      "regulatory_context": "Regulaci\u00f3n de sustancias controladas en Puerto Rico que establece clasificaciones y requisitos para el manejo de medicamentos con potencial de abuso",
+      "pages": "84-100"
+    },
+    {
+      "main_topic": "Colegio de Farmac\u00e9uticos de Puerto Rico",
+      "subtopics": [
+        "Facultades del CFPR",
+        "C\u00e1nones de \u00e9tica profesional",
+        "Investigaci\u00f3n de querellas"
+      ],
+      "content_type": "regulation",
+      "key_terms": [
+        {
+          "term": "C\u00e1nones de \u00e9tica profesional",
+          "definition": "Normas que rigen la conducta de los farmac\u00e9uticos",
+          "importance": "high"
+        },
+        {
+          "term": "Querellas juramentadas",
+          "definition": "Denuncias formales sobre conducta de miembros",
+          "importance": "high"
+        }
+      ],
+      "exam_critical_points": [
+        {
+          "point": "Ley 243 de 1938 (Art. 2) establece las facultades del Colegio",
+          "category": "requirement"
+        },
+        {
+          "point": "Poder para investigar querellas y iniciar procedimientos de destituci\u00f3n",
+          "category": "requirement"
+        }
+      ],
+      "question_potential": {
+        "multiple_choice": "high",
+        "true_false": "medium",
+        "scenario_based": "high",
+        "calculation": "low"
+      },
+      "difficulty_level": "intermediate",
+      "regulatory_context": "Ley 243 de 1938 que establece las facultades y poderes del Colegio de Farmac\u00e9uticos de Puerto Rico",
+      "pages": "101-101"
+    }
+  ]
+}
