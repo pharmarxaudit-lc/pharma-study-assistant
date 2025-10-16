@@ -34,14 +34,15 @@ fi
 # Create necessary directories
 mkdir -p uploads outputs backend/static
 
-# Check if frontend is built
-if [ ! -d "frontend/dist" ]; then
-    echo "📦 Frontend not built. Building now..."
-    cd frontend
+# Always rebuild frontend to ensure it's up-to-date
+echo "📦 Building frontend..."
+cd frontend
+if [ ! -d "node_modules" ]; then
+    echo "📥 Installing frontend dependencies..."
     npm install
-    npm run build
-    cd ..
 fi
+npm run build
+cd ..
 
 # Copy frontend to backend static
 echo "📋 Copying frontend build to backend..."

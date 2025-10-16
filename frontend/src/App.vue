@@ -1,35 +1,41 @@
 <template>
-  <div class="container">
-    <h1>📚 Pharmacy Exam Prep</h1>
-    <p class="subtitle">Phase 1: PDF to Structured Markdown</p>
-
-    <FileUpload v-if="step === 'upload'" @uploaded="handleUpload" />
-    <ProcessingStatus v-if="step === 'process'" :fileId="fileId" @complete="step = 'result'" @restart="resetApp" />
-    <ResultViewer v-if="step === 'result'" :fileId="fileId" @restart="resetApp" />
+  <div class="app-layout">
+    <Navigation />
+    <main class="main-content">
+      <router-view />
+    </main>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import FileUpload from './components/FileUpload.vue'
-import ProcessingStatus from './components/ProcessingStatus.vue'
-import ResultViewer from './components/ResultViewer.vue'
+import Navigation from './components/Navigation.vue'
 
-const step = ref<'upload' | 'process' | 'result'>('upload')
-const fileId = ref('')
-
-console.log('[App] Application initialized')
-
-function handleUpload(id: string) {
-  console.log('[App] File uploaded with ID:', id)
-  fileId.value = id
-  step.value = 'process'
-  console.log('[App] Switching to processing step')
-}
-
-function resetApp() {
-  console.log('[App] Resetting application')
-  step.value = 'upload'
-  fileId.value = ''
-}
+console.log('[App] Application initialized with router')
 </script>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 250px;
+  padding: 2rem;
+  background: #f5f5f5;
+}
+</style>
