@@ -375,10 +375,9 @@ async function confirmExit(): Promise<void> {
     // Fetch results to finalize session
     await api.getSessionResults(sessionId.value)
 
-    // Navigate to results
+    // Mark session as complete (keep currentSession so ExamView knows there's a session)
     sessionStorage.setItem('sessionComplete', 'true')
     sessionStorage.setItem('completedSessionId', String(sessionId.value))
-    sessionStorage.removeItem('currentSession')
     window.dispatchEvent(new Event('sessionComplete'))
     router.push('/exam')
   } catch (error) {
