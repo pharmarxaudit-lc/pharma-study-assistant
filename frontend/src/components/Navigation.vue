@@ -28,6 +28,12 @@
           <span class="nav-label">Progress</span>
         </router-link>
       </li>
+      <li>
+        <router-link to="/maintenance" class="nav-link">
+          <span class="nav-icon">🔧</span>
+          <span class="nav-label">Maintenance</span>
+        </router-link>
+      </li>
     </ul>
   </nav>
 </template>

@@ -843,6 +843,120 @@ def get_session_history():
         logger.error(f"Error getting session history: {e}", exc_info=True)
         return jsonify({"error": str(e)}), 500
 
+# ============================================================================
+# MAINTENANCE ENDPOINTS
+# ============================================================================
+
+@app.route('/api/maintenance/db-info', methods=['GET'])
+def get_database_info():
+    """Get database schema information and statistics."""
+    logger.info("GET /api/maintenance/db-info")
+
+    try:
+        import os
+        from sqlalchemy import inspect
+
+        db_path = Config.DATABASE_PATH
+        db_exists = os.path.exists(db_path)
+        db_size = os.path.getsize(db_path) if db_exists else 0
+
+        # Get table info
+        inspector = inspect(db.engine)
+        tables_info = []
+
+        for table_name in inspector.get_table_names():
+            columns = inspector.get_columns(table_name)
+            tables_info.append({
+                'name': table_name,
+                'columns': [{'name': col['name'], 'type': str(col['type'])} for col in columns]
+            })
+
+        # Get record counts
+        with db.session() as session:
+            counts = {
+                'documents': session.query(Document).count(),
+                'questions': session.query(Question).count(),
+                'study_sessions': session.query(StudySession).count(),
+                'user_attempts': session.query(UserAttempt).count()
+            }
+
+        return jsonify({
+            'database_path': db_path,
+            'exists': db_exists,
+            'size_bytes': db_size,
+            'size_mb': round(db_size / (1024 * 1024), 2),
+            'tables': tables_info,
+            'record_counts': counts
+        })
+
+    except Exception as e:
+        logger.error(f"Error getting database info: {e}", exc_info=True)
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/maintenance/db-reset', methods=['POST'])
+def reset_database():
+    """Reset the database (WARNING: Destroys all data!)."""
+    logger.info("POST /api/maintenance/db-reset")
+
+    try:
+        data = request.get_json() or {}
+        confirm = data.get('confirm', False)
+
+        if not confirm:
+            return jsonify({"error": "Confirmation required. Send {\"confirm\": true}"}), 400
+
+        logger.warning("🔥 DATABASE RESET REQUESTED - This will delete all data!")
+
+        # Reset database
+        db.reset_database()
+
+        logger.info("✅ Database reset complete")
+
+        return jsonify({
+            'success': True,
+            'message': 'Database has been reset successfully',
+            'database_path': Config.DATABASE_PATH
+        })
+
+    except Exception as e:
+        logger.error(f"Error resetting database: {e}", exc_info=True)
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/maintenance/db-check-schema', methods=['GET'])
+def check_database_schema():
+    """Check if database schema matches current models."""
+    logger.info("GET /api/maintenance/db-check-schema")
+
+    try:
+        from sqlalchemy import inspect
+
+        inspector = inspect(db.engine)
+        schema_issues = []
+
+        # Check study_sessions table for pass_threshold column
+        if 'study_sessions' in inspector.get_table_names():
+            columns = {col['name'] for col in inspector.get_columns('study_sessions')}
+
+            if 'pass_threshold' not in columns:
+                schema_issues.append({
+                    'table': 'study_sessions',
+                    'issue': 'Missing column: pass_threshold',
+                    'severity': 'error',
+                    'fix': 'Reset database or run: ALTER TABLE study_sessions ADD COLUMN pass_threshold INTEGER DEFAULT 70;'
+                })
+
+        schema_ok = len(schema_issues) == 0
+
+        return jsonify({
+            'schema_ok': schema_ok,
+            'issues': schema_issues,
+            'message': 'Schema is up to date' if schema_ok else f'Found {len(schema_issues)} schema issue(s)'
+        })
+
+    except Exception as e:
+        logger.error(f"Error checking schema: {e}", exc_info=True)
+        return jsonify({"error": str(e)}), 500
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     debug_mode = os.environ.get('DEBUG', 'False').lower() == 'true'

@@ -5,6 +5,7 @@ import ProgressView from '../views/ProgressView.vue'
 import TestView from '../views/TestView.vue'
 import ExamHistory from '../views/ExamHistory.vue'
 import QuestionReview from '../views/QuestionReview.vue'
+import Maintenance from '../views/Maintenance.vue'
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -48,6 +49,12 @@ const router = createRouter({
       name: 'review',
       component: QuestionReview,
       meta: { title: 'Question Review' }
+    },
+    {
+      path: '/maintenance',
+      name: 'maintenance',
+      component: Maintenance,
+      meta: { title: 'Maintenance' }
     }
   ]
 })

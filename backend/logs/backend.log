@@ -12941,3 +12941,10 @@ TypeError: unsupported operand type(s) for -: 'str' and 'str'
 2025-10-16 15:22:45,819 [DEBUG] __main__: Health check requested
 2025-10-16 15:22:45,819 [INFO] __main__: Health check: {'status': 'healthy', 'claude_configured': True, 'timestamp': '2025-10-16T15:22:45.819226'}
 2025-10-16 15:22:45,819 [INFO] werkzeug: 127.0.0.1 - - [16/Oct/2025 15:22:45] "GET /api/health HTTP/1.1" 200 -
+2025-10-17 09:27:26,617 [INFO] __main__: ================================================================================
+2025-10-17 09:27:26,617 [INFO] __main__: Pharmacy Exam Prep Application Starting
+2025-10-17 09:27:26,617 [INFO] __main__: Upload folder: /Users/luiscotto/Code/pharma-study-assistant/uploads
+2025-10-17 09:27:26,617 [INFO] __main__: Output folder: /Users/luiscotto/Code/pharma-study-assistant/outputs
+2025-10-17 09:27:26,617 [INFO] __main__: Anthropic API Key configured: True
+2025-10-17 09:27:26,617 [INFO] __main__: ================================================================================
+2025-10-17 09:27:26,620 [INFO] __main__: Starting Flask server on port 5001 (debug=False)
