@@ -3,9 +3,10 @@
 # Pharmacy Exam Prep - Validation Script
 # Runs all linters and type checkers on backend and frontend
 
-# Get the directory where the script is located
+# Get the project root directory (parent of scripts directory)
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-cd "$SCRIPT_DIR"
+PROJECT_ROOT="$( cd "$SCRIPT_DIR/.." && pwd )"
+cd "$PROJECT_ROOT"
 
 echo "🔍 Running validation checks..."
 echo ""
