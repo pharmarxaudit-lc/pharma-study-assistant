@@ -313,8 +313,7 @@ function getTopicBarClass(correct: number, total: number): string {
 
 function reviewIncorrect(): void {
   // TODO: Implement review mode - start new session with only incorrect questions
-  console.log('Review feature coming soon')
-  alert('Review feature will be implemented in a future update')
+  console.log('Review feature not yet implemented')
 }
 
 function startNewSession(): void {
@@ -328,9 +327,7 @@ function startNewSession(): void {
 }
 
 function viewHistory(): void {
-  // TODO: Implement session history view
-  console.log('Session history feature coming soon')
-  alert('Session history feature will be implemented in a future update')
+  router.push('/history')
 }
 
 function getPassFailStatus(): 'passed' | 'failed' {

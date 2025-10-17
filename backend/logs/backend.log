@@ -13100,3 +13100,20 @@ TypeError: unsupported operand type(s) for -: 'str' and 'str'
 2025-10-17 10:17:04,057 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:17:04] "GET /api/sessions/29/results HTTP/1.1" 200 -
 2025-10-17 10:17:04,065 [INFO] __main__: GET /api/sessions/29/results
 2025-10-17 10:17:04,074 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:17:04] "GET /api/sessions/29/results HTTP/1.1" 200 -
+2025-10-17 10:22:05,520 [INFO] __main__: GET /api/sessions/history
+2025-10-17 10:22:05,538 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:22:05] "GET /api/sessions/history?limit=20 HTTP/1.1" 200 -
+2025-10-17 10:22:08,941 [INFO] __main__: GET /api/sessions/29/results
+2025-10-17 10:22:08,946 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:22:08] "GET /api/sessions/29/results HTTP/1.1" 200 -
+2025-10-17 10:25:47,468 [DEBUG] __main__: Serving index.html
+2025-10-17 10:25:47,474 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:25:47] "GET / HTTP/1.1" 200 -
+2025-10-17 10:25:47,488 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:25:47] "GET /assets/index-Cd_uOxnF.css HTTP/1.1" 200 -
+2025-10-17 10:25:47,490 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:25:47] "GET /assets/index-Cd_xeFTT.js HTTP/1.1" 200 -
+2025-10-17 10:25:47,601 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:25:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-10-17 10:25:53,406 [INFO] __main__: GET /api/sessions/history
+2025-10-17 10:25:53,426 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:25:53] "GET /api/sessions/history?limit=20 HTTP/1.1" 200 -
+2025-10-17 10:26:42,134 [DEBUG] __main__: Serving index.html
+2025-10-17 10:26:42,135 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:26:42] "GET / HTTP/1.1" 200 -
+2025-10-17 10:26:42,150 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:26:42] "GET /assets/index-CSq5Kvfy.js HTTP/1.1" 200 -
+2025-10-17 10:26:42,151 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:26:42] "GET /assets/index-DP11Jdii.css HTTP/1.1" 200 -
+2025-10-17 10:26:49,003 [INFO] __main__: GET /api/sessions/history
+2025-10-17 10:26:49,005 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:26:49] "GET /api/sessions/history?limit=20 HTTP/1.1" 200 -

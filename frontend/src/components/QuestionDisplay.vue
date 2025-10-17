@@ -107,10 +107,22 @@
 
     <!-- Exit Button -->
     <div class="exit-section">
-      <button class="exit-button" @click="exitSession">
+      <button class="exit-button" @click="showExitModal = true">
         Exit Session
       </button>
     </div>
+
+    <!-- Exit Confirmation Modal -->
+    <Modal
+      :show="showExitModal"
+      title="Exit Session"
+      message="Are you sure you want to exit? Your progress will be saved."
+      confirm-text="Exit"
+      cancel-text="Continue"
+      type="warning"
+      @confirm="confirmExit"
+      @cancel="showExitModal = false"
+    />
   </div>
 </template>
 
@@ -118,6 +130,7 @@
 import { ref, computed, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { api, type Question as ApiQuestion } from '../services/api'
+import Modal from './Modal.vue'
 
 // Type definitions for UI
 interface QuestionOption {
@@ -160,6 +173,9 @@ const showFeedback = ref<boolean>(false)
 const isCorrect = ref<boolean>(false)
 const isLoading = ref<boolean>(false)
 const errorMessage = ref<string>('')
+
+// Modal state
+const showExitModal = ref<boolean>(false)
 
 // Load session from sessionStorage on mount
 onMounted(() => {
@@ -352,24 +368,24 @@ async function nextQuestion(): Promise<void> {
   }
 }
 
-async function exitSession(): Promise<void> {
-  if (confirm('Are you sure you want to exit? Your progress will be saved.')) {
-    try {
-      // Fetch results to finalize session
-      await api.getSessionResults(sessionId.value)
+async function confirmExit(): Promise<void> {
+  showExitModal.value = false
 
-      // Navigate to results
-      sessionStorage.setItem('sessionComplete', 'true')
-      sessionStorage.setItem('completedSessionId', String(sessionId.value))
-      sessionStorage.removeItem('currentSession')
-      window.dispatchEvent(new Event('sessionComplete'))
-      router.push('/exam')
-    } catch (error) {
-      console.error('Failed to save session:', error)
-      // Still allow exit even if save fails
-      sessionStorage.removeItem('currentSession')
-      router.push('/exam')
-    }
+  try {
+    // Fetch results to finalize session
+    await api.getSessionResults(sessionId.value)
+
+    // Navigate to results
+    sessionStorage.setItem('sessionComplete', 'true')
+    sessionStorage.setItem('completedSessionId', String(sessionId.value))
+    sessionStorage.removeItem('currentSession')
+    window.dispatchEvent(new Event('sessionComplete'))
+    router.push('/exam')
+  } catch (error) {
+    console.error('Failed to save session:', error)
+    // Still allow exit even if save fails
+    sessionStorage.removeItem('currentSession')
+    router.push('/exam')
   }
 }
 </script>
