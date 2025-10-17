@@ -90,7 +90,7 @@ entrypoint = "backend/app.py"
 language = "python3"
 
 [nix]
-channel = "stable-22_11"
+channel = "stable-24_05"
 
 [deployment]
 run = ["sh", "-c", "cd frontend && npm run build && cd .. && python backend/app.py"]
@@ -105,14 +105,14 @@ NODE_ENV = "production"
 
 ### `replit.nix` Configuration
 
-Ensure both Python and Node.js are available:
+Ensure both Python and Node.js 20+ are available (Vite 7 requires Node.js 20.19+ or 22.12+):
 
 ```nix
 { pkgs }: {
   deps = [
     pkgs.python310
     pkgs.python310Packages.pip
-    pkgs.nodejs-18_x
+    pkgs.nodejs_20
     pkgs.nodePackages.npm
   ];
 }
