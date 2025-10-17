@@ -43,7 +43,7 @@ This project uses Model Context Protocol (MCP) servers to enhance Claude Code's 
 
 ## Configuration File
 
-MCP servers are configured in `.claude/mcp_settings.json`:
+MCP servers are configured in `.mcp.json` at the project root:
 
 ```json
 {
@@ -60,6 +60,11 @@ MCP servers are configured in `.claude/mcp_settings.json`:
 }
 ```
 
+**Note**: This is a **project-scoped** configuration that:
+- Is checked into version control
+- Applies only to this project
+- Allows team members to use the same MCP servers
+
 ## Requirements
 
 - Node.js version 18 or higher
@@ -70,7 +75,7 @@ MCP servers are configured in `.claude/mcp_settings.json`:
 To add a new MCP server:
 
 1. Find the MCP server package (usually on npm)
-2. Add configuration to `.claude/mcp_settings.json`:
+2. Add configuration to `.mcp.json`:
    ```json
    {
      "mcpServers": {
