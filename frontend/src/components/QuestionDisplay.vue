@@ -282,20 +282,28 @@ async function submitAnswer(): Promise<void> {
 
     // Update state with response
     isCorrect.value = response.is_correct
-    showFeedback.value = true
 
-    // Update question with correct answer and explanation
-    if (question.value) {
-      question.value.correctAnswer = response.correct_answer
-      question.value.explanation = response.explanation
-      // key_terms comes as array from API
-      question.value.keyTerms = Array.isArray(response.key_terms)
-        ? response.key_terms.map((item: any) => ({
-            term: item.term,
-            definition: item.definition
-          }))
-        : []
-      question.value.regulatory = response.regulatory_context
+    // Only show feedback for 'study' mode
+    // For 'practice' and 'mock' modes, proceed directly to next question
+    if (sessionType.value === 'study') {
+      showFeedback.value = true
+
+      // Update question with correct answer and explanation
+      if (question.value) {
+        question.value.correctAnswer = response.correct_answer
+        question.value.explanation = response.explanation
+        // key_terms comes as array from API
+        question.value.keyTerms = Array.isArray(response.key_terms)
+          ? response.key_terms.map((item: any) => ({
+              term: item.term,
+              definition: item.definition
+            }))
+          : []
+        question.value.regulatory = response.regulatory_context
+      }
+    } else {
+      // For practice/mock modes, automatically proceed to next question
+      await nextQuestion()
     }
 
     console.log('Answer submitted successfully:', response)
@@ -344,11 +352,24 @@ async function nextQuestion(): Promise<void> {
   }
 }
 
-function exitSession(): void {
+async function exitSession(): Promise<void> {
   if (confirm('Are you sure you want to exit? Your progress will be saved.')) {
-    // Clear session and return to exam config
-    sessionStorage.removeItem('currentSession')
-    router.push('/exam')
+    try {
+      // Fetch results to finalize session
+      await api.getSessionResults(sessionId.value)
+
+      // Navigate to results
+      sessionStorage.setItem('sessionComplete', 'true')
+      sessionStorage.setItem('completedSessionId', String(sessionId.value))
+      sessionStorage.removeItem('currentSession')
+      window.dispatchEvent(new Event('sessionComplete'))
+      router.push('/exam')
+    } catch (error) {
+      console.error('Failed to save session:', error)
+      // Still allow exit even if save fails
+      sessionStorage.removeItem('currentSession')
+      router.push('/exam')
+    }
   }
 }
 </script>

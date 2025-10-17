@@ -318,11 +318,13 @@ function reviewIncorrect(): void {
 }
 
 function startNewSession(): void {
-  // Clear session data and navigate to config
+  // Clear session data
   sessionStorage.removeItem('currentSession')
   sessionStorage.removeItem('sessionComplete')
   sessionStorage.removeItem('completedSessionId')
-  router.push('/exam')
+
+  // Force full page reload to reset state
+  window.location.reload()
 }
 
 function viewHistory(): void {
