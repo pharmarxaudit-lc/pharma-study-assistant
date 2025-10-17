@@ -39,6 +39,7 @@ wheels/
 # Database - WILL BE TRACKED once populated with generated questions
 # backend/pharma_exam.db will be committed after question generation
 # For now, keeping it untracked until production-ready
+pharma_exam.db  # Ignore root-level database file (backend/pharma_exam.db is the correct location)
 
 # Frontend
 frontend/node_modules/
