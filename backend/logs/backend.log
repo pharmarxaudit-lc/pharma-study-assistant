@@ -13117,3 +13117,40 @@ TypeError: unsupported operand type(s) for -: 'str' and 'str'
 2025-10-17 10:26:42,151 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:26:42] "GET /assets/index-DP11Jdii.css HTTP/1.1" 200 -
 2025-10-17 10:26:49,003 [INFO] __main__: GET /api/sessions/history
 2025-10-17 10:26:49,005 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:26:49] "GET /api/sessions/history?limit=20 HTTP/1.1" 200 -
+2025-10-17 10:29:42,330 [INFO] __main__: ================================================================================
+2025-10-17 10:29:42,330 [INFO] __main__: Pharmacy Exam Prep Application Starting
+2025-10-17 10:29:42,330 [INFO] __main__: Upload folder: /Users/luiscotto/Code/pharma-study-assistant/uploads
+2025-10-17 10:29:42,330 [INFO] __main__: Output folder: /Users/luiscotto/Code/pharma-study-assistant/outputs
+2025-10-17 10:29:42,330 [INFO] __main__: Anthropic API Key configured: True
+2025-10-17 10:29:42,330 [INFO] __main__: ================================================================================
+2025-10-17 10:29:42,333 [INFO] __main__: Starting Flask server on port 5001 (debug=False)
+2025-10-17 10:29:42,338 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.5.102:5001
+2025-10-17 10:29:42,339 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-10-17 10:29:44,644 [DEBUG] __main__: Health check requested
+2025-10-17 10:29:44,644 [INFO] __main__: Health check: {'status': 'healthy', 'claude_configured': True, 'timestamp': '2025-10-17T10:29:44.644903'}
+2025-10-17 10:29:44,645 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:29:44] "GET /api/health HTTP/1.1" 200 -
+2025-10-17 10:36:30,494 [DEBUG] __main__: Serving index.html
+2025-10-17 10:36:30,497 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:36:30] "GET / HTTP/1.1" 200 -
+2025-10-17 10:36:30,507 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:36:30] "GET /assets/index-BIdpzdA_.js HTTP/1.1" 200 -
+2025-10-17 10:36:30,507 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:36:30] "GET /assets/index-FhwPlZqf.css HTTP/1.1" 200 -
+2025-10-17 10:36:35,433 [INFO] __main__: GET /api/sessions/29/results
+2025-10-17 10:36:35,458 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:36:35] "GET /api/sessions/29/results HTTP/1.1" 200 -
+2025-10-17 10:36:42,353 [DEBUG] __main__: Serving index.html
+2025-10-17 10:36:42,355 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:36:42] "GET / HTTP/1.1" 200 -
+2025-10-17 10:36:42,363 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:36:42] "[36mGET /assets/index-BIdpzdA_.js HTTP/1.1[0m" 304 -
+2025-10-17 10:36:42,364 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:36:42] "[36mGET /assets/index-FhwPlZqf.css HTTP/1.1[0m" 304 -
+2025-10-17 10:36:42,378 [INFO] __main__: GET /api/sessions/29/results
+2025-10-17 10:36:42,385 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:36:42] "GET /api/sessions/29/results HTTP/1.1" 200 -
+2025-10-17 10:36:46,811 [DEBUG] __main__: Serving index.html
+2025-10-17 10:36:46,812 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:36:46] "[36mGET / HTTP/1.1[0m" 304 -
+2025-10-17 10:36:46,819 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:36:46] "[36mGET /assets/index-FhwPlZqf.css HTTP/1.1[0m" 304 -
+2025-10-17 10:36:46,819 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:36:46] "[36mGET /assets/index-BIdpzdA_.js HTTP/1.1[0m" 304 -
+2025-10-17 10:36:48,649 [INFO] __main__: GET /api/sessions/29/results
+2025-10-17 10:36:48,653 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:36:48] "GET /api/sessions/29/results HTTP/1.1" 200 -
+2025-10-17 10:37:21,195 [DEBUG] __main__: Serving index.html
+2025-10-17 10:37:21,196 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:37:21] "GET / HTTP/1.1" 200 -
+2025-10-17 10:37:21,208 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:37:21] "[36mGET /assets/index-BIdpzdA_.js HTTP/1.1[0m" 304 -
+2025-10-17 10:37:21,209 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:37:21] "[36mGET /assets/index-FhwPlZqf.css HTTP/1.1[0m" 304 -

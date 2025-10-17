@@ -1,58 +1,39 @@
-2025-10-17 10:16:23,723 [INFO] __main__: ================================================================================
-2025-10-17 10:16:23,723 [INFO] __main__: Pharmacy Exam Prep Application Starting
-2025-10-17 10:16:23,723 [INFO] __main__: Upload folder: /Users/luiscotto/Code/pharma-study-assistant/uploads
-2025-10-17 10:16:23,723 [INFO] __main__: Output folder: /Users/luiscotto/Code/pharma-study-assistant/outputs
-2025-10-17 10:16:23,723 [INFO] __main__: Anthropic API Key configured: True
-2025-10-17 10:16:23,723 [INFO] __main__: ================================================================================
-2025-10-17 10:16:23,727 [INFO] __main__: Starting Flask server on port 5001 (debug=False)
+2025-10-17 10:29:42,330 [INFO] __main__: ================================================================================
+2025-10-17 10:29:42,330 [INFO] __main__: Pharmacy Exam Prep Application Starting
+2025-10-17 10:29:42,330 [INFO] __main__: Upload folder: /Users/luiscotto/Code/pharma-study-assistant/uploads
+2025-10-17 10:29:42,330 [INFO] __main__: Output folder: /Users/luiscotto/Code/pharma-study-assistant/outputs
+2025-10-17 10:29:42,330 [INFO] __main__: Anthropic API Key configured: True
+2025-10-17 10:29:42,330 [INFO] __main__: ================================================================================
+2025-10-17 10:29:42,333 [INFO] __main__: Starting Flask server on port 5001 (debug=False)
  * Serving Flask app 'app'
  * Debug mode: off
-2025-10-17 10:16:23,732 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+2025-10-17 10:29:42,338 [INFO] werkzeug: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on all addresses (0.0.0.0)
  * Running on http://127.0.0.1:5001
  * Running on http://192.168.5.102:5001
-2025-10-17 10:16:23,732 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
-2025-10-17 10:16:26,057 [DEBUG] __main__: Health check requested
-2025-10-17 10:16:26,057 [INFO] __main__: Health check: {'status': 'healthy', 'claude_configured': True, 'timestamp': '2025-10-17T10:16:26.057829'}
-2025-10-17 10:16:26,058 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:16:26] "GET /api/health HTTP/1.1" 200 -
-2025-10-17 10:16:30,288 [DEBUG] __main__: Serving index.html
-2025-10-17 10:16:30,289 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:16:30] "GET / HTTP/1.1" 200 -
-2025-10-17 10:16:30,301 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:16:30] "GET /assets/index-Cd_xeFTT.js HTTP/1.1" 200 -
-2025-10-17 10:16:30,302 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:16:30] "GET /assets/index-Cd_uOxnF.css HTTP/1.1" 200 -
-2025-10-17 10:16:37,109 [INFO] __main__: POST /api/sessions/start
-2025-10-17 10:16:37,127 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:16:37] "POST /api/sessions/start HTTP/1.1" 200 -
-2025-10-17 10:16:40,812 [INFO] __main__: POST /api/sessions/28/answer
-2025-10-17 10:16:40,844 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:16:40] "POST /api/sessions/28/answer HTTP/1.1" 200 -
-2025-10-17 10:16:45,090 [INFO] __main__: GET /api/sessions/28/results
-2025-10-17 10:16:45,098 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:16:45] "GET /api/sessions/28/results HTTP/1.1" 200 -
-2025-10-17 10:16:45,107 [INFO] __main__: GET /api/sessions/28/results
-2025-10-17 10:16:45,111 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:16:45] "GET /api/sessions/28/results HTTP/1.1" 200 -
-2025-10-17 10:16:49,471 [DEBUG] __main__: Serving index.html
-2025-10-17 10:16:49,471 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:16:49] "GET / HTTP/1.1" 200 -
-2025-10-17 10:16:49,482 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:16:49] "[36mGET /assets/index-Cd_xeFTT.js HTTP/1.1[0m" 304 -
-2025-10-17 10:16:49,484 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:16:49] "[36mGET /assets/index-Cd_uOxnF.css HTTP/1.1[0m" 304 -
-2025-10-17 10:16:54,749 [INFO] __main__: POST /api/sessions/start
-2025-10-17 10:16:54,754 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:16:54] "POST /api/sessions/start HTTP/1.1" 200 -
-2025-10-17 10:16:57,627 [INFO] __main__: POST /api/sessions/29/answer
-2025-10-17 10:16:57,630 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:16:57] "POST /api/sessions/29/answer HTTP/1.1" 200 -
-2025-10-17 10:17:04,052 [INFO] __main__: GET /api/sessions/29/results
-2025-10-17 10:17:04,057 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:17:04] "GET /api/sessions/29/results HTTP/1.1" 200 -
-2025-10-17 10:17:04,065 [INFO] __main__: GET /api/sessions/29/results
-2025-10-17 10:17:04,074 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:17:04] "GET /api/sessions/29/results HTTP/1.1" 200 -
-2025-10-17 10:22:05,520 [INFO] __main__: GET /api/sessions/history
-2025-10-17 10:22:05,538 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:22:05] "GET /api/sessions/history?limit=20 HTTP/1.1" 200 -
-2025-10-17 10:22:08,941 [INFO] __main__: GET /api/sessions/29/results
-2025-10-17 10:22:08,946 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:22:08] "GET /api/sessions/29/results HTTP/1.1" 200 -
-2025-10-17 10:25:47,468 [DEBUG] __main__: Serving index.html
-2025-10-17 10:25:47,474 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:25:47] "GET / HTTP/1.1" 200 -
-2025-10-17 10:25:47,488 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:25:47] "GET /assets/index-Cd_uOxnF.css HTTP/1.1" 200 -
-2025-10-17 10:25:47,490 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:25:47] "GET /assets/index-Cd_xeFTT.js HTTP/1.1" 200 -
-2025-10-17 10:25:47,601 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:25:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
-2025-10-17 10:25:53,406 [INFO] __main__: GET /api/sessions/history
-2025-10-17 10:25:53,426 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:25:53] "GET /api/sessions/history?limit=20 HTTP/1.1" 200 -
-2025-10-17 10:26:42,134 [DEBUG] __main__: Serving index.html
-2025-10-17 10:26:42,135 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:26:42] "GET / HTTP/1.1" 200 -
-2025-10-17 10:26:42,150 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:26:42] "GET /assets/index-CSq5Kvfy.js HTTP/1.1" 200 -
-2025-10-17 10:26:42,151 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:26:42] "GET /assets/index-DP11Jdii.css HTTP/1.1" 200 -
-2025-10-17 10:26:49,003 [INFO] __main__: GET /api/sessions/history
-2025-10-17 10:26:49,005 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:26:49] "GET /api/sessions/history?limit=20 HTTP/1.1" 200 -
+2025-10-17 10:29:42,339 [INFO] werkzeug: [33mPress CTRL+C to quit[0m
+2025-10-17 10:29:44,644 [DEBUG] __main__: Health check requested
+2025-10-17 10:29:44,644 [INFO] __main__: Health check: {'status': 'healthy', 'claude_configured': True, 'timestamp': '2025-10-17T10:29:44.644903'}
+2025-10-17 10:29:44,645 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:29:44] "GET /api/health HTTP/1.1" 200 -
+2025-10-17 10:36:30,494 [DEBUG] __main__: Serving index.html
+2025-10-17 10:36:30,497 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:36:30] "GET / HTTP/1.1" 200 -
+2025-10-17 10:36:30,507 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:36:30] "GET /assets/index-BIdpzdA_.js HTTP/1.1" 200 -
+2025-10-17 10:36:30,507 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:36:30] "GET /assets/index-FhwPlZqf.css HTTP/1.1" 200 -
+2025-10-17 10:36:35,433 [INFO] __main__: GET /api/sessions/29/results
+2025-10-17 10:36:35,458 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:36:35] "GET /api/sessions/29/results HTTP/1.1" 200 -
+2025-10-17 10:36:42,353 [DEBUG] __main__: Serving index.html
+2025-10-17 10:36:42,355 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:36:42] "GET / HTTP/1.1" 200 -
+2025-10-17 10:36:42,363 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:36:42] "[36mGET /assets/index-BIdpzdA_.js HTTP/1.1[0m" 304 -
+2025-10-17 10:36:42,364 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:36:42] "[36mGET /assets/index-FhwPlZqf.css HTTP/1.1[0m" 304 -
+2025-10-17 10:36:42,378 [INFO] __main__: GET /api/sessions/29/results
+2025-10-17 10:36:42,385 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:36:42] "GET /api/sessions/29/results HTTP/1.1" 200 -
+2025-10-17 10:36:46,811 [DEBUG] __main__: Serving index.html
+2025-10-17 10:36:46,812 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:36:46] "[36mGET / HTTP/1.1[0m" 304 -
+2025-10-17 10:36:46,819 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:36:46] "[36mGET /assets/index-FhwPlZqf.css HTTP/1.1[0m" 304 -
+2025-10-17 10:36:46,819 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:36:46] "[36mGET /assets/index-BIdpzdA_.js HTTP/1.1[0m" 304 -
+2025-10-17 10:36:48,649 [INFO] __main__: GET /api/sessions/29/results
+2025-10-17 10:36:48,653 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:36:48] "GET /api/sessions/29/results HTTP/1.1" 200 -
+2025-10-17 10:37:21,195 [DEBUG] __main__: Serving index.html
+2025-10-17 10:37:21,196 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:37:21] "GET / HTTP/1.1" 200 -
+2025-10-17 10:37:21,208 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:37:21] "[36mGET /assets/index-BIdpzdA_.js HTTP/1.1[0m" 304 -
+2025-10-17 10:37:21,209 [INFO] werkzeug: 127.0.0.1 - - [17/Oct/2025 10:37:21] "[36mGET /assets/index-FhwPlZqf.css HTTP/1.1[0m" 304 -

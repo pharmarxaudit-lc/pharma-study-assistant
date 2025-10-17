@@ -23,6 +23,19 @@ const sessionComplete = ref<boolean>(false)
 
 // Check session status
 function checkSessionStatus() {
+  // Check for active session first
+  const sessionData = sessionStorage.getItem('currentSession')
+
+  // If there's no current session, clear any completion flags
+  // This handles the case when user navigates to Exam Prep after a page reload
+  if (!sessionData) {
+    sessionStorage.removeItem('sessionComplete')
+    sessionStorage.removeItem('completedSessionId')
+    hasActiveSession.value = false
+    sessionComplete.value = false
+    return
+  }
+
   // Check if session is complete
   const isComplete = sessionStorage.getItem('sessionComplete')
   if (isComplete === 'true') {
@@ -32,16 +45,10 @@ function checkSessionStatus() {
     return
   }
 
-  // Check for active session
-  const sessionData = sessionStorage.getItem('currentSession')
-  if (sessionData) {
-    hasActiveSession.value = true
-    sessionComplete.value = false
-    console.log('[ExamView] Active session found')
-  } else {
-    hasActiveSession.value = false
-    sessionComplete.value = false
-  }
+  // Active session found
+  hasActiveSession.value = true
+  sessionComplete.value = false
+  console.log('[ExamView] Active session found')
 }
 
 // Check for active session on mount
