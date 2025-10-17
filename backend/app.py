@@ -957,6 +957,109 @@ def check_database_schema():
         logger.error(f"Error checking schema: {e}", exc_info=True)
         return jsonify({"error": str(e)}), 500
 
+@app.route('/api/maintenance/db-fix-schema', methods=['POST'])
+def fix_database_schema():
+    """Fix database schema issues by adding missing columns."""
+    logger.info("POST /api/maintenance/db-fix-schema")
+
+    try:
+        from sqlalchemy import inspect
+        import sqlite3
+
+        data = request.get_json() or {}
+        confirm = data.get('confirm', False)
+
+        if not confirm:
+            return jsonify({"error": "Confirmation required. Send {\"confirm\": true}"}), 400
+
+        inspector = inspect(db.engine)
+        fixes_applied = []
+
+        # Check and fix study_sessions table
+        if 'study_sessions' in inspector.get_table_names():
+            columns = {col['name'] for col in inspector.get_columns('study_sessions')}
+
+            if 'pass_threshold' not in columns:
+                logger.info("Adding missing column: pass_threshold to study_sessions")
+
+                # Use raw SQLite connection to add column
+                conn = sqlite3.connect(Config.DATABASE_PATH)
+                cursor = conn.cursor()
+                cursor.execute("ALTER TABLE study_sessions ADD COLUMN pass_threshold INTEGER DEFAULT 70;")
+                conn.commit()
+                conn.close()
+
+                fixes_applied.append({
+                    'table': 'study_sessions',
+                    'fix': 'Added column: pass_threshold (DEFAULT 70)'
+                })
+
+        if not fixes_applied:
+            return jsonify({
+                'success': True,
+                'message': 'No schema fixes needed - database is up to date',
+                'fixes_applied': []
+            })
+
+        logger.info(f"✅ Applied {len(fixes_applied)} schema fix(es)")
+
+        return jsonify({
+            'success': True,
+            'message': f'Successfully applied {len(fixes_applied)} schema fix(es)',
+            'fixes_applied': fixes_applied
+        })
+
+    except Exception as e:
+        logger.error(f"Error fixing schema: {e}", exc_info=True)
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/maintenance/clear-user-data', methods=['POST'])
+def clear_user_data():
+    """Clear user attempts and sessions while preserving documents and questions."""
+    logger.info("POST /api/maintenance/clear-user-data")
+
+    try:
+        data = request.get_json() or {}
+        confirm = data.get('confirm', False)
+
+        if not confirm:
+            return jsonify({"error": "Confirmation required. Send {\"confirm\": true}"}), 400
+
+        logger.warning("🗑️ CLEARING USER DATA - Deleting attempts and sessions")
+
+        with db.session() as session:
+            # Get counts before deletion
+            attempts_count = session.query(UserAttempt).count()
+            sessions_count = session.query(StudySession).count()
+
+            # Delete user attempts and sessions
+            session.query(UserAttempt).delete()
+            session.query(StudySession).delete()
+
+            # Reset question statistics
+            questions = session.query(Question).all()
+            for q in questions:
+                q.times_seen = 0
+                q.times_correct = 0
+
+            session.commit()
+
+        logger.info(f"✅ Cleared {attempts_count} attempts and {sessions_count} sessions")
+
+        return jsonify({
+            'success': True,
+            'message': 'User data cleared successfully',
+            'deleted': {
+                'attempts': attempts_count,
+                'sessions': sessions_count
+            },
+            'preserved': 'Documents and questions remain intact'
+        })
+
+    except Exception as e:
+        logger.error(f"Error clearing user data: {e}", exc_info=True)
+        return jsonify({"error": str(e)}), 500
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     debug_mode = os.environ.get('DEBUG', 'False').lower() == 'true'

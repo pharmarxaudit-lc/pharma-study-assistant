@@ -20,6 +20,68 @@
               <br><small>Fix: {{ issue.fix }}</small>
             </li>
           </ul>
+
+          <button @click="fixSchema" :disabled="fixingSchema" class="btn-warning" style="margin-top: 12px;">
+            {{ fixingSchema ? 'Fixing...' : '🔧 Fix Schema (Add Missing Columns)' }}
+          </button>
+        </div>
+      </div>
+
+      <div v-if="fixSchemaResult" class="result-box" :class="fixSchemaResult.success ? 'success' : 'error'">
+        <p>{{ fixSchemaResult.message }}</p>
+        <ul v-if="fixSchemaResult.fixes_applied && fixSchemaResult.fixes_applied.length > 0">
+          <li v-for="(fix, idx) in fixSchemaResult.fixes_applied" :key="idx">
+            <strong>{{ fix.table }}:</strong> {{ fix.fix }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Clear User Data -->
+    <div class="card warning-zone">
+      <h3>⚠️ Clear User Data</h3>
+      <p class="warning-text">
+        <strong>Warning:</strong> This will delete all user attempts and session history, but will preserve your documents and generated questions. Question statistics will be reset.
+      </p>
+
+      <div v-if="!showClearConfirm">
+        <button @click="showClearConfirm = true" class="btn-warning">
+          Clear User Data
+        </button>
+      </div>
+
+      <div v-else class="confirm-box">
+        <p><strong>Are you sure you want to clear all user data?</strong></p>
+        <p>Type "CLEAR" to confirm:</p>
+        <input
+          v-model="clearConfirmText"
+          type="text"
+          placeholder="Type CLEAR"
+          class="confirm-input"
+        >
+        <div class="button-group">
+          <button
+            @click="clearUserData"
+            :disabled="clearConfirmText !== 'CLEAR' || clearing"
+            class="btn-warning"
+          >
+            {{ clearing ? 'Clearing...' : 'Confirm Clear' }}
+          </button>
+          <button @click="cancelClear" class="btn-secondary">
+            Cancel
+          </button>
+        </div>
+      </div>
+
+      <div v-if="clearResult" class="result-box" :class="clearResult.success ? 'success' : 'error'">
+        <p>{{ clearResult.message }}</p>
+        <div v-if="clearResult.deleted">
+          <p><strong>Deleted:</strong></p>
+          <ul>
+            <li>User Attempts: {{ clearResult.deleted.attempts }}</li>
+            <li>Study Sessions: {{ clearResult.deleted.sessions }}</li>
+          </ul>
+          <p style="margin-top: 8px;"><strong>{{ clearResult.preserved }}</strong></p>
         </div>
       </div>
     </div>
@@ -114,18 +176,25 @@ const API_BASE_URL = import.meta.env.PROD ? '' : 'http://localhost:5001'
 const checking = ref(false)
 const loadingInfo = ref(false)
 const resetting = ref(false)
+const fixingSchema = ref(false)
+const clearing = ref(false)
 const showResetConfirm = ref(false)
+const showClearConfirm = ref(false)
 const resetConfirmText = ref('')
+const clearConfirmText = ref('')
 
 const schemaResult = ref<any>(null)
 const dbInfo = ref<any>(null)
 const resetResult = ref<any>(null)
+const fixSchemaResult = ref<any>(null)
+const clearResult = ref<any>(null)
 const error = ref<string | null>(null)
 
 async function checkSchema() {
   checking.value = true
   error.value = null
   schemaResult.value = null
+  fixSchemaResult.value = null
 
   try {
     const response = await fetch(`${API_BASE_URL}/api/maintenance/db-check-schema`)
@@ -139,6 +208,78 @@ async function checkSchema() {
   } finally {
     checking.value = false
   }
+}
+
+async function fixSchema() {
+  fixingSchema.value = true
+  error.value = null
+  fixSchemaResult.value = null
+
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/maintenance/db-fix-schema`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ confirm: true })
+    })
+
+    if (!response.ok) {
+      const errorData = await response.json()
+      throw new Error(errorData.error || 'Failed to fix schema')
+    }
+
+    fixSchemaResult.value = await response.json()
+
+    // Re-check schema after fix
+    await checkSchema()
+
+  } catch (err: any) {
+    error.value = err.message
+    fixSchemaResult.value = { success: false, message: err.message }
+  } finally {
+    fixingSchema.value = false
+  }
+}
+
+async function clearUserData() {
+  if (clearConfirmText.value !== 'CLEAR') return
+
+  clearing.value = true
+  error.value = null
+  clearResult.value = null
+
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/maintenance/clear-user-data`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ confirm: true })
+    })
+
+    if (!response.ok) {
+      const errorData = await response.json()
+      throw new Error(errorData.error || 'Failed to clear user data')
+    }
+
+    clearResult.value = await response.json()
+
+    // Reset form
+    showClearConfirm.value = false
+    clearConfirmText.value = ''
+
+    // Reload database info
+    await loadDbInfo()
+
+  } catch (err: any) {
+    error.value = err.message
+    clearResult.value = { success: false, message: err.message }
+  } finally {
+    clearing.value = false
+  }
+}
+
+function cancelClear() {
+  showClearConfirm.value = false
+  clearConfirmText.value = ''
+  clearResult.value = null
 }
 
 async function loadDbInfo() {
@@ -238,6 +379,20 @@ h2 {
 .danger-zone {
   border-color: #ff4444;
   background: #fff8f8;
+}
+
+.warning-zone {
+  border-color: #ff9800;
+  background: #fff8f0;
+}
+
+.btn-warning {
+  background: #ff9800;
+  color: white;
+}
+
+.btn-warning:hover:not(:disabled) {
+  background: #e68900;
 }
 
 .btn-primary, .btn-secondary, .btn-danger {
