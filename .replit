@@ -1,4 +1,4 @@
-run = "sh -c 'cd frontend && npm install && npm run build && cd .. && python backend/app.py'"
+run = "sh -c 'cd frontend && rm -rf node_modules package-lock.json && npm install && npm run build && cd .. && python backend/app.py'"
 entrypoint = "backend/app.py"
 language = "python3"
 
