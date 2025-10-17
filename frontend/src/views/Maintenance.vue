@@ -120,45 +120,16 @@
       </div>
     </div>
 
-    <!-- Database Reset -->
-    <div class="card danger-zone">
-      <h3>⚠️ Danger Zone</h3>
+    <!-- Database Reset (DISABLED) -->
+    <div class="card danger-zone" style="opacity: 0.5; pointer-events: none;">
+      <h3>⚠️ Danger Zone (DISABLED)</h3>
       <p class="warning-text">
-        <strong>Warning:</strong> Resetting the database will permanently delete ALL data including documents, questions, sessions, and user attempts. This action cannot be undone!
+        <strong>Feature Disabled:</strong> Full database reset is disabled to prevent accidental data loss. Use "Fix Schema" or "Clear User Data" instead.
       </p>
 
-      <div v-if="!showResetConfirm">
-        <button @click="showResetConfirm = true" class="btn-danger">
-          Reset Database
-        </button>
-      </div>
-
-      <div v-else class="confirm-box">
-        <p><strong>Are you absolutely sure?</strong></p>
-        <p>Type "RESET" to confirm:</p>
-        <input
-          v-model="resetConfirmText"
-          type="text"
-          placeholder="Type RESET"
-          class="confirm-input"
-        >
-        <div class="button-group">
-          <button
-            @click="resetDatabase"
-            :disabled="resetConfirmText !== 'RESET' || resetting"
-            class="btn-danger"
-          >
-            {{ resetting ? 'Resetting...' : 'Confirm Reset' }}
-          </button>
-          <button @click="cancelReset" class="btn-secondary">
-            Cancel
-          </button>
-        </div>
-      </div>
-
-      <div v-if="resetResult" class="result-box" :class="resetResult.success ? 'success' : 'error'">
-        <p>{{ resetResult.message }}</p>
-      </div>
+      <button disabled class="btn-danger">
+        Reset Database (Disabled)
+      </button>
     </div>
 
     <!-- Error Display -->
