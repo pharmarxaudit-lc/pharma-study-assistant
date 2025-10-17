@@ -304,11 +304,25 @@ python backend/init_database.py
 - Check Packages tab - dependencies should be installed
 - Run manually: `pip install -r requirements.txt`
 
-### Issue 2: Frontend Not Building
+### Issue 2: Frontend Not Building / "vite: command not found"
 
-**Symptoms:** Missing `dist/` folder or build errors
+**Symptoms:** Missing `dist/` folder, build errors, or `vite: command not found` error
+
+**Root Cause:** Replit's environment may not properly set up the PATH to find locally installed npm packages.
 
 **Solutions:**
+
+1. **Update `package.json` to use `npx`** (Recommended):
+
+In `frontend/package.json`, change the build script to:
+
+```json
+"scripts": {
+  "build": "npx vite build"
+}
+```
+
+2. **Rebuild frontend manually:**
 
 ```bash
 # Check Node.js version
