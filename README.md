@@ -15,7 +15,6 @@ cp .env.example .env
 
 2. **Install Backend Dependencies**
 ```bash
-cd backend
 pip install -r requirements.txt
 ```
 
@@ -155,7 +154,7 @@ With Anthropic's $5 free credit:
 - Check browser console for errors
 
 ### "Module not found" error
-- Run: `cd backend && pip install -r requirements.txt`
+- Run: `pip install -r requirements.txt`
 
 ### "Frontend not loading"
 ```bash
@@ -175,8 +174,7 @@ pharmacy-exam-prep/
 │   ├── text_processor.py         # Text cleaning & structuring
 │   ├── content_analyzer.py       # Claude-powered analysis
 │   ├── llm_formatter.py          # Claude formatting
-│   ├── config.py                 # Configuration
-│   └── requirements.txt
+│   └── config.py                 # Configuration
 ├── frontend/
 │   ├── src/
 │   │   ├── App.vue
