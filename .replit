@@ -3,7 +3,7 @@ entrypoint = "backend/app.py"
 language = "python3"
 
 [nix]
-channel = "unstable"
+channel = "stable-24_11"
 
 [deployment]
 run = ["sh", "-c", "cd frontend && npm run build && cd .. && python backend/app.py"]

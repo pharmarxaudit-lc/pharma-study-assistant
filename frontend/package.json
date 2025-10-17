@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npx vite build",
+    "build": "vite build",
     "type-check": "vue-tsc --noEmit",
     "lint": "vue-tsc --noEmit"
   },
