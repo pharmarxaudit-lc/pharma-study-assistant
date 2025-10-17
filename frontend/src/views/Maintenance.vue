@@ -3,6 +3,35 @@
     <h2>🔧 Database Maintenance</h2>
     <p class="subtitle">Manage and monitor your database</p>
 
+    <!-- Application Settings -->
+    <div class="card settings-card">
+      <h3>⚙️ Application Settings</h3>
+
+      <div class="setting-group">
+        <label for="timezone-select">Timezone:</label>
+        <select
+          id="timezone-select"
+          v-model="selectedTimezone"
+          @change="saveTimezone"
+          class="timezone-select"
+        >
+          <option value="America/Puerto_Rico">Atlantic (AST) - Puerto Rico</option>
+          <option value="America/New_York">Eastern (EST/EDT)</option>
+          <option value="America/Chicago">Central (CST/CDT)</option>
+          <option value="America/Denver">Mountain (MST/MDT)</option>
+          <option value="America/Los_Angeles">Pacific (PST/PDT)</option>
+          <option value="UTC">UTC</option>
+        </select>
+        <p class="setting-help">
+          All timestamps will be displayed in this timezone. Current time: {{ currentTime }}
+        </p>
+      </div>
+
+      <div v-if="timezoneResult" class="result-box" :class="timezoneResult.success ? 'success' : 'error'">
+        <p>{{ timezoneResult.message }}</p>
+      </div>
+    </div>
+
     <!-- Schema Check -->
     <div class="card">
       <h3>Schema Health Check</h3>
@@ -140,7 +169,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted, computed } from 'vue'
 
 const API_BASE_URL = import.meta.env.PROD ? '' : 'http://localhost:5001'
 
@@ -160,6 +189,70 @@ const resetResult = ref<any>(null)
 const fixSchemaResult = ref<any>(null)
 const clearResult = ref<any>(null)
 const error = ref<string | null>(null)
+
+// Timezone settings
+const selectedTimezone = ref('America/Puerto_Rico')  // Default to AST
+const timezoneResult = ref<any>(null)
+const currentTimeValue = ref(new Date())
+
+// Current time display
+const currentTime = computed(() => {
+  return currentTimeValue.value.toLocaleString('en-US', {
+    timeZone: selectedTimezone.value,
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    timeZoneName: 'short'
+  })
+})
+
+// Load timezone on mount
+onMounted(async () => {
+  await loadTimezone()
+  // Update current time every second
+  setInterval(() => {
+    currentTimeValue.value = new Date()
+  }, 1000)
+})
+
+async function loadTimezone() {
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/settings/timezone`)
+    if (response.ok) {
+      const data = await response.json()
+      selectedTimezone.value = data.timezone || 'America/Puerto_Rico'
+    }
+  } catch (err) {
+    console.error('Failed to load timezone:', err)
+    // Use default AST if loading fails
+  }
+}
+
+async function saveTimezone() {
+  timezoneResult.value = null
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/settings/timezone`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ timezone: selectedTimezone.value })
+    })
+
+    if (!response.ok) {
+      const errorData = await response.json()
+      throw new Error(errorData.error || 'Failed to save timezone')
+    }
+
+    const data = await response.json()
+    timezoneResult.value = { success: true, message: data.message }
+
+    // Clear success message after 3 seconds
+    setTimeout(() => {
+      timezoneResult.value = null
+    }, 3000)
+  } catch (err: any) {
+    timezoneResult.value = { success: false, message: err.message }
+  }
+}
 
 async function checkSchema() {
   checking.value = true
@@ -345,6 +438,53 @@ h2 {
   margin-top: 0;
   margin-bottom: 16px;
   color: #2c3e50;
+}
+
+.settings-card {
+  border-color: #667eea;
+  background: linear-gradient(135deg, #f5f7ff 0%, #ffffff 100%);
+}
+
+.setting-group {
+  margin-bottom: 20px;
+}
+
+.setting-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #2c3e50;
+}
+
+.timezone-select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.timezone-select:hover {
+  border-color: #667eea;
+}
+
+.timezone-select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.setting-help {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #666;
+  font-family: monospace;
+  background: #f5f5f5;
+  padding: 8px 12px;
+  border-radius: 4px;
 }
 
 .danger-zone {

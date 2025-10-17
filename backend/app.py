@@ -13,6 +13,7 @@ from llm_formatter import ClaudeFormatter
 from pdf_extractor import PDFExtractor
 from sqlalchemy import func
 from text_processor import TextProcessor
+from timezone_utils import now_in_timezone, format_datetime, to_iso_string
 from werkzeug.utils import secure_filename
 
 # Create necessary directories first
@@ -115,7 +116,7 @@ def health():
     health_data = {
         "status": "healthy",
         "claude_configured": bool(Config.ANTHROPIC_API_KEY),
-        "timestamp": datetime.now().isoformat()
+        "timestamp": to_iso_string()
     }
     logger.info(f"Health check: {health_data}")
     return jsonify(health_data)
@@ -137,7 +138,7 @@ def upload_file():
         return jsonify({"error": "Invalid file"}), 400
 
     filename = secure_filename(file.filename)
-    file_id = datetime.now().strftime("%Y%m%d_%H%M%S")
+    file_id = now_in_timezone().strftime("%Y%m%d_%H%M%S")
     filepath = os.path.join(Config.UPLOAD_FOLDER, f"{file_id}_{filename}")
 
     logger.info(f"Saving file to: {filepath}")
@@ -255,7 +256,7 @@ def process_file(file_id):
             # Write markdown header
             with open(md_path, 'w', encoding='utf-8') as f:
                 f.write("# Pharmacy Law Study Guide\n\n")
-                f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n---\n\n")
+                f.write(f"Generated: {now_in_timezone().strftime('%Y-%m-%d %H:%M:%S')}\n\n---\n\n")
 
             analyzer = PharmacyContentAnalyzer(logger=session_logger)
             formatter = ClaudeFormatter(logger=session_logger)
@@ -290,7 +291,7 @@ def process_file(file_id):
             with open(json_path, 'w') as f:
                 json.dump({
                     "metadata": {
-                        "generated": datetime.now().isoformat(),
+                        "generated": to_iso_string(),
                         "total_topics": len(analyses),
                         "file_id": file_id
                     },
@@ -565,7 +566,7 @@ def start_session():
             new_session = StudySession(
                 document_id=document.id,
                 session_type=session_type,
-                start_time=datetime.now(),
+                start_time=now_in_timezone(),
                 total_questions=len(questions),
                 correct_answers=0,
                 score_percentage=0.0,
@@ -652,7 +653,7 @@ def submit_answer(session_id):
                 session_id=session_id,
                 selected_answer=selected_answer,
                 is_correct=is_correct,
-                attempt_date=datetime.now(),
+                attempt_date=now_in_timezone(),
                 time_spent_seconds=time_spent
             )
             db_session.add(attempt)
@@ -725,7 +726,7 @@ def get_session_results(session_id):
 
             # Mark as complete
             if not study_session.end_time:
-                study_session.end_time = datetime.now()
+                study_session.end_time = now_in_timezone()
                 study_session.score_percentage = (
                     (study_session.correct_answers / study_session.total_questions * 100)
                     if study_session.total_questions > 0 else 0
@@ -762,17 +763,29 @@ def get_session_results(session_id):
                     if attempt.is_correct:
                         topic_breakdown[question.topic_name]['correct'] += 1
 
-            # Calculate timing
+            # Calculate timing and format dates
             duration_seconds = 0
-            if study_session.end_time and study_session.start_time:
-                # Parse datetime strings from SQLite
-                end_dt = datetime.fromisoformat(study_session.end_time) if isinstance(study_session.end_time, str) else study_session.end_time
+            start_dt = None
+            end_dt = None
+
+            if study_session.start_time:
                 start_dt = datetime.fromisoformat(study_session.start_time) if isinstance(study_session.start_time, str) else study_session.start_time
+
+            if study_session.end_time:
+                end_dt = datetime.fromisoformat(study_session.end_time) if isinstance(study_session.end_time, str) else study_session.end_time
+
+            if end_dt and start_dt:
                 duration_seconds = int((end_dt - start_dt).total_seconds())
+
+            # Format dates for display (pre-formatted strings to avoid JS timezone issues)
+            start_time_formatted = format_datetime(start_dt, 'full') if start_dt else None
+            end_time_formatted = format_datetime(end_dt, 'full') if end_dt else None
 
             return jsonify({
                 'session_id': session_id,
                 'session_type': study_session.session_type,
+                'start_time_formatted': start_time_formatted,  # "October 17, 2025 11:30 AM AST"
+                'end_time_formatted': end_time_formatted,  # "October 17, 2025 11:45 AM AST"
                 'score': study_session.correct_answers,
                 'total': study_session.total_questions,
                 'percentage': round(study_session.score_percentage, 1),
@@ -814,20 +827,21 @@ def get_session_history():
 
             sessions_data = []
             for s in sessions:
-                # Handle datetime fields - they may be strings or datetime objects from SQLite
+                # Convert datetime fields to datetime objects if they're strings
                 start_time = s.start_time
-                if start_time and not isinstance(start_time, str):
-                    start_time = start_time.isoformat()
+                if isinstance(start_time, str):
+                    start_time = datetime.fromisoformat(start_time)
 
-                end_time = s.end_time
-                if end_time and not isinstance(end_time, str):
-                    end_time = end_time.isoformat()
+                # Format dates for display (pre-formatted strings to avoid JS timezone issues)
+                start_time_formatted = format_datetime(start_time, 'relative') if start_time else None
+                start_time_full = format_datetime(start_time, 'full') if start_time else None
 
                 sessions_data.append({
                     'id': s.id,
                     'session_type': s.session_type,
-                    'start_time': start_time,
-                    'end_time': end_time,
+                    'start_time': start_time.isoformat() if start_time else None,  # ISO for sorting
+                    'start_time_formatted': start_time_formatted,  # Pre-formatted: "Today, 11:30 AM" or "2 days ago"
+                    'start_time_full': start_time_full,  # Full format: "October 17, 2025 11:30 AM AST"
                     'score': s.correct_answers,
                     'total': s.total_questions,
                     'percentage': round(s.score_percentage, 1),
@@ -841,6 +855,88 @@ def get_session_history():
 
     except Exception as e:
         logger.error(f"Error getting session history: {e}", exc_info=True)
+        return jsonify({"error": str(e)}), 500
+
+# ============================================================================
+# SETTINGS ENDPOINTS
+# ============================================================================
+
+@app.route('/api/settings/timezone', methods=['GET'])
+def get_timezone_setting():
+    """Get the configured timezone setting."""
+    logger.info("GET /api/settings/timezone")
+
+    try:
+        from database_models import AppSettings
+
+        with db.session() as session:
+            setting = session.query(AppSettings).filter_by(setting_key='timezone').first()
+            timezone = setting.setting_value if setting else 'America/Puerto_Rico'  # Default to AST
+
+            return jsonify({
+                'timezone': timezone,
+                'updated_at': setting.updated_at if setting else None
+            })
+
+    except Exception as e:
+        logger.error(f"Error getting timezone: {e}", exc_info=True)
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/settings/timezone', methods=['POST'])
+def save_timezone_setting():
+    """Save the timezone setting."""
+    logger.info("POST /api/settings/timezone")
+
+    try:
+        from database_models import AppSettings
+        from timezone_utils import clear_timezone_cache
+
+        data = request.get_json()
+        timezone = data.get('timezone')
+
+        if not timezone:
+            return jsonify({"error": "Timezone is required"}), 400
+
+        # Validate timezone (basic check)
+        valid_timezones = [
+            'America/Puerto_Rico', 'America/New_York', 'America/Chicago',
+            'America/Denver', 'America/Los_Angeles', 'UTC'
+        ]
+        if timezone not in valid_timezones:
+            return jsonify({"error": f"Invalid timezone. Must be one of: {', '.join(valid_timezones)}"}), 400
+
+        with db.session() as session:
+            # Check if setting exists
+            setting = session.query(AppSettings).filter_by(setting_key='timezone').first()
+
+            if setting:
+                # Update existing
+                setting.setting_value = timezone
+                setting.updated_at = to_iso_string()
+            else:
+                # Create new
+                setting = AppSettings(
+                    setting_key='timezone',
+                    setting_value=timezone,
+                    updated_at=to_iso_string()
+                )
+                session.add(setting)
+
+            session.commit()
+
+            # Clear timezone cache so next request uses new timezone
+            clear_timezone_cache()
+
+            logger.info(f"✅ Timezone updated to: {timezone}")
+
+            return jsonify({
+                'success': True,
+                'message': f'Timezone updated to {timezone}',
+                'timezone': timezone
+            })
+
+    except Exception as e:
+        logger.error(f"Error saving timezone: {e}", exc_info=True)
         return jsonify({"error": str(e)}), 500
 
 # ============================================================================

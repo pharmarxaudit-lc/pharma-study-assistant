@@ -6,6 +6,18 @@
         <span class="question-number">Question {{ currentQuestion }} of {{ totalQuestions }}</span>
         <span v-if="question" class="topic-badge">{{ question.topic }}</span>
       </div>
+      <div class="timer-section">
+        <div class="session-timer">
+          <span class="timer-icon">⏱️</span>
+          <span class="timer-label">Session:</span>
+          <span class="timer-value">{{ formatTime(sessionElapsedSeconds) }}</span>
+        </div>
+        <div class="question-timer">
+          <span class="timer-icon">⏲️</span>
+          <span class="timer-label">Question:</span>
+          <span class="timer-value">{{ formatTime(questionElapsedSeconds) }}</span>
+        </div>
+      </div>
       <div class="progress-bar">
         <div class="progress-fill" :style="{ width: progressPercent + '%' }"></div>
       </div>
@@ -127,7 +139,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { api, type Question as ApiQuestion } from '../services/api'
 import Modal from './Modal.vue'
@@ -177,6 +189,33 @@ const errorMessage = ref<string>('')
 // Modal state
 const showExitModal = ref<boolean>(false)
 
+// Timer state
+const sessionStartTime = ref<number>(Date.now())
+const questionStartTime = ref<number>(Date.now())
+const sessionElapsedSeconds = ref<number>(0)
+const questionElapsedSeconds = ref<number>(0)
+let timerInterval: number | null = null
+
+// Format time as MM:SS
+function formatTime(seconds: number): string {
+  const mins = Math.floor(seconds / 60)
+  const secs = seconds % 60
+  return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
+}
+
+// Update timers every second
+function updateTimers(): void {
+  const now = Date.now()
+  sessionElapsedSeconds.value = Math.floor((now - sessionStartTime.value) / 1000)
+  questionElapsedSeconds.value = Math.floor((now - questionStartTime.value) / 1000)
+}
+
+// Reset question timer when moving to next question
+function resetQuestionTimer(): void {
+  questionStartTime.value = Date.now()
+  questionElapsedSeconds.value = 0
+}
+
 // Load session from sessionStorage on mount
 onMounted(() => {
   const sessionData = sessionStorage.getItem('currentSession')
@@ -197,9 +236,19 @@ onMounted(() => {
     if (session.currentQuestion) {
       loadQuestion(session.currentQuestion)
     }
+
+    // Start timer
+    timerInterval = window.setInterval(updateTimers, 1000)
   } catch (error) {
     console.error('Failed to load session:', error)
     errorMessage.value = 'Failed to load session'
+  }
+})
+
+// Clean up timer on component unmount
+onUnmounted(() => {
+  if (timerInterval !== null) {
+    clearInterval(timerInterval)
   }
 })
 
@@ -286,11 +335,12 @@ async function submitAnswer(): Promise<void> {
     // Format answer for API (e.g., "A" or "A,C")
     const selectedAnswer = selectedAnswers.value.sort().join(',')
 
-    // Submit to API
+    // Submit to API with time spent on this question
     const response = await api.submitAnswer(
       sessionId.value,
       question.value.id,
-      selectedAnswer
+      selectedAnswer,
+      questionElapsedSeconds.value
     )
 
     // Store response for next question navigation
@@ -350,6 +400,9 @@ async function nextQuestion(): Promise<void> {
     isCorrect.value = false
     errorMessage.value = ''
     lastAnswerResponse.value = null
+
+    // Reset question timer
+    resetQuestionTimer()
 
     // Update session storage
     const sessionData = sessionStorage.getItem('currentSession')
@@ -425,6 +478,45 @@ async function confirmExit(): Promise<void> {
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 500;
+}
+
+.timer-section {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.session-timer,
+.question-timer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.timer-icon {
+  font-size: 1.2rem;
+}
+
+.timer-label {
+  font-weight: 600;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.timer-value {
+  font-family: 'Courier New', monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #667eea;
+  background: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  min-width: 60px;
+  text-align: center;
 }
 
 .progress-bar {

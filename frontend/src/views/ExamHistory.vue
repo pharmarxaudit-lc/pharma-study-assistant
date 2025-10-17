@@ -65,7 +65,7 @@
               <h3 class="session-type">
                 {{ getSessionTypeLabel(session.session_type) }}
               </h3>
-              <p class="session-date">{{ formatDate(session.start_time) }}</p>
+              <p class="session-date">{{ session.start_time_formatted }}</p>
             </div>
             <div class="session-score">
               <div class="score-circle" :class="getScoreClass(session.percentage)">
@@ -180,23 +180,6 @@ function getScoreClass(percentage: number): string {
   if (percentage >= 80) return 'score-great'
   if (percentage >= 70) return 'score-good'
   return 'score-needs-work'
-}
-
-function formatDate(dateString: string): string {
-  const date = new Date(dateString)
-  const now = new Date()
-  const diffMs = now.getTime() - date.getTime()
-  const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24))
-
-  if (diffDays === 0) return 'Today, ' + date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
-  if (diffDays === 1) return 'Yesterday, ' + date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
-  if (diffDays < 7) return diffDays + ' days ago'
-
-  return date.toLocaleDateString('en-US', {
-    month: 'short',
-    day: 'numeric',
-    year: date.getFullYear() !== now.getFullYear() ? 'numeric' : undefined
-  })
 }
 
 function formatDuration(startString: string, endString: string): string {

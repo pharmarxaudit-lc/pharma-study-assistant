@@ -103,7 +103,8 @@ export interface SessionHistoryItem {
   id: number
   session_type: string
   start_time: string
-  end_time: string
+  start_time_formatted: string  // Pre-formatted: "Today, 11:30 AM" or "2 days ago"
+  start_time_full: string  // Full format: "October 17, 2025 11:30 AM AST"
   score: number
   total: number
   percentage: number
@@ -139,7 +140,8 @@ export const api = {
   async submitAnswer(
     sessionId: number,
     questionId: number,
-    selectedAnswer: string
+    selectedAnswer: string,
+    timeSpentSeconds?: number
   ): Promise<AnswerResponse> {
     const response = await fetch(`${API_BASE_URL}/api/sessions/${sessionId}/answer`, {
       method: 'POST',
@@ -149,6 +151,7 @@ export const api = {
       body: JSON.stringify({
         question_id: questionId,
         selected_answer: selectedAnswer,
+        time_spent_seconds: timeSpentSeconds || 0
       }),
     })
 

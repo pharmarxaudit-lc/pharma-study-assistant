@@ -2,6 +2,7 @@
 SQLAlchemy database models for pharmacy exam prep application.
 
 Tables:
+- app_settings: Application-wide settings (timezone, etc.)
 - documents: Processed PDF documents
 - questions: Generated exam questions
 - user_attempts: Answer attempts for analytics
@@ -14,8 +15,22 @@ from typing import Optional
 from sqlalchemy import Boolean, Column, Date, Float, ForeignKey, Integer, String, Text, create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
+from timezone_utils import to_iso_string
 
 Base = declarative_base()
+
+
+class AppSettings(Base):
+    """Application-wide settings."""
+    __tablename__ = 'app_settings'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    setting_key = Column(String(100), unique=True, nullable=False, index=True)
+    setting_value = Column(Text, nullable=False)
+    updated_at = Column(String(50), default=lambda: to_iso_string())
+
+    def __repr__(self) -> str:
+        return f"<AppSettings(key='{self.setting_key}', value='{self.setting_value}')>"
 
 
 class Document(Base):
@@ -25,12 +40,12 @@ class Document(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     file_id = Column(String(50), unique=True, nullable=False, index=True)
     filename = Column(String(255), nullable=False)
-    upload_date = Column(String(50), default=lambda: datetime.now().isoformat())
+    upload_date = Column(String(50), default=lambda: to_iso_string())
     total_topics = Column(Integer, nullable=False)
     total_pages = Column(Integer, nullable=False)
     analysis_path = Column(Text, nullable=False)
     formatted_path = Column(Text)
-    created_at = Column(String(50), default=lambda: datetime.now().isoformat())
+    created_at = Column(String(50), default=lambda: to_iso_string())
 
     # Relationships
     questions = relationship('Question', back_populates='document', cascade='all, delete-orphan')
@@ -65,7 +80,7 @@ class Question(Base):
     # Tracking
     times_seen = Column(Integer, default=0)
     times_correct = Column(Integer, default=0)
-    created_at = Column(String(50), default=lambda: datetime.now().isoformat())
+    created_at = Column(String(50), default=lambda: to_iso_string())
 
     # Relationships
     document = relationship('Document', back_populates='questions')
@@ -97,7 +112,7 @@ class UserAttempt(Base):
     time_spent_seconds = Column(Integer)
 
     # Timestamp
-    attempt_date = Column(String(50), default=lambda: datetime.now().isoformat(), index=True)
+    attempt_date = Column(String(50), default=lambda: to_iso_string(), index=True)
 
     # Relationships
     question = relationship('Question', back_populates='user_attempts')
@@ -194,7 +209,7 @@ class SpacedRepetition(Base):
                 5: Perfect recall
         """
         self.total_reviews += 1
-        self.last_reviewed = datetime.now().isoformat()
+        self.last_reviewed = to_iso_string()
 
         if quality >= 3:
             # Correct answer
