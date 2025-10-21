@@ -85,27 +85,28 @@ console.log('[Navigation] Initialized')
 
 .toggle-btn {
   position: absolute;
-  top: 1rem;
-  right: -15px;
+  top: 1.5rem;
+  right: -12px;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
-  border: none;
-  border-radius: 50%;
-  width: 35px;
-  height: 35px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 10;
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
   transition: all 0.3s ease;
 }
 
 .toggle-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 16px rgba(102, 126, 234, 0.6);
+  transform: translateX(2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.5);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .collapsed-title {
