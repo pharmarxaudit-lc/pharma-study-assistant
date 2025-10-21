@@ -17,14 +17,16 @@ from timezone_utils import now_in_timezone, format_datetime, to_iso_string
 from werkzeug.utils import secure_filename
 
 # Create necessary directories first
-os.makedirs('logs', exist_ok=True)
+# Create logs directory in project root
+log_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'logs')
+os.makedirs(log_dir, exist_ok=True)
 
 # Configure logging
 logging.basicConfig(
     level=logging.DEBUG,
     format='%(asctime)s [%(levelname)s] %(name)s: %(message)s',
     handlers=[
-        logging.FileHandler('logs/backend.log'),
+        logging.FileHandler(os.path.join(log_dir, 'backend.log')),
         logging.StreamHandler()
     ]
 )

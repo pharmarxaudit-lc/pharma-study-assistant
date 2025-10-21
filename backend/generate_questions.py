@@ -16,12 +16,16 @@ from question_generator import QuestionGenerator
 
 def setup_logging():
     """Configure logging for question generation."""
+    # Create logs directory in project root
+    log_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'logs')
+    os.makedirs(log_dir, exist_ok=True)
+
     logging.basicConfig(
         level=logging.INFO,
         format='%(message)s',
         handlers=[
             logging.StreamHandler(sys.stdout),
-            logging.FileHandler('logs/question_generation.log', mode='a', encoding='utf-8')
+            logging.FileHandler(os.path.join(log_dir, 'question_generation.log'), mode='a', encoding='utf-8')
         ]
     )
     return logging.getLogger(__name__)

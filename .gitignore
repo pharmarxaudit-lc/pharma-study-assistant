@@ -32,9 +32,9 @@ wheels/
 # outputs/
 # *.pdf
 
-# Logs - TEMPORARILY TRACKED
-# logs/
-# *.log
+# Logs - centralized in /logs/ directory
+logs/
+*.log
 
 # Database - NOT tracked in git to prevent overwriting production data
 # Each environment (local, Replit) maintains its own database
