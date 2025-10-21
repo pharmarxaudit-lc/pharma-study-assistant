@@ -252,8 +252,8 @@ onMounted(async () => {
         topic: q.topic_name,
         difficulty: q.difficulty as 'basic' | 'intermediate' | 'advanced',
         question: q.question_text,
-        userAnswer: q.selected_answer,
-        correctAnswer: q.correct_answer
+        userAnswer: q.options[q.selected_answer] || q.selected_answer,
+        correctAnswer: q.options[q.correct_answer] || q.correct_answer
       }))
     }
 
