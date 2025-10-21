@@ -72,7 +72,7 @@ def parse_options(options_json: str) -> dict:
         logger.error(f"Error parsing options: {e}")
         return {}
 
-def shuffle_options(options: dict, correct_answer: str) -> tuple[dict, dict, str]:
+def shuffle_options(options: dict, correct_answer: str):
     """
     Shuffle answer options to prevent pattern memorization.
 
