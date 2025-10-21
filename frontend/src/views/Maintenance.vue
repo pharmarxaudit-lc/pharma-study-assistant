@@ -153,7 +153,7 @@
     <div class="card danger-zone">
       <h3>🔄 Reset to Baseline</h3>
       <p class="warning-text">
-        <strong>Warning:</strong> This will replace your database with the baseline (325 questions, 0 sessions). A backup will be created automatically.
+        <strong>Warning:</strong> This will replace your database with the baseline (255 questions, 0 sessions). A backup will be created automatically.
       </p>
 
       <div v-if="!showResetConfirm">
@@ -164,7 +164,7 @@
 
       <div v-else class="confirm-box">
         <p><strong>Are you sure you want to reset to baseline?</strong></p>
-        <p>Current data will be backed up. Baseline contains 325 questions with no sessions.</p>
+        <p>Current data will be backed up. Baseline contains 255 questions with no sessions.</p>
         <div class="button-group">
           <button @click="resetToBaseline" :disabled="resetting" class="btn-danger">
             {{ resetting ? 'Resetting...' : 'Yes, Reset to Baseline' }}

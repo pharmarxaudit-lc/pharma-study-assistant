@@ -1229,7 +1229,7 @@ def clear_user_data():
 
 @app.route('/api/maintenance/reset-to-baseline', methods=['POST'])
 def reset_to_baseline():
-    """Reset database to baseline (325 questions, no sessions)."""
+    """Reset database to baseline (255 questions, no sessions)."""
     logger.info("POST /api/maintenance/reset-to-baseline")
 
     try:
@@ -1264,7 +1264,7 @@ def reset_to_baseline():
             'success': True,
             'message': 'Database reset to baseline successfully',
             'backup': os.path.basename(backup_path),
-            'baseline_info': '325 questions, 0 sessions'
+            'baseline_info': '255 questions, 0 sessions'
         })
 
     except Exception as e:

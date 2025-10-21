@@ -43,7 +43,7 @@
             :class="['topic-mode-button', { active: topicMode === 'all' }]"
             @click="topicMode = 'all'; selectedTopics = []"
           >
-            All Topics (325 questions)
+            All Topics ({{ totalQuestions }} questions)
           </button>
           <button
             :class="['topic-mode-button', { active: topicMode === 'select' }]"
@@ -135,7 +135,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import { api } from '../services/api'
 
@@ -173,6 +173,8 @@ const passThreshold = ref<number>(70) // Default 70%
 // Loading and error states
 const isLoading = ref<boolean>(false)
 const errorMessage = ref<string>('')
+const totalQuestions = ref<number>(0)
+const availableTopics = ref<Topic[]>([])
 
 // Available options (MOCK DATA - will come from API)
 const sessionTypes: SessionType[] = [
@@ -204,22 +206,22 @@ const difficulties: Difficulty[] = [
   { value: 'advanced', label: 'Advanced' }
 ]
 
-// MOCK DATA - will come from API
-const availableTopics: Topic[] = [
-  { id: 1, name: 'La Profesión de Farmacia - Responsabilidad Social', questionCount: 25 },
-  { id: 2, name: 'Requisitos para ejercer como Farmacéutico', questionCount: 25 },
-  { id: 3, name: 'Denegación y Suspensión de Licencia', questionCount: 25 },
-  { id: 4, name: 'Funciones del Farmacéutico', questionCount: 25 },
-  { id: 5, name: 'Farmacéutico Regente y Preceptor', questionCount: 25 },
-  { id: 6, name: 'Delitos y Conductas Prohibidas', questionCount: 25 },
-  { id: 7, name: 'Recetas y Dispensación', questionCount: 25 },
-  { id: 8, name: 'Sustancias Controladas', questionCount: 25 },
-  { id: 9, name: 'Farmacia Comunitaria', questionCount: 25 },
-  { id: 10, name: 'Consulta Farmacéutica', questionCount: 25 },
-  { id: 11, name: 'Aspectos Éticos', questionCount: 25 },
-  { id: 12, name: 'Responsabilidad Legal', questionCount: 25 },
-  { id: 13, name: 'Procedimientos Administrativos', questionCount: 25 }
-]
+// Load question stats on mount
+onMounted(async () => {
+  try {
+    const stats = await api.getQuestionStats('20251016_113156')
+    totalQuestions.value = stats.total
+    availableTopics.value = stats.by_topic.map((topic, index) => ({
+      id: index + 1,
+      name: topic.topic_name,
+      questionCount: topic.count
+    }))
+  } catch (error) {
+    console.error('Failed to load question stats:', error)
+    // Fallback to showing 0 if API fails
+    totalQuestions.value = 0
+  }
+})
 
 function getSessionSummary(): string {
   const typeLabel = sessionTypes.find(t => t.value === sessionType.value)?.label || 'Study'
