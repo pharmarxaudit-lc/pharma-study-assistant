@@ -81,7 +81,7 @@
             </div>
             <div class="detail-item">
               <span class="detail-label">Duration:</span>
-              <span class="detail-value">{{ formatDuration(session.start_time, session.end_time) }}</span>
+              <span class="detail-value">{{ formatDuration(session.duration_seconds) }}</span>
             </div>
             <div class="detail-item">
               <span class="detail-label">Status:</span>
@@ -182,14 +182,19 @@ function getScoreClass(percentage: number): string {
   return 'score-needs-work'
 }
 
-function formatDuration(startString: string, endString: string): string {
-  const start = new Date(startString)
-  const end = new Date(endString)
-  const diffMs = end.getTime() - start.getTime()
-  const diffMins = Math.floor(diffMs / (1000 * 60))
+function formatDuration(durationSeconds: number): string {
+  if (!durationSeconds || durationSeconds === 0) return 'N/A'
 
-  if (diffMins < 1) return '< 1 min'
-  if (diffMins < 60) return `${diffMins} min`
+  const diffMins = Math.floor(durationSeconds / 60)
+
+  if (diffMins < 1) {
+    return `${durationSeconds}s`
+  }
+
+  if (diffMins < 60) {
+    const secs = durationSeconds % 60
+    return secs > 0 ? `${diffMins}m ${secs}s` : `${diffMins}m`
+  }
 
   const hours = Math.floor(diffMins / 60)
   const mins = diffMins % 60

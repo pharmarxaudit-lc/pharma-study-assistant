@@ -110,6 +110,7 @@ export interface SessionHistoryItem {
   total: number
   percentage: number
   pass_threshold: number
+  duration_seconds: number
 }
 
 export interface SessionHistoryResponse {

@@ -893,6 +893,15 @@ def get_session_history():
                 if isinstance(start_time, str):
                     start_time = datetime.fromisoformat(start_time)
 
+                end_time = s.end_time
+                if isinstance(end_time, str):
+                    end_time = datetime.fromisoformat(end_time)
+
+                # Calculate duration
+                duration_seconds = 0
+                if end_time and start_time:
+                    duration_seconds = int((end_time - start_time).total_seconds())
+
                 # Format dates for display (pre-formatted strings to avoid JS timezone issues)
                 start_time_formatted = format_datetime(start_time, 'relative') if start_time else None
                 start_time_full = format_datetime(start_time, 'full') if start_time else None
@@ -906,7 +915,8 @@ def get_session_history():
                     'score': s.correct_answers,
                     'total': s.total_questions,
                     'percentage': round(s.score_percentage, 1),
-                    'pass_threshold': s.pass_threshold
+                    'pass_threshold': s.pass_threshold,
+                    'duration_seconds': duration_seconds
                 })
 
             return jsonify({
