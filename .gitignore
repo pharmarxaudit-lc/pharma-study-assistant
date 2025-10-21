@@ -36,12 +36,16 @@ wheels/
 # logs/
 # *.log
 
-# Database - WILL BE TRACKED once populated with generated questions
-# backend/pharma_exam.db will be committed after question generation
-# For now, keeping it untracked until production-ready
-pharma_exam.db  # Ignore root-level database file (backend/pharma_exam.db is the correct location)
-*_backup_*.db   # Ignore backup database files
-*.db-journal    # Ignore SQLite journal files
+# Database - NOT tracked in git to prevent overwriting production data
+# Each environment (local, Replit) maintains its own database
+# Schema changes are managed through Alembic migrations
+pharma_exam.db           # Ignore root-level database file
+backend/pharma_exam.db   # Ignore production database
+*_backup_*.db            # Ignore backup database files
+*.db-journal             # Ignore SQLite journal files
+
+# Keep baseline database for fresh deployments
+!backend/pharma_exam_baseline.db
 
 # Frontend
 frontend/node_modules/
