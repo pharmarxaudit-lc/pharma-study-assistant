@@ -1156,6 +1156,49 @@ def clear_user_data():
         logger.error(f"Error clearing user data: {e}", exc_info=True)
         return jsonify({"error": str(e)}), 500
 
+@app.route('/api/maintenance/reset-to-baseline', methods=['POST'])
+def reset_to_baseline():
+    """Reset database to baseline (325 questions, no sessions)."""
+    logger.info("POST /api/maintenance/reset-to-baseline")
+
+    try:
+        import shutil
+        data = request.get_json() or {}
+        confirm = data.get('confirm', False)
+
+        if not confirm:
+            return jsonify({"error": "Confirmation required. Send {\"confirm\": true}"}), 400
+
+        baseline_path = os.path.join(os.path.dirname(__file__), 'pharma_exam_baseline.db')
+        current_path = os.path.join(os.path.dirname(__file__), 'pharma_exam.db')
+        backup_path = os.path.join(os.path.dirname(__file__), f'pharma_exam_backup_{int(datetime.now().timestamp())}.db')
+
+        # Check baseline exists
+        if not os.path.exists(baseline_path):
+            return jsonify({"error": "Baseline database not found"}), 404
+
+        logger.warning("🔄 RESETTING TO BASELINE - Creating backup and replacing database")
+
+        # Backup current database
+        if os.path.exists(current_path):
+            shutil.copy2(current_path, backup_path)
+            logger.info(f"📦 Backup created: {backup_path}")
+
+        # Replace with baseline
+        shutil.copy2(baseline_path, current_path)
+        logger.info(f"✅ Database reset to baseline")
+
+        return jsonify({
+            'success': True,
+            'message': 'Database reset to baseline successfully',
+            'backup': os.path.basename(backup_path),
+            'baseline_info': '325 questions, 0 sessions'
+        })
+
+    except Exception as e:
+        logger.error(f"Error resetting to baseline: {e}", exc_info=True)
+        return jsonify({"error": str(e)}), 500
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     debug_mode = os.environ.get('DEBUG', 'False').lower() == 'true'

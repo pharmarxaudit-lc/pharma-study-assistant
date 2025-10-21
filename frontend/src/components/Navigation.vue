@@ -1,37 +1,42 @@
 <template>
-  <nav class="navigation">
+  <nav class="navigation" :class="{ collapsed: isCollapsed }">
+    <button class="toggle-btn" @click="toggleSidebar" :title="isCollapsed ? 'Expand' : 'Collapse'">
+      {{ isCollapsed ? '▶' : '◀' }}
+    </button>
+
     <div class="nav-header">
-      <h1>📚 Pharmacy Exam Prep</h1>
+      <h1 v-if="!isCollapsed">📚 Pharmacy Exam Prep</h1>
+      <h1 v-else class="collapsed-title">📚</h1>
     </div>
     <ul class="nav-menu">
       <li>
         <router-link to="/process" class="nav-link">
           <span class="nav-icon">📄</span>
-          <span class="nav-label">Process PDFs</span>
+          <span class="nav-label" v-if="!isCollapsed">Process PDFs</span>
         </router-link>
       </li>
       <li>
         <router-link to="/exam" class="nav-link">
           <span class="nav-icon">📝</span>
-          <span class="nav-label">Exam Prep</span>
+          <span class="nav-label" v-if="!isCollapsed">Exam Prep</span>
         </router-link>
       </li>
       <li>
         <router-link to="/history" class="nav-link">
           <span class="nav-icon">📜</span>
-          <span class="nav-label">History</span>
+          <span class="nav-label" v-if="!isCollapsed">History</span>
         </router-link>
       </li>
       <li>
         <router-link to="/progress" class="nav-link">
           <span class="nav-icon">📊</span>
-          <span class="nav-label">Progress</span>
+          <span class="nav-label" v-if="!isCollapsed">Progress</span>
         </router-link>
       </li>
       <li>
         <router-link to="/maintenance" class="nav-link">
           <span class="nav-icon">🔧</span>
-          <span class="nav-label">Maintenance</span>
+          <span class="nav-label" v-if="!isCollapsed">Maintenance</span>
         </router-link>
       </li>
     </ul>
@@ -39,6 +44,24 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
+
+const isCollapsed = ref(false)
+
+function toggleSidebar() {
+  isCollapsed.value = !isCollapsed.value
+  // Store preference
+  localStorage.setItem('sidebarCollapsed', String(isCollapsed.value))
+  // Emit event for main content to adjust
+  window.dispatchEvent(new CustomEvent('sidebar-toggle', { detail: isCollapsed.value }))
+}
+
+// Load saved preference on mount
+const saved = localStorage.getItem('sidebarCollapsed')
+if (saved === 'true') {
+  isCollapsed.value = true
+}
+
 console.log('[Navigation] Initialized')
 </script>
 
@@ -52,6 +75,39 @@ console.log('[Navigation] Initialized')
   position: fixed;
   left: 0;
   top: 0;
+  transition: width 0.3s ease;
+}
+
+.navigation.collapsed {
+  width: 70px;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 1rem;
+  right: -15px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.toggle-btn:hover {
+  background: #2980b9;
+}
+
+.collapsed-title {
+  text-align: center;
+  font-size: 2rem;
 }
 
 .nav-header {

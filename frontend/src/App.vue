@@ -1,14 +1,35 @@
 <template>
   <div class="app-layout">
     <Navigation />
-    <main class="main-content">
+    <main class="main-content" :class="{ 'sidebar-collapsed': isSidebarCollapsed }">
       <router-view />
     </main>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
 import Navigation from './components/Navigation.vue'
+
+const isSidebarCollapsed = ref(false)
+
+function handleSidebarToggle(event: Event) {
+  const customEvent = event as CustomEvent
+  isSidebarCollapsed.value = customEvent.detail
+}
+
+onMounted(() => {
+  window.addEventListener('sidebar-toggle', handleSidebarToggle)
+  // Check saved preference
+  const saved = localStorage.getItem('sidebarCollapsed')
+  if (saved === 'true') {
+    isSidebarCollapsed.value = true
+  }
+})
+
+onUnmounted(() => {
+  window.removeEventListener('sidebar-toggle', handleSidebarToggle)
+})
 
 console.log('[App] Application initialized with router')
 </script>
@@ -37,5 +58,10 @@ body {
   margin-left: 250px;
   padding: 2rem;
   background: #f5f5f5;
+  transition: margin-left 0.3s ease;
+}
+
+.main-content.sidebar-collapsed {
+  margin-left: 70px;
 }
 </style>

@@ -149,16 +149,36 @@
       </div>
     </div>
 
-    <!-- Database Reset (DISABLED) -->
-    <div class="card danger-zone" style="opacity: 0.5; pointer-events: none;">
-      <h3>⚠️ Danger Zone (DISABLED)</h3>
+    <!-- Reset to Baseline -->
+    <div class="card danger-zone">
+      <h3>🔄 Reset to Baseline</h3>
       <p class="warning-text">
-        <strong>Feature Disabled:</strong> Full database reset is disabled to prevent accidental data loss. Use "Fix Schema" or "Clear User Data" instead.
+        <strong>Warning:</strong> This will replace your database with the baseline (325 questions, 0 sessions). A backup will be created automatically.
       </p>
 
-      <button disabled class="btn-danger">
-        Reset Database (Disabled)
-      </button>
+      <div v-if="!showResetConfirm">
+        <button @click="showResetConfirm = true" class="btn-danger">
+          Reset to Baseline
+        </button>
+      </div>
+
+      <div v-else class="confirm-box">
+        <p><strong>Are you sure you want to reset to baseline?</strong></p>
+        <p>Current data will be backed up. Baseline contains 325 questions with no sessions.</p>
+        <div class="button-group">
+          <button @click="resetToBaseline" :disabled="resetting" class="btn-danger">
+            {{ resetting ? 'Resetting...' : 'Yes, Reset to Baseline' }}
+          </button>
+          <button @click="showResetConfirm = false" class="btn-secondary">
+            Cancel
+          </button>
+        </div>
+      </div>
+
+      <div v-if="resetResult" class="result-box" :class="resetResult.success ? 'success' : 'error'">
+        <p>{{ resetResult.message }}</p>
+        <p v-if="resetResult.backup"><small>Backup: {{ resetResult.backup }}</small></p>
+      </div>
     </div>
 
     <!-- Error Display -->
@@ -182,7 +202,6 @@ const showResetConfirm = ref(false)
 const showClearConfirm = ref(false)
 const resetConfirmText = ref('')
 const clearConfirmText = ref('')
-
 const schemaResult = ref<any>(null)
 const dbInfo = ref<any>(null)
 const resetResult = ref<any>(null)
@@ -344,6 +363,39 @@ function cancelClear() {
   showClearConfirm.value = false
   clearConfirmText.value = ''
   clearResult.value = null
+}
+
+async function resetToBaseline() {
+  resetting.value = true
+  error.value = null
+  resetResult.value = null
+
+  try {
+    const response = await fetch(`${API_BASE_URL}/api/maintenance/reset-to-baseline`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ confirm: true })
+    })
+
+    if (!response.ok) {
+      const errorData = await response.json()
+      throw new Error(errorData.error || 'Failed to reset to baseline')
+    }
+
+    resetResult.value = await response.json()
+
+    // Reset form
+    showResetConfirm.value = false
+
+    // Reload database info
+    await loadDbInfo()
+
+  } catch (err: any) {
+    error.value = err.message
+    resetResult.value = { success: false, message: err.message }
+  } finally {
+    resetting.value = false
+  }
 }
 
 async function loadDbInfo() {
