@@ -1163,6 +1163,7 @@ def reset_to_baseline():
 
     try:
         import shutil
+        import time
         data = request.get_json() or {}
         confirm = data.get('confirm', False)
 
@@ -1171,7 +1172,7 @@ def reset_to_baseline():
 
         baseline_path = os.path.join(os.path.dirname(__file__), 'pharma_exam_baseline.db')
         current_path = os.path.join(os.path.dirname(__file__), 'pharma_exam.db')
-        backup_path = os.path.join(os.path.dirname(__file__), f'pharma_exam_backup_{int(datetime.now().timestamp())}.db')
+        backup_path = os.path.join(os.path.dirname(__file__), f'pharma_exam_backup_{int(time.time())}.db')
 
         # Check baseline exists
         if not os.path.exists(baseline_path):
