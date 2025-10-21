@@ -185,6 +185,7 @@ const showFeedback = ref<boolean>(false)
 const isCorrect = ref<boolean>(false)
 const isLoading = ref<boolean>(false)
 const errorMessage = ref<string>('')
+const currentShuffleMap = ref<Record<string, string>>({})
 
 // Modal state
 const showExitModal = ref<boolean>(false)
@@ -255,6 +256,9 @@ onUnmounted(() => {
 // Convert API question format to UI format
 function loadQuestion(apiQuestion: ApiQuestion): void {
   const optionKeys = Object.keys(apiQuestion.options).sort()
+
+  // Store shuffle_map for this question
+  currentShuffleMap.value = apiQuestion.shuffle_map || {}
 
   question.value = {
     id: apiQuestion.id,
@@ -335,12 +339,13 @@ async function submitAnswer(): Promise<void> {
     // Format answer for API (e.g., "A" or "A,C")
     const selectedAnswer = selectedAnswers.value.sort().join(',')
 
-    // Submit to API with time spent on this question
+    // Submit to API with time spent on this question and shuffle_map
     const response = await api.submitAnswer(
       sessionId.value,
       question.value.id,
       selectedAnswer,
-      questionElapsedSeconds.value
+      questionElapsedSeconds.value,
+      currentShuffleMap.value
     )
 
     // Store response for next question navigation

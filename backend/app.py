@@ -72,6 +72,47 @@ def parse_options(options_json: str) -> dict:
         logger.error(f"Error parsing options: {e}")
         return {}
 
+def shuffle_options(options: dict, correct_answer: str) -> tuple[dict, dict, str]:
+    """
+    Shuffle answer options to prevent pattern memorization.
+
+    Args:
+        options: Original options dict {"A": "text", "B": "text", ...}
+        correct_answer: Original correct answer letter(s) like "A" or "A,B,C"
+
+    Returns:
+        (shuffled_options, shuffle_map, shuffled_correct_answer)
+        - shuffled_options: Options with new letter assignments
+        - shuffle_map: Mapping from shuffled letter to original letter {"A": "C", "B": "A", ...}
+        - shuffled_correct_answer: Correct answer in shuffled positions
+    """
+    import random
+
+    # Get list of letters and their texts
+    letters = list(options.keys())
+    texts = [options[letter] for letter in letters]
+
+    # Create shuffled assignment
+    shuffled_letters = letters.copy()
+    random.shuffle(shuffled_letters)
+
+    # Build shuffled options and mapping
+    shuffled_options = {}
+    shuffle_map = {}  # shuffled -> original
+    reverse_map = {}  # original -> shuffled
+
+    for new_letter, original_letter in zip(letters, shuffled_letters):
+        shuffled_options[new_letter] = options[original_letter]
+        shuffle_map[new_letter] = original_letter
+        reverse_map[original_letter] = new_letter
+
+    # Map correct answer to shuffled positions
+    correct_letters = correct_answer.split(',')
+    shuffled_correct_letters = [reverse_map[letter.strip()] for letter in correct_letters]
+    shuffled_correct_answer = ','.join(sorted(shuffled_correct_letters))
+
+    return shuffled_options, shuffle_map, shuffled_correct_answer
+
 def create_session_logger(file_id: str) -> logging.Logger:
     """Create a file-specific logger for tracing individual processing sessions."""
     # Create logger with unique name
@@ -589,8 +630,11 @@ def start_session():
 
             session.commit()
 
-            # Return first question
+            # Return first question with shuffled options
             first_q = questions[0]
+            original_options = parse_options(first_q.options_json)
+            shuffled_options, shuffle_map, _ = shuffle_options(original_options, first_q.correct_answer)
+
             return jsonify({
                 'session_id': session_id,
                 'total_questions': len(questions),
@@ -603,7 +647,8 @@ def start_session():
                     'question_type': first_q.question_type,
                     'difficulty': first_q.difficulty,
                     'question_text': first_q.question_text,
-                    'options': parse_options(first_q.options_json)
+                    'options': shuffled_options,
+                    'shuffle_map': shuffle_map
                 }
             })
 
@@ -638,6 +683,7 @@ def submit_answer(session_id):
     try:
         question_id = data.get('question_id')
         selected_answer = data.get('selected_answer')
+        shuffle_map = data.get('shuffle_map', {})
         time_spent = data.get('time_spent_seconds', 0)
 
         with db.session() as db_session:
@@ -646,8 +692,16 @@ def submit_answer(session_id):
             if not question:
                 return jsonify({"error": "Question not found"}), 404
 
-            # Check answer
-            is_correct = (selected_answer == question.correct_answer)
+            # Reverse-map the selected answer using shuffle_map
+            # If shuffle_map exists, map shuffled letter back to original
+            original_selected_answer = selected_answer
+            if shuffle_map:
+                selected_letters = selected_answer.split(',')
+                original_letters = [shuffle_map.get(letter.strip(), letter.strip()) for letter in selected_letters]
+                original_selected_answer = ','.join(sorted(original_letters))
+
+            # Check answer against original correct answer
+            is_correct = (original_selected_answer == question.correct_answer)
 
             # Record attempt
             attempt = UserAttempt(
@@ -690,6 +744,10 @@ def submit_answer(session_id):
                         id=question_ids[current_index]
                     ).first()
                     if next_q:
+                        # Shuffle options for next question
+                        original_options = parse_options(next_q.options_json)
+                        shuffled_options, next_shuffle_map, _ = shuffle_options(original_options, next_q.correct_answer)
+
                         next_question = {
                             'id': next_q.id,
                             'question_number': current_index + 1,
@@ -697,7 +755,8 @@ def submit_answer(session_id):
                             'question_type': next_q.question_type,
                             'difficulty': next_q.difficulty,
                             'question_text': next_q.question_text,
-                            'options': parse_options(next_q.options_json)
+                            'options': shuffled_options,
+                            'shuffle_map': next_shuffle_map
                         }
             else:
                 next_question = None

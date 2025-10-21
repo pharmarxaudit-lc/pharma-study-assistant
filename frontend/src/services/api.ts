@@ -29,6 +29,7 @@ export interface Question {
     [key: string]: string
   }
   regulatory_context?: string
+  shuffle_map?: Record<string, string>
 }
 
 export interface SessionStartResponse {
@@ -141,7 +142,8 @@ export const api = {
     sessionId: number,
     questionId: number,
     selectedAnswer: string,
-    timeSpentSeconds?: number
+    timeSpentSeconds?: number,
+    shuffleMap?: Record<string, string>
   ): Promise<AnswerResponse> {
     const response = await fetch(`${API_BASE_URL}/api/sessions/${sessionId}/answer`, {
       method: 'POST',
@@ -151,7 +153,8 @@ export const api = {
       body: JSON.stringify({
         question_id: questionId,
         selected_answer: selectedAnswer,
-        time_spent_seconds: timeSpentSeconds || 0
+        time_spent_seconds: timeSpentSeconds || 0,
+        shuffle_map: shuffleMap || {}
       }),
     })
 
