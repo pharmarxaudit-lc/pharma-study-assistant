@@ -118,10 +118,22 @@ If deploying to a new environment with no database:
 
 ```bash
 cd backend
-alembic upgrade head
+# Copy baseline database (includes 325 pre-generated questions)
+cp pharma_exam_baseline.db pharma_exam.db
+
+# Verify questions loaded
+sqlite3 pharma_exam.db "SELECT COUNT(*) FROM questions;"
+# Should show: 325
+
+# Database is already stamped with Alembic version, ready to use!
 ```
 
-This creates a fresh database with all tables.
+The baseline includes:
+- ✅ 325 pharmacy exam questions (generated from PDF)
+- ✅ 1 source document
+- ✅ All tables created
+- ✅ Alembic version tracking
+- ❌ No user sessions or attempts (clean slate)
 
 ### Scenario 2: Check Migration Status
 
