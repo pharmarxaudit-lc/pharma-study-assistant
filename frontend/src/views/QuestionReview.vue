@@ -169,6 +169,11 @@ onMounted(async () => {
     return
   }
 
+  // Clear session storage so Exam Prep shows fresh state
+  sessionStorage.removeItem('currentSession')
+  sessionStorage.removeItem('sessionComplete')
+  sessionStorage.removeItem('completedSessionId')
+
   try {
     results.value = await api.getSessionResults(parseInt(sessionId))
   } catch (error: any) {
