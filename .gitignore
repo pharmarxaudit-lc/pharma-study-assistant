@@ -40,6 +40,8 @@ wheels/
 # backend/pharma_exam.db will be committed after question generation
 # For now, keeping it untracked until production-ready
 pharma_exam.db  # Ignore root-level database file (backend/pharma_exam.db is the correct location)
+*_backup_*.db   # Ignore backup database files
+*.db-journal    # Ignore SQLite journal files
 
 # Frontend
 frontend/node_modules/

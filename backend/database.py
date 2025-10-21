@@ -29,9 +29,18 @@ class Database:
         self.SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=self.engine)
 
     def create_tables(self) -> None:
-        """Create all tables in the database."""
-        Base.metadata.create_all(bind=self.engine)
-        print(f"✅ Database tables created: {self.db_path}")
+        """Create all tables in the database using Alembic migrations."""
+        from alembic.config import Config
+        from alembic import command
+        import os
+
+        # Get the directory containing this file
+        backend_dir = os.path.dirname(os.path.abspath(__file__))
+        alembic_cfg = Config(os.path.join(backend_dir, "alembic.ini"))
+
+        # Run migrations to latest version
+        command.upgrade(alembic_cfg, "head")
+        print(f"✅ Database migrated to latest schema: {self.db_path}")
 
     def drop_tables(self) -> None:
         """Drop all tables in the database. WARNING: Destroys all data!"""

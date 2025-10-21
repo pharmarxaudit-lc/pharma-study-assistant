@@ -18,19 +18,27 @@ cp .env.example .env
 pip install -r requirements.txt
 ```
 
-3. **Install Frontend Dependencies**
+3. **Initialize Database**
+```bash
+# Run database migrations to set up schema
+cd backend
+alembic upgrade head
+cd ..
+```
+
+4. **Install Frontend Dependencies**
 ```bash
 cd frontend
 npm install
 ```
 
-4. **Run Validation (Optional but Recommended)**
+5. **Run Validation (Optional but Recommended)**
 ```bash
 bash validate.sh
 ```
 This runs linters and type checkers on both backend and frontend.
 
-5. **Start Application**
+6. **Start Application**
 
 Option A - Using the startup script (recommended):
 ```bash
@@ -51,7 +59,7 @@ cd frontend
 npm run dev
 ```
 
-6. **Access the Application**
+7. **Access the Application**
 - Startup script: http://localhost:5001
 - Manual dev servers: http://localhost:3000
 
@@ -164,17 +172,102 @@ mkdir -p ../backend/static
 cp -r dist/* ../backend/static/
 ```
 
+## Database Migrations
+
+This project uses **Alembic** for database schema version control, ensuring safe deployments without data loss.
+
+### Initial Setup (First Time)
+```bash
+cd backend
+alembic upgrade head
+```
+
+### Making Schema Changes
+
+1. **Modify the model** in `backend/database_models.py`:
+```python
+# Example: Add a new column
+class StudySession(Base):
+    # ... existing columns ...
+    user_notes = Column(Text)  # NEW COLUMN
+```
+
+2. **Generate migration** (Alembic auto-detects changes):
+```bash
+cd backend
+alembic revision --autogenerate -m "Add user_notes to study sessions"
+```
+
+3. **Review the migration** in `backend/migrations/versions/`:
+```python
+# migrations/versions/XXX_add_user_notes.py
+def upgrade():
+    with op.batch_alter_table('study_sessions') as batch_op:
+        batch_op.add_column(sa.Column('user_notes', sa.Text(), nullable=True))
+```
+
+4. **Apply migration**:
+```bash
+alembic upgrade head
+```
+
+### Deployment Workflow
+
+When deploying updates to production:
+
+```bash
+cd backend
+alembic upgrade head  # Apply any new migrations
+cd ..
+# Restart application
+```
+
+### Useful Commands
+
+```bash
+# Check current version
+alembic current
+
+# View migration history
+alembic history
+
+# Rollback one migration (if needed)
+alembic downgrade -1
+
+# Rollback to specific version
+alembic downgrade <revision_id>
+
+# Upgrade to latest
+alembic upgrade head
+```
+
+### Migration Best Practices
+
+- ✅ **Always review** auto-generated migrations before applying
+- ✅ **Test migrations** on a copy of production data first
+- ✅ **Make backups** before running migrations in production
+- ✅ **Never edit** applied migrations - create new ones instead
+- ✅ **Commit migrations** to version control along with model changes
+- ⚠️ **SQLite limitations**: Some operations require batch mode (already configured)
+
 ## Project Structure
 
 ```
 pharmacy-exam-prep/
 ├── backend/
 │   ├── app.py                    # Flask API server
+│   ├── database.py               # Database connection & session management
+│   ├── database_models.py        # SQLAlchemy ORM models
 │   ├── pdf_extractor.py          # PDF text extraction
 │   ├── text_processor.py         # Text cleaning & structuring
 │   ├── content_analyzer.py       # Claude-powered analysis
 │   ├── llm_formatter.py          # Claude formatting
-│   └── config.py                 # Configuration
+│   ├── config.py                 # Configuration
+│   ├── alembic.ini               # Alembic migration config
+│   ├── migrations/               # Database migrations
+│   │   ├── env.py                # Migration environment
+│   │   └── versions/             # Migration version files
+│   └── pharma_exam.db            # SQLite database (tracked in git)
 ├── frontend/
 │   ├── src/
 │   │   ├── App.vue
