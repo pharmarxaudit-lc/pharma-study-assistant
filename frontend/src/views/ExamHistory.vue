@@ -58,7 +58,7 @@
           :key="session.id"
           class="session-card"
           :class="getSessionClass(session.percentage)"
-          @click="viewSessionDetails(session.id)"
+          @click="router.push(`/review/${session.id}`)"
         >
           <div class="session-header">
             <div class="session-info">
@@ -93,10 +93,10 @@
 
           <div class="session-actions">
             <router-link :to="`/review/${session.id}`" class="action-button review-button" @click.stop>
-              Review Answers
+              📝 Review Answers
             </router-link>
-            <button class="action-button view-button" @click.stop="viewSessionDetails(session.id)">
-              View Results
+            <button class="action-button view-button secondary" @click.stop="viewSessionDetails(session.id)">
+              📊 Quick Summary
             </button>
           </div>
         </div>

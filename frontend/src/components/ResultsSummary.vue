@@ -196,6 +196,10 @@ onMounted(async () => {
     return
   }
 
+  // Redirect to detailed review instead of showing summary
+  router.push(`/review/${completedSessionId}`)
+  return
+
   // Load pass threshold from session storage
   const sessionData = sessionStorage.getItem('currentSession')
   if (sessionData) {
