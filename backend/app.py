@@ -928,6 +928,35 @@ def get_session_history():
         logger.error(f"Error getting session history: {e}", exc_info=True)
         return jsonify({"error": str(e)}), 500
 
+@app.route('/api/sessions/<int:session_id>', methods=['DELETE'])
+def delete_session(session_id):
+    """Delete a session and all associated attempts."""
+    logger.info(f"DELETE /api/sessions/{session_id}")
+
+    try:
+        with db.session() as session:
+            # Find the study session
+            study_session = session.query(StudySession).filter_by(id=session_id).first()
+
+            if not study_session:
+                logger.warning(f"Session {session_id} not found")
+                return jsonify({"error": "Session not found"}), 404
+
+            # Delete all attempts for this session
+            from database_models import UserAttempt
+            session.query(UserAttempt).filter_by(session_id=session_id).delete()
+
+            # Delete the session itself
+            session.delete(study_session)
+            session.commit()
+
+            logger.info(f"Successfully deleted session {session_id}")
+            return jsonify({"message": "Session deleted successfully"}), 200
+
+    except Exception as e:
+        logger.error(f"Error deleting session: {e}", exc_info=True)
+        return jsonify({"error": str(e)}), 500
+
 # ============================================================================
 # SETTINGS ENDPOINTS
 # ============================================================================

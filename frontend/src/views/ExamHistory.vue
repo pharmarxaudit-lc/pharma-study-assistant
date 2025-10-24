@@ -98,6 +98,9 @@
             <button class="action-button view-button secondary" @click.stop="viewSessionDetails(session.id)">
               📊 Quick Summary
             </button>
+            <button class="action-button delete-button" @click.stop="confirmDelete(session.id)">
+              🗑️ Delete
+            </button>
           </div>
         </div>
       </div>
@@ -107,6 +110,27 @@
         <button @click="loadMore" class="load-more-button">
           Load More Sessions
         </button>
+      </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div v-if="showDeleteModal" class="modal-overlay" @click="cancelDelete">
+      <div class="modal-content" @click.stop>
+        <div class="modal-header">
+          <h2>⚠️ Delete Session</h2>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to delete this session?</p>
+          <p class="warning-text">This action cannot be undone.</p>
+        </div>
+        <div class="modal-actions">
+          <button class="modal-button cancel-button" @click="cancelDelete">
+            Cancel
+          </button>
+          <button class="modal-button confirm-button" @click="executeDelete">
+            Delete Session
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -125,6 +149,8 @@ const isLoading = ref<boolean>(true)
 const errorMessage = ref<string>('')
 const filterType = ref<string>('')
 const currentLimit = ref<number>(20)
+const showDeleteModal = ref<boolean>(false)
+const sessionToDelete = ref<number | null>(null)
 
 // Computed properties
 const totalSessions = computed(() => sessions.value.length)
@@ -205,6 +231,33 @@ function viewSessionDetails(sessionId: number): void {
   // Store session ID for results view
   sessionStorage.setItem('completedSessionId', sessionId.toString())
   router.push('/exam')
+}
+
+function confirmDelete(sessionId: number): void {
+  sessionToDelete.value = sessionId
+  showDeleteModal.value = true
+}
+
+function cancelDelete(): void {
+  showDeleteModal.value = false
+  sessionToDelete.value = null
+}
+
+async function executeDelete(): Promise<void> {
+  if (sessionToDelete.value === null) return
+
+  try {
+    await api.deleteSession(sessionToDelete.value)
+    // Remove session from local list
+    sessions.value = sessions.value.filter(s => s.id !== sessionToDelete.value)
+    showDeleteModal.value = false
+    sessionToDelete.value = null
+  } catch (error: any) {
+    errorMessage.value = error.message || 'Failed to delete session'
+    console.error('Error deleting session:', error)
+    showDeleteModal.value = false
+    sessionToDelete.value = null
+  }
 }
 </script>
 
@@ -503,6 +556,19 @@ function viewSessionDetails(sessionId: number): void {
   box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
 }
 
+.delete-button {
+  background: white;
+  color: #FF5252;
+  border: 2px solid #FF5252;
+}
+
+.delete-button:hover {
+  background: #FF5252;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 82, 82, 0.3);
+}
+
 /* Load More */
 .load-more-section {
   text-align: center;
@@ -555,5 +621,88 @@ function viewSessionDetails(sessionId: number): void {
   .score-circle {
     align-self: flex-end;
   }
+}
+
+/* Delete Confirmation Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  margin-bottom: 1.5rem;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.modal-body {
+  margin-bottom: 2rem;
+}
+
+.modal-body p {
+  margin: 0.5rem 0;
+  color: #666;
+  font-size: 1rem;
+}
+
+.warning-text {
+  color: #FF5252;
+  font-weight: 600;
+  font-size: 0.9rem !important;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.modal-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.cancel-button {
+  background: #e0e0e0;
+  color: #666;
+}
+
+.cancel-button:hover {
+  background: #d0d0d0;
+}
+
+.confirm-button {
+  background: linear-gradient(135deg, #FF6B6B 0%, #FF5252 100%);
+  color: white;
+}
+
+.confirm-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 82, 82, 0.4);
 }
 </style>

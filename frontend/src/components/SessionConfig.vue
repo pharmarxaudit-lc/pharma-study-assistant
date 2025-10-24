@@ -22,12 +22,29 @@
 
       <!-- Number of Questions -->
       <div class="form-section">
-        <label class="section-label">Number of Questions</label>
+        <label class="section-label">
+          Number of Questions: <span class="question-count-value">{{ numQuestions }}</span>
+        </label>
+        <div class="slider-container">
+          <input
+            type="range"
+            v-model.number="numQuestions"
+            min="1"
+            :max="totalQuestions || 394"
+            step="1"
+            class="question-slider"
+          />
+          <div class="slider-labels">
+            <span>1</span>
+            <span>{{ Math.floor((totalQuestions || 394) / 2) }}</span>
+            <span>{{ totalQuestions || 394 }}</span>
+          </div>
+        </div>
         <div class="question-count-options">
           <button
             v-for="count in questionCounts"
             :key="count"
-            :class="['count-button', { active: numQuestions === count }]"
+            :class="['count-button-small', { active: numQuestions === count }]"
             @click="numQuestions = count"
           >
             {{ count }}
@@ -378,30 +395,82 @@ h2 {
 }
 
 /* Question Count */
-.question-count-options {
-  display: flex;
-  gap: 1rem;
+.question-count-value {
+  color: #2196F3;
+  font-weight: 700;
+  font-size: 1.3rem;
 }
 
-.count-button {
+.question-slider {
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: linear-gradient(to right, #2196F3 0%, #1976D2 100%);
+  outline: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.question-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid #2196F3;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+
+.question-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
+}
+
+.question-slider::-moz-range-thumb {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid #2196F3;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+
+.question-slider::-moz-range-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
+}
+
+.question-count-options {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.count-button-small {
   flex: 1;
-  padding: 1rem;
+  padding: 0.6rem;
   border: 2px solid #e0e0e0;
-  border-radius: 8px;
+  border-radius: 6px;
   background: white;
   color: #2c3e50;
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.2s;
 }
 
-.count-button:hover {
+.count-button-small:hover {
   border-color: #2196F3;
   color: #2196F3;
+  transform: translateY(-1px);
 }
 
-.count-button.active {
+.count-button-small.active {
   border-color: #2196F3;
   background: #e3f2fd;
   color: #1976D2;

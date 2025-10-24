@@ -52,7 +52,10 @@
           :key="filter.value"
           @click="activeFilter = filter.value"
           class="filter-button"
-          :class="{ active: activeFilter === filter.value }"
+          :class="[
+            { active: activeFilter === filter.value },
+            `filter-${filter.value}`
+          ]"
         >
           {{ filter.label }} ({{ getFilterCount(filter.value) }})
         </button>
@@ -353,6 +356,40 @@ function formatDuration(seconds: number): string {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   border-color: #667eea;
+}
+
+/* Color-coded filter buttons - Correct (Green) */
+button.filter-button.filter-correct {
+  border: 2px solid #4CAF50;
+  color: #4CAF50;
+}
+
+button.filter-button.filter-correct:hover {
+  background: #E8F5E9;
+  border-color: #4CAF50;
+}
+
+button.filter-button.filter-correct.active {
+  background: linear-gradient(135deg, #66BB6A 0%, #4CAF50 100%);
+  border-color: #4CAF50;
+  color: white;
+}
+
+/* Color-coded filter buttons - Incorrect (Red) */
+button.filter-button.filter-incorrect {
+  border: 2px solid #FF5252;
+  color: #FF5252;
+}
+
+button.filter-button.filter-incorrect:hover {
+  background: #FFEBEE;
+  border-color: #FF5252;
+}
+
+button.filter-button.filter-incorrect.active {
+  background: linear-gradient(135deg, #FF6B6B 0%, #FF5252 100%);
+  border-color: #FF5252;
+  color: white;
 }
 
 /* Questions List */

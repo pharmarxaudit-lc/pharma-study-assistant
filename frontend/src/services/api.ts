@@ -207,4 +207,16 @@ export const api = {
 
     return response.json()
   },
+
+  // Delete a session
+  async deleteSession(sessionId: number): Promise<void> {
+    const response = await fetch(`${API_BASE_URL}/api/sessions/${sessionId}`, {
+      method: 'DELETE',
+    })
+
+    if (!response.ok) {
+      const error = await response.json()
+      throw new Error(error.error || 'Failed to delete session')
+    }
+  },
 }
