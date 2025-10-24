@@ -47,6 +47,13 @@ backend/pharma_exam.db   # Ignore production database
 # Keep baseline database for fresh deployments
 !backend/pharma_exam_baseline.db
 
+# Keep database backups for preservation
+!backend/backups/
+!backend/backups/**/*.db
+!backend/backups/**/*.json
+!backend/backups/**/*.sql
+!backend/backups/**/*.md
+
 # Frontend
 frontend/node_modules/
 frontend/dist/

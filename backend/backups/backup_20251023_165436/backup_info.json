@@ -1,0 +1,13 @@
+{
+  "timestamp": "20251023_165436",
+  "date": "2025-10-23T16:54:36.343479",
+  "description": "Before duplicate cleanup - 399 questions total, 5 exact duplicates identified",
+  "database_path": "/Users/luiscotto/Code/pharma-study-assistant/backend/pharma_exam.db",
+  "backup_directory": "backups/backup_20251023_165436",
+  "files": {
+    "database": "pharma_exam_20251023_165436.db",
+    "questions_json": "questions_20251023_165436.json",
+    "sql_dump": "dump_20251023_165436.sql",
+    "report": "report_20251023_165436.md"
+  }
+}
