@@ -1,0 +1,2697 @@
+{
+  "matched_topics": [
+    {
+      "original_topic": "La Profesión de Farmacia - Responsabilidad Social",
+      "db_topic": "La Profesión de Farmacia - Responsabilidad Social",
+      "pages": "1-2",
+      "question_count": 20,
+      "questions": [
+        {
+          "id": 1,
+          "question_text": "Un farmacéutico recién graduado desea ejercer en Puerto Rico. Según la Ley de Farmacia de Puerto Ric",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "1-2",
+          "times_seen": 0
+        },
+        {
+          "id": 2,
+          "question_text": "De acuerdo con la Ley de Farmacia de Puerto Rico (Ley 247 de 2004), ¿cuál es el principal aspecto de",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "1-2",
+          "times_seen": 0
+        },
+        {
+          "id": 3,
+          "question_text": "Un farmacéutico recién graduado está evaluando los requisitos para ejercer la profesión en Puerto Ri",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "1-2",
+          "times_seen": 0
+        },
+        {
+          "id": 4,
+          "question_text": "Un farmacéutico recién graduado está evaluando los requisitos para ejercer la profesión en Puerto Ri",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "1-2",
+          "times_seen": 0
+        },
+        {
+          "id": 5,
+          "question_text": "Un farmacéutico recién graduado desea ejercer la profesión en Puerto Rico. Según la Ley de Farmacia ",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "1-2",
+          "times_seen": 1
+        }
+      ]
+    },
+    {
+      "original_topic": "Requisitos para ejercer como Farmacéutico",
+      "db_topic": "Requisitos para ejercer como Farmacéutico",
+      "pages": "3-8",
+      "question_count": 18,
+      "questions": [
+        {
+          "id": 26,
+          "question_text": "Un farmacéutico recién graduado ha completado su internado y aprobado los exámenes de reválida. Segú",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "3-8",
+          "times_seen": 0
+        },
+        {
+          "id": 27,
+          "question_text": "¿Cuál es el requisito de horas de internado que debe completar un aspirante a farmacéutico antes de ",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "3-8",
+          "times_seen": 1
+        },
+        {
+          "id": 28,
+          "question_text": "¿Cuál es el requisito de horas de internado que debe completar un aspirante a farmacéutico antes de ",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "3-8",
+          "times_seen": 0
+        },
+        {
+          "id": 29,
+          "question_text": "Un farmacéutico recién graduado completó sus 1500 horas de internado y aprobó ambas partes de la rev",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "3-8",
+          "times_seen": 2
+        },
+        {
+          "id": 30,
+          "question_text": "Un recién graduado de farmacia ha completado 1200 horas de internado y desea solicitar su licencia p",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "3-8",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "original_topic": "Denegación y Suspensión de Licencia",
+      "db_topic": "Denegación y Suspensión de Licencia",
+      "pages": "9-10",
+      "question_count": 20,
+      "questions": [
+        {
+          "id": 51,
+          "question_text": "Un farmacéutico licenciado es acusado de fraude en la dispensación de medicamentos. Durante la inves",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "9-10",
+          "times_seen": 0
+        },
+        {
+          "id": 52,
+          "question_text": "Un farmacéutico recientemente licenciado es acusado de haber falsificado documentos de experiencia p",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "9-10",
+          "times_seen": 0
+        },
+        {
+          "id": 53,
+          "question_text": "Un farmacéutico licenciado fue convicto por un delito grave relacionado con sustancias controladas h",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "9-10",
+          "times_seen": 0
+        },
+        {
+          "id": 54,
+          "question_text": "¿Cuál de las siguientes situaciones NO es una causa para la denegación de una licencia de farmacéuti",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "9-10",
+          "times_seen": 0
+        },
+        {
+          "id": 55,
+          "question_text": "Un farmacéutico licenciado es acusado de fraude en la dispensación de medicamentos. Durante la inves",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "9-10",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "original_topic": "Funciones del Farmacéutico",
+      "db_topic": "Funciones del Farmacéutico",
+      "pages": "11-13",
+      "question_count": 18,
+      "questions": [
+        {
+          "id": 76,
+          "question_text": "Según la Ley 247 de 2004, ¿cuál de las siguientes NO es una función permitida al farmacéutico en Pue",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "11-13",
+          "times_seen": 0
+        },
+        {
+          "id": 77,
+          "question_text": "Un farmacéutico recién licenciado desea administrar vacunas en su práctica profesional. Según la Ley",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "11-13",
+          "times_seen": 0
+        },
+        {
+          "id": 78,
+          "question_text": "Un farmacéutico está evaluando qué servicios puede ofrecer en su farmacia. Según la Ley 247 de 2004,",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "11-13",
+          "times_seen": 0
+        },
+        {
+          "id": 79,
+          "question_text": "Un farmacéutico recién licenciado desea administrar vacunas en su farmacia. Según la Ley 247 de 2004",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "11-13",
+          "times_seen": 0
+        },
+        {
+          "id": 80,
+          "question_text": "Un farmacéutico certificado para administrar vacunas recibe a un paciente que solicita la vacuna con",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "11-13",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "original_topic": "Farmacéutico Regente y Preceptor",
+      "db_topic": "Farmacéutico Regente y Preceptor",
+      "pages": "14-17",
+      "question_count": 22,
+      "questions": [
+        {
+          "id": 101,
+          "question_text": "Un farmacéutico regente de una farmacia comunitaria supervisa actualmente a 3 técnicos de farmacia. ",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "14-17",
+          "times_seen": 0
+        },
+        {
+          "id": 102,
+          "question_text": "Un farmacéutico regente de una farmacia comunitaria desea ejercer como preceptor. En su establecimie",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "14-17",
+          "times_seen": 0
+        },
+        {
+          "id": 103,
+          "question_text": "Según la Ley de Farmacia de Puerto Rico, ¿cuál es el número máximo total de personas que puede super",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "14-17",
+          "times_seen": 0
+        },
+        {
+          "id": 104,
+          "question_text": "Un farmacéutico regente en una farmacia comunitaria supervisa actualmente a 3 técnicos de farmacia. ",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "14-17",
+          "times_seen": 0
+        },
+        {
+          "id": 105,
+          "question_text": "Un farmacéutico regente de una farmacia comunitaria supervisa actualmente a 3 técnicos de farmacia. ",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "14-17",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "original_topic": "Delitos y Conductas Prohibidas",
+      "db_topic": "Delitos y Conductas Prohibidas",
+      "pages": "18-26",
+      "question_count": 16,
+      "questions": [
+        {
+          "id": 126,
+          "question_text": "Según la Ley de Farmacia de Puerto Rico, ¿cuál de las siguientes conductas constituye un delito meno",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "18-26",
+          "times_seen": 1
+        },
+        {
+          "id": 127,
+          "question_text": "Según la Ley de Farmacia de Puerto Rico, ¿cuál de las siguientes acciones constituye un delito menos",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "18-26",
+          "times_seen": 0
+        },
+        {
+          "id": 128,
+          "question_text": "Un técnico de farmacia con 5 años de experiencia laboral decide abrir su propio establecimiento de f",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "18-26",
+          "times_seen": 0
+        },
+        {
+          "id": 130,
+          "question_text": "Un técnico de farmacia con 5 años de experiencia laboral decide comenzar a dispensar medicamentos re",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "18-26",
+          "times_seen": 0
+        },
+        {
+          "id": 131,
+          "question_text": "Un técnico de farmacia con 5 años de experiencia decide abrir su propio establecimiento de farmacia ",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "18-26",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "original_topic": "Técnico de Farmacia",
+      "db_topic": "Técnico de Farmacia",
+      "pages": "27-34",
+      "question_count": 18,
+      "questions": [
+        {
+          "id": 151,
+          "question_text": "Un Técnico de Farmacia necesita renovar su certificación. Según la Ley 247 de 2004, ¿cuántas horas d",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "27-34",
+          "times_seen": 0
+        },
+        {
+          "id": 152,
+          "question_text": "Según la Ley 247 de 2004, ¿cuántas horas de educación continua debe completar un Técnico de Farmacia",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "27-34",
+          "times_seen": 0
+        },
+        {
+          "id": 153,
+          "question_text": "Según la Ley 247 de 2004, ¿cuál es el requisito de educación continua que debe cumplir un Técnico de",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "27-34",
+          "times_seen": 0
+        },
+        {
+          "id": 154,
+          "question_text": "Un Técnico de Farmacia certificado ha completado 15 horas de educación continua durante su primer añ",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "27-34",
+          "times_seen": 0
+        },
+        {
+          "id": 157,
+          "question_text": "Un Técnico de Farmacia certificado lleva 2.5 años ejerciendo y necesita recertificarse. Al revisar s",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "27-34",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "original_topic": "Junta de Farmacia",
+      "db_topic": "Junta de Farmacia",
+      "pages": "35-37",
+      "question_count": 17,
+      "questions": [
+        {
+          "id": 176,
+          "question_text": "¿Cuál es la composición correcta de la Junta de Farmacia de Puerto Rico según la ley vigente?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "35-37",
+          "times_seen": 1
+        },
+        {
+          "id": 177,
+          "question_text": "Según la Ley de Farmacia de Puerto Rico, ¿cuál es la composición correcta de la Junta de Farmacia?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "35-37",
+          "times_seen": 0
+        },
+        {
+          "id": 178,
+          "question_text": "Según la Ley de Farmacia de Puerto Rico, ¿cuál de las siguientes afirmaciones es correcta sobre la c",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "35-37",
+          "times_seen": 1
+        },
+        {
+          "id": 182,
+          "question_text": "Según la Ley de Farmacia de Puerto Rico, ¿cuál de las siguientes afirmaciones es CORRECTA respecto a",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "35-37",
+          "times_seen": 0
+        },
+        {
+          "id": 183,
+          "question_text": "Durante una reunión de la Junta de Farmacia, surge una vacante inesperada. Para continuar las operac",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "35-37",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "original_topic": "Regulación de Establecimientos Farmacéuticos",
+      "db_topic": "Regulación de Establecimientos Farmacéuticos",
+      "pages": "38-53",
+      "question_count": 20,
+      "questions": [
+        {
+          "id": 201,
+          "question_text": "Una farmacia comunitaria opera de lunes a domingo de 7:00 AM a 10:00 PM. El farmacéutico regente deb",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "38-53",
+          "times_seen": 0
+        },
+        {
+          "id": 202,
+          "question_text": "Una farmacia comunitaria que opera en horario extendido de 7:00 AM a 10:00 PM tiene un farmacéutico ",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "38-53",
+          "times_seen": 0
+        },
+        {
+          "id": 204,
+          "question_text": "Según la Ley de Farmacia de Puerto Rico, ¿cuál es el requisito mínimo de personal farmacéutico que d",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "38-53",
+          "times_seen": 0
+        },
+        {
+          "id": 205,
+          "question_text": "Una farmacia comunitaria está operando normalmente cuando el único farmacéutico presente debe ausent",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "38-53",
+          "times_seen": 0
+        },
+        {
+          "id": 206,
+          "question_text": "Durante una inspección rutinaria, se encuentra que una farmacia comunitaria opera sin farmacéutico r",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "38-53",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "original_topic": "Medicamentos y su Dispensación",
+      "db_topic": "Medicamentos y su Dispensación",
+      "pages": "54-78",
+      "question_count": 16,
+      "questions": [
+        {
+          "id": 226,
+          "question_text": "Un paciente llega a la farmacia con una receta para un medicamento biológico. El farmacéutico identi",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "54-78",
+          "times_seen": 1
+        },
+        {
+          "id": 227,
+          "question_text": "Un paciente llega a la farmacia con una receta para Humira® (adalimumab). El farmacéutico nota que h",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "54-78",
+          "times_seen": 1
+        },
+        {
+          "id": 228,
+          "question_text": "Un paciente llega a la farmacia con una receta de un producto biológico. El farmacéutico identifica ",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "54-78",
+          "times_seen": 0
+        },
+        {
+          "id": 229,
+          "question_text": "Según la Ley de Farmacia de Puerto Rico, ¿cuál de las siguientes afirmaciones es correcta sobre la d",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "54-78",
+          "times_seen": 0
+        },
+        {
+          "id": 230,
+          "question_text": "Un paciente llega a la farmacia con una receta de un producto biológico de referencia. La farmacia t",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "54-78",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "original_topic": "Cuerpos Regulatorios y División de Medicamentos",
+      "db_topic": "Cuerpos Regulatorios y División de Medicamentos",
+      "pages": "79-83",
+      "question_count": 16,
+      "questions": [
+        {
+          "id": 251,
+          "question_text": "Según la Ley de Farmacia de Puerto Rico, ¿cuál es uno de los requisitos principales que debe cumplir",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "79-83",
+          "times_seen": 0
+        },
+        {
+          "id": 252,
+          "question_text": "Según la Ley de Farmacia de Puerto Rico, ¿cuál de las siguientes afirmaciones es correcta sobre la D",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "79-83",
+          "times_seen": 0
+        },
+        {
+          "id": 253,
+          "question_text": "Según la Ley de Farmacia de Puerto Rico, ¿cuál de las siguientes afirmaciones es CORRECTA sobre los ",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "79-83",
+          "times_seen": 1
+        },
+        {
+          "id": 255,
+          "question_text": "Según la Ley de Farmacia de Puerto Rico, ¿cuál de las siguientes afirmaciones es CORRECTA sobre los ",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "79-83",
+          "times_seen": 0
+        },
+        {
+          "id": 256,
+          "question_text": "Según la Ley de Farmacia de Puerto Rico, ¿cuál de las siguientes afirmaciones es correcta sobre los ",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "79-83",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "original_topic": "Sustancias Controladas",
+      "db_topic": "Sustancias Controladas",
+      "pages": "84-100",
+      "question_count": 18,
+      "questions": [
+        {
+          "id": 276,
+          "question_text": "Un farmacéutico recién graduado desea establecer una farmacia que dispensará sustancias controladas.",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "84-100",
+          "times_seen": 0
+        },
+        {
+          "id": 277,
+          "question_text": "¿Cuál de las siguientes afirmaciones es CORRECTA sobre el registro para manejar sustancias controlad",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "84-100",
+          "times_seen": 0
+        },
+        {
+          "id": 278,
+          "question_text": "Un farmacéutico recién graduado desea establecer una farmacia que dispensará sustancias controladas.",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "84-100",
+          "times_seen": 0
+        },
+        {
+          "id": 279,
+          "question_text": "Un farmacéutico desea comenzar a dispensar sustancias controladas en su nueva farmacia. ¿Cuál de las",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "84-100",
+          "times_seen": 0
+        },
+        {
+          "id": 280,
+          "question_text": "Un farmacéutico desea comenzar a dispensar sustancias controladas en su farmacia. ¿Cuál de las sigui",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "84-100",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "original_topic": "Colegio de Farmacéuticos de Puerto Rico",
+      "db_topic": "Colegio de Farmacéuticos de Puerto Rico",
+      "pages": "101-101",
+      "question_count": 15,
+      "questions": [
+        {
+          "id": 301,
+          "question_text": "Según la Ley 243 de 1938, cuando el Colegio de Farmacéuticos de Puerto Rico recibe una querella cont",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "101-101",
+          "times_seen": 0
+        },
+        {
+          "id": 302,
+          "question_text": "De acuerdo con la Ley 243 de 1938, cuando el Colegio de Farmacéuticos de Puerto Rico recibe una quer",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "101-101",
+          "times_seen": 0
+        },
+        {
+          "id": 303,
+          "question_text": "De acuerdo a la Ley 243 de 1938, cuando el Colegio de Farmacéuticos de Puerto Rico recibe una querel",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "101-101",
+          "times_seen": 0
+        },
+        {
+          "id": 304,
+          "question_text": "Según la Ley 243 de 1938, cuando el Colegio de Farmacéuticos de Puerto Rico recibe una querella cont",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "101-101",
+          "times_seen": 0
+        },
+        {
+          "id": 305,
+          "question_text": "Un farmacéutico licenciado presenta una querella juramentada ante el Colegio de Farmacéuticos de Pue",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "101-101",
+          "times_seen": 0
+        }
+      ]
+    }
+  ],
+  "unmatched_topics": [],
+  "extra_db_topics": [
+    {
+      "db_topic": "Junta de Farmacia - Propósito y Funciones",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 326,
+          "question_text": "¿Cuál es el propósito principal de la creación de la Junta de Farmacia según la Ley 247 de 2004?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Junta de Farmacia - Composición",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 327,
+          "question_text": "¿Quién tiene la autoridad para nombrar los miembros de la Junta de Farmacia?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Técnico de Farmacia - Limitaciones",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 328,
+          "question_text": "Según la ley, ¿cuáles funciones NO puede realizar un técnico de farmacia?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Requisitos para Ejercer - Farmacéutico",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 329,
+          "question_text": "¿Cuáles son los tres requisitos principales para ejercer como farmacéutico en Puerto Rico?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Horas de Práctica - Farmacéutico",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 330,
+          "question_text": "¿Cuántas horas mínimas de práctica debe completar un farmacéutico bajo supervisión de un preceptor?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Reciprocidad - Farmacéutico",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 331,
+          "question_text": "¿Cuál NO es un requisito para ejercer la farmacia en Puerto Rico por reciprocidad?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Colegio de Farmacéuticos",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 332,
+          "question_text": "¿Cuál es la cuota anual de colegiación en el CFPR y qué ley creó esta organización?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Educación Continua",
+      "question_count": 3,
+      "questions": [
+        {
+          "id": 333,
+          "question_text": "¿Cuáles son los requisitos de educación continua para farmacéuticos en Puerto Rico?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        },
+        {
+          "id": 388,
+          "question_text": "¿Cuáles son los requisitos de educación continua para farmacéuticos según la reglamentación vigente?",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        },
+        {
+          "id": 468,
+          "question_text": "¿Cuál es el requisito mínimo de horas de educación continua presencial que debe cumplir un farmacéut",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Colegio de Farmacéuticos - Administración",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 334,
+          "question_text": "¿Qué entidad tiene el poder para ejecutar decisiones en el Colegio de Farmacéuticos de Puerto Rico?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Horas de Práctica - Técnico",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 335,
+          "question_text": "¿Cuántas horas mínimas de internado debe completar un técnico de farmacia?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Disciplina Profesional",
+      "question_count": 2,
+      "questions": [
+        {
+          "id": 336,
+          "question_text": "¿Qué autoridad puede quitar la licencia, suspender, cancelar o revocar la licencia de farmacéuticos ",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        },
+        {
+          "id": 440,
+          "question_text": "¿Qué entidad tiene la autoridad para suspender o revocar la licencia de la profesión de farmacia?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Licencias de Establecimientos",
+      "question_count": 3,
+      "questions": [
+        {
+          "id": 337,
+          "question_text": "¿Qué ocurre con la licencia de un establecimiento farmacéutico cuando cambia de dueño o de lugar?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        },
+        {
+          "id": 441,
+          "question_text": "¿Quién puede suspender o revocar la licencia de un establecimiento farmacéutico?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        },
+        {
+          "id": 447,
+          "question_text": "¿Cuál es la duración de la licencia de establecimiento farmacéutico?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Renovación de Licencias",
+      "question_count": 2,
+      "questions": [
+        {
+          "id": 338,
+          "question_text": "Según el Reglamento 156, ¿cada cuánto tiempo se renuevan las licencias de establecimientos y cuándo ",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        },
+        {
+          "id": 392,
+          "question_text": "¿Con qué frecuencia deben renovarse las licencias de establecimientos farmacéuticos?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Autoridad sobre Establecimientos",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 339,
+          "question_text": "¿Quién tiene la autoridad para denegar, suspender, cancelar o revocar licencias de establecimientos ",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Personal Farmacéutico",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 340,
+          "question_text": "¿Cuántos farmacéuticos se requieren en una farmacia según la reglamentación?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Notificaciones de Personal",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 341,
+          "question_text": "¿En cuánto tiempo debe notificarse por escrito el cambio o cese de empleo de un farmacéutico?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Industria Farmacéutica",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 342,
+          "question_text": "¿En cuánto tiempo debe notificarse la ausencia de un farmacéutico en la industria farmacéutica?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Ausencias de Emergencia",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 343,
+          "question_text": "¿Cuáles son los requisitos cuando un farmacéutico se ausenta del recetario en emergencia?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Ausencias por Alimentos",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 344,
+          "question_text": "¿Cuándo NO se requiere colocar rótulo durante la ausencia del farmacéutico en el recetario?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Supervisión de Internos",
+      "question_count": 2,
+      "questions": [
+        {
+          "id": 345,
+          "question_text": "¿Qué puede hacer un interno durante la ausencia de su preceptor?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        },
+        {
+          "id": 396,
+          "question_text": "¿Qué puede hacer un interno de farmacia cuando hay ausencia del preceptor?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Almacenamiento de Biológicos",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 346,
+          "question_text": "¿Cuál es la temperatura máxima permitida para el almacenamiento de productos biológicos?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Registros de Vacunación",
+      "question_count": 2,
+      "questions": [
+        {
+          "id": 347,
+          "question_text": "¿Por cuánto tiempo deben conservarse los expedientes de vacunación?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        },
+        {
+          "id": 470,
+          "question_text": "¿Por cuánto tiempo debe conservarse el perfil de vacunación del paciente?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Vacunación sin Receta",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 348,
+          "question_text": "¿Cuáles vacunas pueden administrarse sin receta médica?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "División de Medicamentos y Farmacia",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 349,
+          "question_text": "¿Qué requisito debe cumplir el director de la División de Medicamentos y Farmacia?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Medicamentos Veterinarios",
+      "question_count": 2,
+      "questions": [
+        {
+          "id": 350,
+          "question_text": "¿Dónde pueden dispensarse medicamentos para uso veterinario además de las farmacias?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        },
+        {
+          "id": 401,
+          "question_text": "Para medicamentos de uso veterinario, ¿qué licencia específica necesita el veterinario?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Información de Recetas",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 351,
+          "question_text": "¿Qué información de la receta se le puede preguntar al paciente si falta en la prescripción?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Transmisión de Recetas",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 352,
+          "question_text": "¿Cuáles son los métodos permitidos para la transmisión de recetas?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Suplidos de Emergencia",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 353,
+          "question_text": "¿Cuáles son las condiciones para el suplido de emergencia de medicamentos?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Recetas de Estados Unidos",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 354,
+          "question_text": "¿Cuáles son las condiciones para aceptar recetas de Estados Unidos?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Intercambio de Medicamentos",
+      "question_count": 4,
+      "questions": [
+        {
+          "id": 355,
+          "question_text": "¿Cuándo se permite el intercambio por medicamentos bioequivalentes?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        },
+        {
+          "id": 406,
+          "question_text": "¿Cuándo se puede intercambiar un medicamento prescrito por uno genérico bioequivalente?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        },
+        {
+          "id": 444,
+          "question_text": "Al hacer intercambio de medicamento por bioequivalente, ¿qué información NO debe incluirse en el doc",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Supervisión de Personal",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 356,
+          "question_text": "¿Cuál es el máximo número de empleados que puede supervisar un farmacéutico?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Entregas a Domicilio",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 357,
+          "question_text": "¿Bajo qué condición puede un paciente renunciar a que sea el farmacéutico quien entregue medicamento",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Documentación de Renuncias",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 358,
+          "question_text": "¿Cómo debe documentarse la evidencia de renuncia del paciente y por cuánto tiempo debe archivarse?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Cambios a Bioequivalentes",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 359,
+          "question_text": "¿Qué se requiere para cambiar un medicamento de marca a uno bioequivalente?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Etiquetado de Medicamentos",
+      "question_count": 4,
+      "questions": [
+        {
+          "id": 360,
+          "question_text": "¿Qué información debe contener el label cuando se cambia de marca a bioequivalente?",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        },
+        {
+          "id": 410,
+          "question_text": "¿Cómo debe aparecer en la etiqueta cuando se cambia de medicamento de marca a bioequivalente?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        },
+        {
+          "id": 411,
+          "question_text": "¿Cuál de los siguientes datos NO es necesario en la etiqueta del medicamento dispensado?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Requisitos de Etiquetado",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 361,
+          "question_text": "¿Qué información NO es necesaria incluir en el label de un medicamento?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Fechas de Expiración",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 362,
+          "question_text": "¿Cuáles son las fechas de expiración (Beyond Use Date) para diferentes tipos de preparaciones?",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Intercambio de Biológicos",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 363,
+          "question_text": "¿Cuándo se permite el intercambio de un biológico por un biosimilar?",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Dispositivos Médicos",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 364,
+          "question_text": "¿Qué dispositivos médicos están exentos de registro ante el Departamento de Salud?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Jeringuillas y Parafernalia",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 365,
+          "question_text": "¿Qué estableció la Ley #73 de 2007 respecto a las jeringuillas?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Dispensación de Narcóticos",
+      "question_count": 2,
+      "questions": [
+        {
+          "id": 366,
+          "question_text": "¿Cuál es el requisito de tiempo para la dispensación de narcóticos desde su expedición?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        },
+        {
+          "id": 415,
+          "question_text": "¿Cuál es el tiempo máximo permitido para dispensar narcóticos después de su expedición?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Inspectores de Controlados",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 367,
+          "question_text": "¿Quién puede ser nombrado inspector de sustancias controladas?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Clasificación de Controlados",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 368,
+          "question_text": "¿Qué autoridad tiene el poder para clasificar sustancias controladas?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Seguridad de Controlados",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 369,
+          "question_text": "¿Cuáles son las medidas de seguridad requeridas para sustancias controladas?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Autoridad sobre Registros",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 370,
+          "question_text": "¿Quién puede denegar, suspender o revocar registros de sustancias controladas a nivel estatal y fede",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Conservación de Controlados",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 371,
+          "question_text": "¿Cuáles son los requisitos de conservación para sustancias controladas según regulación federal?",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Hojas de Pedido",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 372,
+          "question_text": "¿Qué son las hojas oficiales de pedido y por cuánto tiempo deben conservarse?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Prescribientes Autorizados",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 373,
+          "question_text": "¿Quiénes pueden expedir recetas de sustancias controladas?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Modificaciones de Recetas",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 374,
+          "question_text": "¿Qué cambios puede hacer un farmacéutico en recetas de sustancias controladas según regulación feder",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Repeticiones de Controlados",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 375,
+          "question_text": "¿Cuántas repeticiones tienen los narcóticos y los controlados no narcóticos?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Infracciones Técnicas",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 376,
+          "question_text": "¿Qué constituye una infracción técnica grave relacionada con información al paciente?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Tipos de Infracciones",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 377,
+          "question_text": "¿Cuáles son ejemplos de infracciones técnicas graves?",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Reclasificación de Controlados",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 378,
+          "question_text": "¿Quién puede reclasificar sustancias controladas en Puerto Rico?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Cannabis Medicinal",
+      "question_count": 4,
+      "questions": [
+        {
+          "id": 379,
+          "question_text": "¿Cuáles son las características de las recomendaciones de cannabis medicinal?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        },
+        {
+          "id": 431,
+          "question_text": "¿A qué tipo de pacientes debe recomendarse cannabis medicinal?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        },
+        {
+          "id": 459,
+          "question_text": "¿Para qué propósito está autorizado el uso de cannabis en Puerto Rico?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Dispensación de Cannabis",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 380,
+          "question_text": "¿Qué requisito debe cumplir una persona que dispensa cannabis medicinal?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Protección Legal",
+      "question_count": 2,
+      "questions": [
+        {
+          "id": 381,
+          "question_text": "¿Qué establece la Ley del Buen Samaritano?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        },
+        {
+          "id": 438,
+          "question_text": "¿Qué protección ofrece la Ley del Buen Samaritano a los profesionales de la salud?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Medicamentos Especiales",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 382,
+          "question_text": "¿Cuáles tipos de medicamentos tienen requisitos especiales de manejo?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Composición de la Junta",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 384,
+          "question_text": "¿Quién tiene la autoridad para nombrar a los miembros de la Junta de Farmacia de Puerto Rico?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Funciones del Técnico",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 385,
+          "question_text": "¿Cuáles son las limitaciones en las funciones del técnico de farmacia?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Horas de Práctica",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 386,
+          "question_text": "¿Cuántas horas de práctica supervisada debe completar un farmacéutico para obtener su licencia en Pu",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Colegiación",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 387,
+          "question_text": "¿Cuál es la organización responsable de la colegiación obligatoria de los farmacéuticos en Puerto Ri",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Estructura CFPR",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 389,
+          "question_text": "¿Qué entidad tiene el poder ejecutivo y toma las decisiones principales en el Colegio de Farmacéutic",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Requisitos Técnico",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 390,
+          "question_text": "¿Cuántas horas de práctica supervisada debe completar un técnico de farmacia para obtener su licenci",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Poder Disciplinario",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 391,
+          "question_text": "¿Cuáles son las acciones disciplinarias que puede tomar la Junta de Farmacia contra farmacéuticos y ",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Personal Requerido",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 393,
+          "question_text": "¿Cuántos farmacéuticos se requieren en una farmacia, institución o droguería según la reglamentación",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Notificación de Ausencias",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 394,
+          "question_text": "¿Dentro de cuánto tiempo debe notificar el dueño de un establecimiento la falta de farmacéutico a la",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Protocolos de Ausencia",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 395,
+          "question_text": "¿Cuándo se considera que aplica el protocolo de emergencia por ausencia del farmacéutico?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Conservación de Expedientes",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 397,
+          "question_text": "¿Por cuánto tiempo deben conservarse los expedientes de vacunación de los pacientes?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Dispensación de Vacunas",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 398,
+          "question_text": "¿Cuáles de las siguientes vacunas NO requieren receta médica para su dispensación?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Licencias Farmacéuticas",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 399,
+          "question_text": "¿Qué tipo de medicamentos están exentos de la licencia de botiquín?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Certificaciones de Salud",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 400,
+          "question_text": "¿Cuáles de las siguientes entidades requieren certificado de registro trienal?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Procesamiento de Recetas",
+      "question_count": 2,
+      "questions": [
+        {
+          "id": 402,
+          "question_text": "¿Cuáles datos del paciente puede preguntar el farmacéutico si faltan en la receta?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        },
+        {
+          "id": 403,
+          "question_text": "Para acelerar el proceso de dispensación, ¿a qué se debe adherir la receta original?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Dispensación de Emergencia",
+      "question_count": 2,
+      "questions": [
+        {
+          "id": 404,
+          "question_text": "En caso de emergencia, ¿por cuánto tiempo se puede dispensar un suplido de medicamento?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        },
+        {
+          "id": 485,
+          "question_text": "En caso de emergencia, ¿cuál es la cantidad máxima de medicamento que se puede dispensar?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Recetas Interestatales",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 405,
+          "question_text": "Para recetas de Estados Unidos con refills, ¿cuál es la limitación para tomarlos en Puerto Rico?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Entrega de Medicamentos",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 407,
+          "question_text": "¿Qué se requiere para realizar entregas de medicamentos al domicilio del paciente?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Documentación Farmacéutica",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 408,
+          "question_text": "¿Por cuánto tiempo debe guardarse la evidencia de renuncia a entrega u orientación en el expediente ",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Medicamentos Bioequivalentes",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 409,
+          "question_text": "¿Qué característica principal define a los medicamentos bioequivalentes?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Fechas de Medicamentos",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 412,
+          "question_text": "¿Qué concepto se refiere a la fecha límite de uso de medicamentos cuando se despachan?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Productos Biológicos",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 413,
+          "question_text": "¿Qué se requiere para intercambiar un producto biológico?",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Registro de Productos",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 414,
+          "question_text": "¿Qué productos están exentos del registro del Departamento de Salud?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Inspección de Sustancias Controladas",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 416,
+          "question_text": "¿Quién tiene la autoridad para nombrar al inspector de sustancias controladas?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Control y Clasificación de Sustancias",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 417,
+          "question_text": "¿Qué autoridad tiene la responsabilidad de establecer los procedimientos específicos para el control",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Medidas de Seguridad para Controlados",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 418,
+          "question_text": "¿Cuáles son elementos esenciales de las medidas de seguridad para sustancias controladas?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Registro de Sustancias Controladas",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 419,
+          "question_text": "¿Quién tiene la autoridad para denegar, suspender o revocar el registro de sustancias controladas?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Almacenamiento de Controlados Clase II",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 420,
+          "question_text": "¿Cuáles son los requisitos de almacenamiento para sustancias controladas Clase II en manufactureros ",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Pedidos de Sustancias Controladas",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 421,
+          "question_text": "¿Quién puede firmar las hojas oficiales de pedido de sustancias controladas?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Requisitos para Expedir Controlados",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 422,
+          "question_text": "¿Cuáles son los requisitos de licencia para poder expedir sustancias controladas?",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Autoprescripción de Controlados",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 423,
+          "question_text": "¿Cuándo está permitido que un dispensador se prescriba a sí mismo sustancias controladas como consum",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Modificaciones en Recetas de Controlados",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 424,
+          "question_text": "¿Qué elementos de una receta de sustancias controladas NO pueden ser cambiados bajo ninguna circunst",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Despacho de Narcóticos",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 425,
+          "question_text": "¿Cuál es el tiempo máximo permitido para el despacho de narcóticos después de su prescripción?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Repetición de Narcóticos",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 426,
+          "question_text": "¿Está permitida la repetición de narcóticos clasificados como II, III, IV o V?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Repetición de No Narcóticos Controlados",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 427,
+          "question_text": "¿Cuáles son las reglas para la repetición de sustancias controladas no narcóticas de clasificación I",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Orientación al Paciente sobre Controlados",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 428,
+          "question_text": "¿Qué constituye el no orientar y facilitar al paciente un resumen impreso de sustancias controladas?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Clasificación de Infracciones",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 429,
+          "question_text": "¿Cómo se clasifican las violaciones relacionadas con sustancias controladas según su gravedad?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Reclasificación de Sustancias Controladas",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 430,
+          "question_text": "¿Quién tiene la autoridad para reclasificar sustancias controladas?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Dispensación de Cannabis Medicinal",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 432,
+          "question_text": "¿Qué requisito debe cumplir cualquier persona que quiera dispensar cannabis medicinal?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Limitaciones de la Ley del Buen Samaritano",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 433,
+          "question_text": "¿Cuándo NO aplica la exoneración de la Ley del Buen Samaritano?",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Medicamentos con Requisitos Especiales",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 434,
+          "question_text": "¿Cuáles son los tipos de medicamentos que requieren requisitos especiales para ser despachados?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Requisitos de Licenciatura",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 435,
+          "question_text": "¿Cuántas horas de internado debe completar un farmacéutico para obtener su licencia?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Requisitos de Técnicos",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 436,
+          "question_text": "¿Cuáles son los requisitos que debe cumplir un técnico de farmacia para su internado?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Operación de Farmacias",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 437,
+          "question_text": "¿Cuál es la composición mínima de personal requerida para operar una farmacia?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Certificación Profesional",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 439,
+          "question_text": "¿Qué entidad es responsable de autorizar, aprobar o denegar las certificaciones del personal farmacé",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Responsabilidades Profesionales",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 442,
+          "question_text": "¿Qué constituye negligencia profesional en el ejercicio de la farmacia?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Licencias Especializadas",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 443,
+          "question_text": "¿Qué licencia deben obtener los veterinarios para almacenar y administrar medicamentos?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Supervisión Farmacéutica",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 446,
+          "question_text": "¿Cuántas personas puede supervisar un farmacéutico simultáneamente?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Obligaciones Profesionales",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 448,
+          "question_text": "¿En cuánto tiempo debe un farmacéutico notificar a la División de Medicamentos y Farmacia sobre un n",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Renovación de Certificados",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 449,
+          "question_text": "¿Cada cuánto tiempo se renueva el certificado de farmacéutico y técnico?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Certificados Especiales",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 450,
+          "question_text": "¿Para qué tipo de establecimientos se requiere el certificado de registro trienal?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Registro de Dispositivos Médicos",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 451,
+          "question_text": "¿Qué artefactos médicos están exentos de registro en el Departamento de Salud?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Medicamentos Controlados",
+      "question_count": 3,
+      "questions": [
+        {
+          "id": 452,
+          "question_text": "¿Cuántas repeticiones se permiten para medicamentos controlados de clasificación II?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        },
+        {
+          "id": 453,
+          "question_text": "¿Cuál es la duración máxima de una receta de medicamentos controlados y el número máximo de repetici",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        },
+        {
+          "id": 454,
+          "question_text": "¿Cuál es el tiempo de vigencia para despachar un medicamento narcótico controlado de cualquier clasi",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Documentación y Registros",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 455,
+          "question_text": "¿Por cuánto tiempo deben conservarse los informes y recetas de medicamentos controlados en la farmac",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Registros de Narcóticos",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 456,
+          "question_text": "¿Con qué frecuencia debe realizarse el registro de narcóticos en la farmacia?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Prescriptores Autorizados",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 457,
+          "question_text": "¿Qué registros necesita un médico para poder recetar medicamentos controlados?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Administración de Vacunas",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 458,
+          "question_text": "¿Cuáles vacunas están exentas de orden médica EXCEPTO una?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Colegiación Profesional",
+      "question_count": 2,
+      "questions": [
+        {
+          "id": 461,
+          "question_text": "¿Qué ley establece que se necesita colegiación para ejercer como farmacéutico en Puerto Rico?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        },
+        {
+          "id": 462,
+          "question_text": "¿Con qué frecuencia debe renovarse la colegiación del farmacéutico?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Certificación de Vacunas",
+      "question_count": 2,
+      "questions": [
+        {
+          "id": 464,
+          "question_text": "Para obtener la certificación de administración de vacunas, ¿cuál de los siguientes NO es necesario?",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        },
+        {
+          "id": 469,
+          "question_text": "Para obtener el certificado de administración de vacunas, ¿cuál de los siguientes NO es necesario?",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Infracciones y Sanciones",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 465,
+          "question_text": "¿Qué tipo de infracción constituye un descuadre en la cantidad de medicamentos controlados?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Licenciatura por Reciprocidad",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 466,
+          "question_text": "Para la licencia por reciprocidad, ¿cuál de los siguientes requisitos NO aplica?",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Responsabilidad Profesional",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 467,
+          "question_text": "¿Ante quién se presenta una demanda por mala práctica profesional farmacéutica?",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Mantenimiento de Registros Farmacéuticos",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 471,
+          "question_text": "¿Por cuánto tiempo debe mantenerse el perfil farmacéutico del paciente según la regulación vigente?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Reporte de Errores en Medicación",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 472,
+          "question_text": "¿A qué agencia gubernamental deben someterse los errores en medicación para su reporte y seguimiento",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Requisitos Especiales de Dispensación",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 474,
+          "question_text": "¿Cuáles de los siguientes tipos de medicamentos tienen requisitos especiales en cuanto a su dispensa",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Requisitos de Rotulación",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 475,
+          "question_text": "¿Cuál de los siguientes elementos NO es requerido en el rótulo de un medicamento dispensado?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Evaluación y Completación de Recetas",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 476,
+          "question_text": "Al evaluar una receta incompleta, ¿cuál de los siguientes elementos NO puede completar el farmacéuti",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Manejo de Recetas Electrónicas",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 477,
+          "question_text": "¿Cuál es el procedimiento correcto cuando se recibe una receta electrónica con instrucciones incompl",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Almacenaje de Medicamentos Controlados",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 478,
+          "question_text": "¿Cuál es el requisito de almacenaje para medicamentos controlados de la Lista II en establecimientos",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Ley de Paraphernalia",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 479,
+          "question_text": "Según la ley de paraphernalia, ¿cuál de los siguientes elementos NO está incluido en la definición d",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Inspección Farmacéutica",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 480,
+          "question_text": "¿Quién tiene la autoridad para nombrar a los inspectores farmacéuticos?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Ausencia del Farmacéutico",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 481,
+          "question_text": "¿Cuáles son los procedimientos requeridos durante la ausencia del farmacéutico para tomar alimento c",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Supervisión de Personal Técnico",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 482,
+          "question_text": "Durante la ausencia del farmacéutico preceptor, ¿qué restricción aplica para el técnico o interno de",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Autorización para Órdenes de Controlados",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 483,
+          "question_text": "¿Quiénes pueden firmar órdenes para medicamentos controlados de la Lista II a nivel federal y estata",
+          "difficulty": "advanced",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Estabilidad y Expiración de Medicamentos",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 484,
+          "question_text": "¿Según qué referencia se determina la fecha de expiración de los medicamentos?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Educación Continua para Técnicos",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 486,
+          "question_text": "¿Cuántas horas de educación continua debe completar anualmente un técnico de farmacia?",
+          "difficulty": "basic",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    },
+    {
+      "db_topic": "Excepciones en Ausencia del Farmacéutico",
+      "question_count": 1,
+      "questions": [
+        {
+          "id": 487,
+          "question_text": "¿Cuándo NO se requiere colocar rótulo durante la ausencia del farmacéutico en el recetario durante p",
+          "difficulty": "intermediate",
+          "document_id": 1,
+          "pages": "",
+          "times_seen": 0
+        }
+      ]
+    }
+  ],
+  "statistics": {
+    "original_topics_count": 13,
+    "db_topics_count": 147,
+    "matched_count": 13,
+    "unmatched_count": 0
+  }
+}
