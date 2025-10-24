@@ -230,7 +230,7 @@ onMounted(async () => {
     totalQuestions.value = stats.total
     availableTopics.value = stats.by_topic.map((topic, index) => ({
       id: index + 1,
-      name: topic.topic_name,
+      name: topic.topic,
       questionCount: topic.count
     }))
   } catch (error) {
