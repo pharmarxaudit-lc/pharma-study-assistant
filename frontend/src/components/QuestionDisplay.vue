@@ -271,16 +271,8 @@ function loadQuestion(apiQuestion: ApiQuestion): void {
       text: apiQuestion.options[key]
     })),
     explanation: apiQuestion.explanation,
-    // key_terms comes as either object or array from API
-    keyTerms: Array.isArray(apiQuestion.key_terms)
-      ? apiQuestion.key_terms.map((item: any) => ({
-          term: item.term,
-          definition: item.definition
-        }))
-      : Object.entries(apiQuestion.key_terms || {}).map(([term, definition]) => ({
-          term,
-          definition
-        })),
+    // key_terms comes as array from API
+    keyTerms: apiQuestion.key_terms || [],
     regulatory: apiQuestion.regulatory_context,
     correctAnswer: apiQuestion.correct_answer
   }
@@ -364,12 +356,7 @@ async function submitAnswer(): Promise<void> {
         question.value.correctAnswer = response.correct_answer
         question.value.explanation = response.explanation
         // key_terms comes as array from API
-        question.value.keyTerms = Array.isArray(response.key_terms)
-          ? response.key_terms.map((item: any) => ({
-              term: item.term,
-              definition: item.definition
-            }))
-          : []
+        question.value.keyTerms = response.key_terms || []
         question.value.regulatory = response.regulatory_context
       }
     } else {

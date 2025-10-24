@@ -25,9 +25,10 @@ export interface Question {
   }
   correct_answer: string
   explanation: string
-  key_terms: {
-    [key: string]: string
-  }
+  key_terms: Array<{
+    term: string
+    definition: string
+  }>
   regulatory_context?: string
   shuffle_map?: Record<string, string>
 }
@@ -46,9 +47,10 @@ export interface AnswerResponse {
   is_correct: boolean
   correct_answer: string
   explanation: string
-  key_terms: {
-    [key: string]: string
-  }
+  key_terms: Array<{
+    term: string
+    definition: string
+  }>
   regulatory_context?: string
   current_question_number: number
   total_questions: number
