@@ -96,8 +96,13 @@
         <div v-if="question.keyTerms && question.keyTerms.length > 0" class="key-terms">
           <h4>Key Terms:</h4>
           <div class="terms-list">
-            <div v-for="term in question.keyTerms" :key="term.term" class="term-item">
-              <strong>{{ term.term }}:</strong> {{ term.definition }}
+            <div v-for="(term, index) in question.keyTerms" :key="getTermKey(term, index)" class="term-item">
+              <template v-if="typeof term === 'string'">
+                <strong>{{ term }}</strong>
+              </template>
+              <template v-else>
+                <strong>{{ term.term }}:</strong> {{ term.definition }}
+              </template>
             </div>
           </div>
         </div>
@@ -289,6 +294,13 @@ function getDifficultyLabel(difficulty: 'basic' | 'intermediate' | 'advanced'): 
     advanced: 'Advanced'
   }
   return labels[difficulty] || difficulty
+}
+
+function getTermKey(term: string | KeyTerm, index: number): string {
+  if (typeof term === 'string') {
+    return `term-${index}-${term}`
+  }
+  return `term-${index}-${term.term}`
 }
 
 function isSelected(optionId: string): boolean {
