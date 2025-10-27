@@ -297,9 +297,15 @@ function isSelected(optionId: string): boolean {
 
 function isCorrectOption(optionId: string): boolean {
   if (!question.value || !question.value.correctAnswer) return false
-  // correctAnswer can be "A" or "A,C" for multiple answers
-  const correctIds = question.value.correctAnswer.split(',').map(id => id.trim())
-  return correctIds.includes(optionId)
+
+  // correctAnswer contains original letter positions (e.g., "A,C,D")
+  const originalCorrectIds = question.value.correctAnswer.split(',').map(id => id.trim())
+
+  // currentShuffleMap maps: shuffled letter -> original letter
+  // We need to check if the current optionId (shuffled) maps to an original correct answer
+  const originalLetter = currentShuffleMap.value[optionId] || optionId
+
+  return originalCorrectIds.includes(originalLetter)
 }
 
 function selectOption(optionId: string): void {
